@@ -6,9 +6,11 @@ import store from './store'
 import router from './router'
 import App from './App'
 import VueFire from 'vuefire'
+// import vueScrollTo from 'vue-scrollTo'
 
 Vue.use(Vuex)
 Vue.use(VueFire)
+// Vue.use(vueScrollTo)
 
 /* eslint-disable no-new */
 new Vue({

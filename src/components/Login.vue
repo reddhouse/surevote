@@ -18,9 +18,8 @@
       </div>
     </form>
 
-    <div class="spacer"></div>
+    <div class="spacer">New SureVote user?<br>Sign up below to create an account.</div>
 
-    <p>New SureVote user?<br>Please sign up to create an account.</p>
     <div class="title">Signup</div>
     <form v-on:submit.prevent="handleRegister">
       <div class="alert" v-if="signUpError">{{ signUpError }}</div>
@@ -108,12 +107,6 @@ export default {
   color: red;
 }
 
-input {
-  border: 1px solid #2c3e50;
-  padding: 2px 4px;
-  margin: 1px 2px;
-}
-
 .flex1 {
   max-width: 320px;
   width: 95%;
@@ -135,6 +128,12 @@ input {
   padding: 2px;
 }
 
+input {
+  border: 1px solid #2c3e50;
+  padding: 2px 4px;
+  margin: 1px 2px;
+}
+
 button {
   background-color: #2c3e50;
   color: white;
@@ -151,7 +150,7 @@ button {
 }
 
 .spacer {
-  padding: 25px;
+  padding: 80px 0px 20px 0px;
 }
 
 @media (min-width: 321px) {

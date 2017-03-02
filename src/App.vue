@@ -57,8 +57,21 @@ export default {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+  font-size: 100%;
+  color: darkslategrey;
+}
+
+@media (min-width: 321px) {
+
+  #app {
+    font-size: 110%;
+  }
+}
+
+@media (min-width: 600px) {
+
+  #app {
+    font-size: 120%;
+  }
 }
 </style>

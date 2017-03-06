@@ -16,7 +16,13 @@ const state = {
   artists: [],
 
   // SureVote Global State -----------------------------------------------------
-  user: {}
+  user: {},
+  homeView: {
+    Intro1: true,
+    Intro2Why: true,
+    Intro2How: true,
+    NavFooter: false
+  }
 }
 
 const store = new Vuex.Store({

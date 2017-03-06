@@ -29,3 +29,7 @@ export const receiveSearchResults = (state, { artists }) => {
 export const mutateUser = (state, userObj) => {
   state.user = userObj
 }
+
+export const mutateHomeView = (state, newViewObj) => {
+  state.homeView = newViewObj
+}

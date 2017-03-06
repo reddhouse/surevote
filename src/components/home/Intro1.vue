@@ -2,23 +2,21 @@
   <div class="intro-component">
     <div class="super-container">
 
-      <div id="header" class="spc spc5"></div>
-      <div class="row">
-        <div class="col"></div>
-        <div class="col"></div>
-        <div class="col"></div>
-        <div class="col"></div>
-        <div class="col"></div>
+      <div class="spc spc25"></div>
+      <div class="nfr title">
+        <div class="nfc">"I think they just figured out how to fix everything"</div>
+        <div class="nfc"></div>
+        <div class="nfc"></div>
       </div>
 
       <div class="spc"></div>
       <div class="nfr">
         <div class="nfc">
-          Some Text
+          <a href="#" v-on:click="emitScrollEvent">No, Seriously</a>
         </div>
       </div>
 
-      <div id="footer" class="spc spc5"></div>
+      <div class="spc spc5"></div>
 
     </div>
   </div>
@@ -43,6 +41,9 @@ export default {
   },
   methods: {
     // ...mapActions(['setTitle'])
+    emitScrollEvent () {
+      this.$emit('scroll-two')
+    }
   },
   filters: {
 
@@ -56,10 +57,12 @@ export default {
 <style scoped>
 
 .intro-component {
-  --width-percent-for-margin: 95%;
   height: 100vh;
   background-color: #262626;
   color: white;
+}
+a {
+  color: yellow;
 }
 
 /* Flex defaults for Justin's custom grid */
@@ -68,42 +71,44 @@ export default {
   flex-direction: column;
   height: 100vh;
 }
-
 .spc {
-  width: var(--width-percent-for-margin);
+  width: 95%;
   margin: 0 auto;
   /* Spacers prefer to fill empty space 1000 to 1 */
   flex: 1000 1000 auto;
-  border: 1px solid yellow;
+  /*border: 1px solid yellow;*/
 }
-
 .row {
-  width: var(--width-percent-for-margin);
+  width: 95%;
   margin: 0 auto;
   flex: 1 1 auto;
   display: flex;
   flex-direction: row;
 }
-
 .col {
   flex: 1 1 auto;
   border: 1px solid white;
 }
-
 .nfr {
-  width: var(--width-percent-for-margin);
+  width: 95%;
   margin: 0 auto;
 }
-
 .nfc {
   text-align: center;
 }
 
 /* Individual col or row styliing */
+.nfr.title {
+  width: 90%;
+  font-size: 2em;
+}
 
 /* Individual spacer sizing */
 .spc5 {
   max-height: 5vh;
+}
+.spc25 {
+  max-height: 25vh;
 }
 
 </style>

@@ -49,16 +49,23 @@ export default {
   methods: {
     ...mapActions(['setUser'])
   }
+  // watch: {
+  //   '$route' (to, from) {
+  //     console.log('Route is changing', to, from)
+  //   }
+  // }
 }
 </script>
 <!--xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx-->
 <style>
 #app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
+  /*font-family: 'Avenir', Helvetica, Arial, sans-serif;*/
+  font-family: 'Arimo', Helvetica, Arial, sans-serif;
+  /*font-family: 'Cousine', Courier, monospace;*/
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-size: 100%;
-  color: darkslategrey;
+  color: #262626;
 }
 
 @media (min-width: 321px) {

@@ -97,6 +97,10 @@ export default {
 <!--xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx-->
 <style scoped>
 
+.login-component {
+  text-align: center;
+}
+
 .title {
   font-size: 1.5em;
   text-align: left;

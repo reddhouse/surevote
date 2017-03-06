@@ -13,8 +13,8 @@
       <div class="middle-container">
         <div class="gradient-1"></div>
         <div class="section-title-right">MyAccount</div>
-        <div>Common Cents Balance:</div>
-        <div>50&#162;</div>
+        <div>Balance:</div>
+        <div class="mono">50 √otes</div>
       </div>
     </div>
 
@@ -67,6 +67,10 @@ export default {
   flex-direction: column;
 }
 
+.mono {
+  font-family: 'Cousine', Courier, monospace;
+}
+
 .logo-sure {
   color: firebrick;
   font-size: 1.25em;
@@ -74,7 +78,7 @@ export default {
 }
 
 .logo-vote {
-  color: darkslategray;
+  color: #262626;
   font-size: 1.25em;
   font-weight: 500;
 }

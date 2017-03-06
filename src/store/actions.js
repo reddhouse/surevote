@@ -36,3 +36,7 @@ export const setTitle = ({ commit }, { title }) => {
 export const setUser = ({ commit }, payload) => {
   commit('mutateUser', payload)
 }
+
+export const setHomeView = ({ commit }, payload) => {
+  commit('mutateHomeView', payload)
+}

@@ -3,6 +3,7 @@ import VueRouter from 'vue-router'
 import Home from '../components/Home'
 import Hello from '../components/Hello'
 import Login from '../components/Login'
+import Why from '../components/Why'
 import UserAccount from '../components/UserAccount'
 
 Vue.use(VueRouter)
@@ -26,6 +27,12 @@ const router = new VueRouter({
       path: '/login',
       name: 'login',
       component: Login,
+      meta: { requiresAuth: false }
+    },
+    {
+      path: '/why',
+      name: 'why',
+      component: Why,
       meta: { requiresAuth: false }
     },
     {

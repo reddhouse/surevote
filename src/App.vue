@@ -68,6 +68,7 @@ export default {
   color: #262626;
 }
 
+/* Media Queries */
 @media (min-width: 321px) {
 
   #app {

@@ -65,7 +65,7 @@ a {
   color: yellow;
 }
 
-/* Flex defaults for Justin's custom grid */
+/* Flex defaults for SureVote's custom grid template  */
 .super-container {
   display: flex;
   flex-direction: column;

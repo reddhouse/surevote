@@ -131,7 +131,7 @@ export default {
 
 .why-component {
   --width-percent-for-margin: 85%;
-  background-color: #262626;
+  background-color: #242442;
   color: white;
 }
 a {
@@ -160,7 +160,7 @@ a {
   height: 0;
   border-left: calc(1.75vh + 2vw) solid transparent;
   border-right: calc(1.75vh + 2vw) solid transparent;
-  border-bottom: calc(1.75vh + 2vw) solid #262626;
+  border-bottom: calc(1.75vh + 2vw) solid #242442;
 }
 
 /* Flex defaults for SureVote's custom grid template  */
@@ -209,7 +209,7 @@ a {
   width: 100%;
   min-height: calc(10vh + 5vw);
   background-color: white;
-  color: #262626;
+  color: #242442;
   font-weight: 700;
 }
 .rowFlip {

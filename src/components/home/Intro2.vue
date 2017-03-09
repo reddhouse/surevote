@@ -27,9 +27,9 @@
       <div class="row">
         <div class="col"></div>
         <div class="col center">
-          <router-link to="/why">Why?</router-link>
+          <router-link to="/why">Why</router-link>
           &nbsp;|&nbsp;
-          <router-link to="/how">How?</router-link>
+          <router-link to="/how">How</router-link>
         </div>
         <div class="col"></div>
       </div>
@@ -123,7 +123,7 @@ a {
   border-bottom: calc(3vh + 5vw) solid white;
 }
 
-/* Flex defaults for Justin's custom grid */
+/* Flex defaults for SureVote's custom grid template  */
 .super-container {
   display: flex;
   flex-direction: column;

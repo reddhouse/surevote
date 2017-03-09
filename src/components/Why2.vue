@@ -131,11 +131,11 @@ export default {
 
 .why-component {
   --width-percent-for-margin: 85%;
-  background-color: #262626;
-  color: white;
+  background-color: white;
+  color: #262626;
 }
 a {
-  color: yellow;
+  color: deepskyblue;
 }
 .mono {
   font-family: 'Cousine', Courier, monospace;
@@ -153,14 +153,14 @@ a {
   height: 0;
   border-left: calc(1.75vh + 2vw) solid transparent;
   border-right: calc(1.75vh + 2vw) solid transparent;
-  border-top: calc(1.75vh + 2vw) solid white;
+  border-top: calc(1.75vh + 2vw) solid #262626;
 }
 .triangle-up {
   width: 0;
   height: 0;
   border-left: calc(1.75vh + 2vw) solid transparent;
   border-right: calc(1.75vh + 2vw) solid transparent;
-  border-bottom: calc(1.75vh + 2vw) solid #262626;
+  border-bottom: calc(1.75vh + 2vw) solid white;
 }
 
 /* Flex defaults for SureVote's custom grid template  */
@@ -208,8 +208,8 @@ a {
 .rowPoint {
   width: 100%;
   min-height: calc(10vh + 5vw);
-  background-color: white;
-  color: #262626;
+  background-color: #262626;
+  color: white;
   font-weight: 700;
 }
 .rowFlip {

@@ -16,7 +16,7 @@ row = Rows (vertical flex item and horizontal flex container)
 col = Column (flex item only)
 icc = Inner Column Container turns a regular column into a vertical flex container
 icr = Inner Column Row
-nfr = No flex row
+nfr = No flex row (does not contain flex elements, but may still stretch if inside of a flex parent)
 nfc = NO flex column
 
 Numbered Classses = Rapid Prototyping
@@ -29,15 +29,10 @@ spc's will limit height by declaring max-height as a PERCENTAGE of vh.
 ** spc5 stands for spacer with 5vh
 
 Margins
-Turns out trying to force stuff into grid is way harder than using margins.
-However, be sure to use margins with a PERCENTAGE of vw.
+Be sure to use margins with a PERCENTAGE of vw.
 
 Div Positions
 I've decided to handle everything by flexbox. No absolute, relative, float, etc.
 When in doubt, I've wrapped two divs inside a container, and gone from there.
-
-Icons
-Didn't want to download 736kb file of icons. Need to research bundling a custom
-font package later.
 
 -->

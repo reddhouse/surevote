@@ -67,7 +67,14 @@ export default {
   font-size: 100%;
   color: #262626;
 }
-
+span.nobr {
+  white-space: nowrap;
+}
+i.vcoin {
+  border-radius: 50%;
+  background-color: #ffbf00;
+  color: black;
+}
 /* Media Queries */
 @media (min-width: 321px) {
 

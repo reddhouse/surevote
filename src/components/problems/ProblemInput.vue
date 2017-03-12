@@ -1,40 +1,27 @@
 <template>
-  <div class="grid-template-component">
+  <div class="problem-input-component">
     <div class="super-container">
 
-      <!-- Standard flex row containing 5 flex columns -->
-      <div class="spc spc5"></div>
       <div class="row">
-        <div class="col">1</div>
-        <div class="col">2</div>
-        <div class="col">3</div>
-        <div class="col">4</div>
-        <div class="col">5</div>
+        <div class="col">Problem Input</div>
+        <div class="col"></div>
       </div>
-
-      <!-- Flex row containing 5 flex columns with center column containing 3 inner flex rows -->
-      <div class="spc spc5"></div>
       <div class="row">
-        <div class="col">1</div>
-        <div class="col">2</div>
-        <div class="icc">
-          <div class="icr">3</div>
-          <div class="icr">4</div>
-          <div class="icr">5</div>
-        </div>
-        <div class="col">6</div>
-        <div class="col">7</div>
+        <div class="col">Title</div>
+        <div class="col"></div>
       </div>
-
-      <!-- Non flex row -->
-      <div class="spc"></div>
-      <div class="nfr">
-        <div class="nfc">
-          Some Text
-        </div>
+      <div class="row">
+        <div class="col">Needed vars, but not visible</div>
+        <div class="col"></div>
       </div>
-
-      <div class="spc spc5"></div>
+      <div class="row">
+        <div class="col">Timestamp</div>
+        <div class="col"></div>
+      </div>
+      <div class="row">
+        <div class="col">Author(user)</div>
+        <div class="col"></div>
+      </div>
 
     </div>
   </div>
@@ -45,7 +32,7 @@
 // import HelloChild from './HelloChild'
 
 export default {
-  name: 'grid-template-component',
+  name: 'problem-input-component',
   props: ['propsIn'],
   data () {
     return {
@@ -71,16 +58,14 @@ export default {
 <!--xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx-->
 <style scoped>
 
-.grid-template-component {
-  --width-percent-for-margin: 95%;
-  height: 100vh;
-  background-color: #262626;
-  color: white;
+.problem-input-component {
+  --width-percent-for-margin: inherit;
+  background-color: white;
+  color: #262626;
 }
 
 /* Flex defaults for SureVote's custom grid template  */
 .super-container {
-  height: 100vh;
   display: flex;
   flex-direction: column;
 }
@@ -88,7 +73,7 @@ export default {
   width: var(--width-percent-for-margin);
   margin: 0 auto;
   flex: 1000 1000 auto;
-  border: 1px solid yellow;
+  /*border: 1px solid yellow;*/
 }
 .row {
   width: var(--width-percent-for-margin);
@@ -99,7 +84,7 @@ export default {
 }
 .col {
   flex: 1 1 auto;
-  border: 1px solid white;
+  /*border: 1px solid #262626;*/
 }
 .icc {
   flex: 1 1 auto;
@@ -108,7 +93,7 @@ export default {
 }
 .icr {
   flex: 1 1 auto;
-  border: 1px solid white;
+  /*border: 1px solid #262626;*/
 }
 .nfr {
   width: var(--width-percent-for-margin);
@@ -129,7 +114,10 @@ export default {
 /* Individual spacer sizing */
 /* If height is NOT set in super-container use min-height in spacers */
 .spc5 {
-  max-height: 5vh;
+  min-height: 5vh;
+}
+.spc25 {
+  min-height: 25vh;
 }
 
 </style>

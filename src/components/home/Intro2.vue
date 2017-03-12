@@ -2,7 +2,7 @@
   <div class="intro-component">
     <div class="super-container">
 
-      <div class="spc spc20"></div>
+      <div class="spc spcTopBar spc20"></div>
       <div class="row rowLogo">
         <div class="col"></div>
         <div class="col colShrink">
@@ -35,11 +35,11 @@
       </div>
 
       <div class="spc"></div>
-      <div class="nfr">
+      <!-- <div class="nfr">
         <div class="nfc">
           <a href="#" v-on:click="emitScrollEvent">Just Show Me</a>
         </div>
-      </div>
+      </div> -->
 
       <div class="spc spc5"></div>
 
@@ -88,7 +88,8 @@ export default {
 .intro-component {
   --width-percent-for-margin: 90%;
   height: 100vh;
-  background-color: #242442;
+  background-color: #001a33;
+  /*background-color: #242442;*/
   color: white;
 }
 a {
@@ -112,7 +113,7 @@ a {
   height: 0;
   border-left: calc(2.5vh + 4vw) solid transparent;
   border-right: calc(2.5vh + 4vw) solid transparent;
-  border-top: calc(3vh + 5vw) solid #242442;
+  border-top: calc(3vh + 5vw) solid white;
 }
 .triangle-up {
   /* Not visible. Left here for future styling */
@@ -204,6 +205,10 @@ a {
 }
 .spc25 {
   max-height: 25vh;
+}
+.spcTopBar {
+  width: 100%;
+  background-color: white;
 }
 
 </style>

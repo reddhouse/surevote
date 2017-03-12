@@ -15,15 +15,15 @@
           <div class="icc">
             <div class="icr"><router-link to="why">Why</router-link></div>
             <div class="icr"><router-link to="how">How</router-link></div>
-            <div class="icr">My Account</div>
+            <div class="icr">About Us</div>
           </div>
         </div>
         <div class="col"></div>
         <div class="col">
           <div class="icc">
-            <div class="icr">Problems</div>
-            <div class="icr">Solutions</div>
-            <div class="icr">Laws</div>
+            <div class="icr"><router-link to="problems">Problems &amp; Solutions</router-link></div>
+            <div class="icr">Lawmakers</div>
+            <div class="icr">My Account</div>
           </div>
         </div>
         <div class="col colGrow"></div>

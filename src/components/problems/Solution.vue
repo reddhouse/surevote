@@ -1,18 +1,19 @@
 <template>
-  <div class="intro-component">
+  <div class="solution-component">
     <div class="super-container">
 
-      <div class="spc spc25"></div>
-      <div class="nfr title">
-        <div class="nfc">"I think they just figured out how to fix everything"</div>
-        <div class="nfc"></div>
-        <div class="nfc"></div>
+      <!-- Standard flex row containing 5 flex columns -->
+      <div class="spc spc5"></div>
+      <div class="row">
+        <div class="col">Solution</div>
+        <div class="col"></div>
       </div>
 
-      <div class="spc"></div>
+      <!-- Non flex row -->
+      <div class="spc spc25"></div>
       <div class="nfr">
         <div class="nfc">
-          <a href="#" v-on:click="emitScrollEvent">Cool. Let's do this.</a>
+          Some Text
         </div>
       </div>
 
@@ -27,7 +28,7 @@
 // import HelloChild from './HelloChild'
 
 export default {
-  name: 'intro-component',
+  name: 'solution-component',
   props: ['propsIn'],
   data () {
     return {
@@ -41,9 +42,6 @@ export default {
   },
   methods: {
     // ...mapActions(['setTitle'])
-    emitScrollEvent () {
-      this.$emit('scroll-two')
-    }
   },
   filters: {
 
@@ -56,30 +54,25 @@ export default {
 <!--xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx-->
 <style scoped>
 
-.intro-component {
-  height: 100vh;
-  background-color: #262626;
-  color: white;
-}
-a {
-  color: white;
+.solution-component {
+  --width-percent-for-margin: 85%;
+  background-color: white;
+  color: #262626;
 }
 
 /* Flex defaults for SureVote's custom grid template  */
 .super-container {
   display: flex;
   flex-direction: column;
-  height: 100vh;
 }
 .spc {
-  width: 95%;
+  width: var(--width-percent-for-margin);
   margin: 0 auto;
-  /* Spacers prefer to fill empty space 1000 to 1 */
   flex: 1000 1000 auto;
-  /*border: 1px solid yellow;*/
+  border: 1px solid yellow;
 }
 .row {
-  width: 95%;
+  width: var(--width-percent-for-margin);
   margin: 0 auto;
   flex: 1 1 auto;
   display: flex;
@@ -87,10 +80,19 @@ a {
 }
 .col {
   flex: 1 1 auto;
-  border: 1px solid white;
+  border: 1px solid #262626;
+}
+.icc {
+  flex: 1 1 auto;
+  display: flex;
+  flex-direction: column;
+}
+.icr {
+  flex: 1 1 auto;
+  border: 1px solid #262626;
 }
 .nfr {
-  width: 95%;
+  width: var(--width-percent-for-margin);
   margin: 0 auto;
 }
 .nfc {
@@ -98,17 +100,20 @@ a {
 }
 
 /* Individual col or row styliing */
-.nfr.title {
-  width: 90%;
-  font-size: 2em;
+.col1 {
+  max-width: 1vw;
+}
+.colMargin {
+  width: calc((100% - var(--width-percent-for-margin))/2);
 }
 
 /* Individual spacer sizing */
+/* If height is NOT set in super-container use min-height in spacers */
 .spc5 {
-  max-height: 5vh;
+  min-height: 5vh;
 }
 .spc25 {
-  max-height: 25vh;
+  min-height: 25vh;
 }
 
 </style>

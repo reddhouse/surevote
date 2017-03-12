@@ -2,9 +2,16 @@
   <div class="why-component">
     <div class="super-container">
 
-      <div id="header" class="spc spc10"></div>
+      <!-- <div class="spc spc2"></div> -->
+      <div class="row rowTopNav">
+        <div class="col colGrow"></div>
+        <div class="col colTab colShrink" v-on:click="handleBack">Why?</div>
+        <!-- <div class="col colMargin"></div> -->
+      </div>
+
+      <div id="header" class="spc spc4"></div>
       <div class="nfr">
-        <div class="heading">Because this is happening:</div>
+        <div class="heading">Because this is happening...</div>
         <br>
         <div>"Those people are basically ruining everything."</div>
       </div>
@@ -17,7 +24,7 @@
 
       <div class="spc spc8"></div>
       <div class="nfr">
-        <div class="heading">And this:</div>
+        <div class="heading">...and this</div>
         <br>
         <div>"We tried to fix things, but the other party wouldn't cooperate."</div>
       </div>
@@ -39,8 +46,8 @@
           <div class="icr icrGrow"></div>
           <div class="icr">
             <div class="center">
-              Finger pointing is great if you're<br>
-              trying to maintain the status quo.
+              These are excuses at best,<br>
+              and lies at worst.
             </div>
           </div>
           <div class="icr icrGrow"></div>
@@ -54,25 +61,31 @@
       <div class="spc spc8"></div>
 
       <div class="nfr">
-        <div>Here's the deal.</div>
-        <br>
         <div>
-          Regardless of who you are, or what you believe, we all want to feel
-          happy, healthy, and secure in our country, state, and home town.
+          The truth is, at the end of the day, regardless of our identity or political
+          persuasion, we all want to feel happy, healthy, and secure in the places
+          where we live and work.
         </div>
         <br>
         <div>
-          Sadly, it appears the happiest, healthiest, and most secure among us
-          are relatively satisfied with the way things are. To make matters
-          worse, our news and social media sources are pulling this country
-          apart at the seams for profit.
+          Sadly, the happiest, healthiest, and most secure among are sometimes
+          less motivated to fix the problems that many of us face every day.
+        </div>
+        <br>
+        <div>
+          To make matters worse, many of the companies we trust for news and social media are
+          intentionally dividing our country for profit. After a while, it seems
+          normal to be angry and point fingers.
         </div>
         <br>
         <div>
           Enough is enough.
-          <br>There is common ground.
-          <br>
-          <router-link to="how">We have the technology...</router-link>
+        </div>
+        <br>
+        <div>
+          SureVote users are finding common ground. We build consensus,
+          and then we take action.
+          <br><router-link to="how">Come see how.</router-link>
         </div>
       </div>
 
@@ -81,7 +94,7 @@
         <div class="col colNavText colShrink" v-on:click="handleBack">&lt;&lt; Back</div>
       </div>
 
-      <div id="divider" class="nfr nfrDivider"></div>
+      <div class="nfr nfrDivider"></div>
 
       <sure-footer></sure-footer>
 
@@ -91,7 +104,7 @@
 <!--xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx-->
 <script>
 import { mapGetters, mapActions } from 'vuex'
-import SureFooter from './SureFooter'
+import SureFooter from '../SureFooter'
 
 export default {
   name: 'why-component',
@@ -132,7 +145,7 @@ export default {
 .why-component {
   --width-percent-for-margin: 85%;
   background-color: white;
-  color: #242442;
+  color: #001a33;
 }
 a {
   color: dodgerblue;
@@ -141,6 +154,7 @@ a {
   font-family: 'Cousine', Courier, monospace;
 }
 .heading {
+  color: #262626;
   font-weight: 700;
   margin-bottom: 2vh;
 }
@@ -153,7 +167,7 @@ a {
   height: 0;
   border-left: calc(1.75vh + 2vw) solid transparent;
   border-right: calc(1.75vh + 2vw) solid transparent;
-  border-top: calc(1.75vh + 2vw) solid #242442;
+  border-top: calc(1.75vh + 2vw) solid #001a33;
 }
 .triangle-up {
   width: 0;
@@ -208,12 +222,16 @@ a {
 .rowPoint {
   width: 100%;
   min-height: calc(10vh + 5vw);
-  background-color: #242442;
+  background-color: #001a33;
   color: white;
   font-weight: 700;
 }
 .rowFlip {
   flex-direction: row-reverse;
+}
+.rowTopNav {
+  width: 100%;
+  border-top: 1vh solid #001a33;
 }
 .col10 {
   min-width: 10vw;
@@ -221,6 +239,9 @@ a {
 }
 .colShrink {
   flex: 0 1000 auto;
+}
+.colGrow {
+  flex: 1000 1 auto;
 }
 .colFlip {
   align-self: flex-end;
@@ -230,6 +251,16 @@ a {
   padding-top: 1vh;
   padding-bottom: 1vh;
   cursor: pointer;
+}
+.colTab {
+  background-color: #001a33;
+  color: white;
+  text-align: right;
+  padding: .5vh 4vw;
+  cursor: pointer;
+}
+.colMargin {
+  width: calc((100% - var(--width-percent-for-margin))/2);
 }
 .icrGrow {
   flex: 1000 1 auto;
@@ -243,6 +274,9 @@ a {
 /* If height is NOT set in super-container use min-height in spacers*/
 .spc2 {
   min-height: 2vh;
+}
+.spc4 {
+  min-height: 4vh;
 }
 .spc7 {
   min-height: 7vh;

@@ -3,8 +3,9 @@ import VueRouter from 'vue-router'
 import Home from '../components/Home'
 import Hello from '../components/Hello'
 import Login from '../components/Login'
-import Why from '../components/Why4'
-import How from '../components/How'
+import Why from '../components/questions/Why'
+import How from '../components/questions/How'
+import ProblemsList from '../components/problems/ProblemsList'
 import UserAccount from '../components/UserAccount'
 
 Vue.use(VueRouter)
@@ -40,6 +41,12 @@ const router = new VueRouter({
       path: '/how',
       name: 'how',
       component: How,
+      meta: { requiresAuth: false }
+    },
+    {
+      path: '/problems',
+      name: 'problems',
+      component: ProblemsList,
       meta: { requiresAuth: false }
     },
     {

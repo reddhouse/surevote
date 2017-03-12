@@ -1,40 +1,35 @@
 <template>
-  <div class="grid-template-component">
+  <div class="problems-list-component">
     <div class="super-container">
 
       <!-- Standard flex row containing 5 flex columns -->
       <div class="spc spc5"></div>
       <div class="row">
-        <div class="col">1</div>
-        <div class="col">2</div>
-        <div class="col">3</div>
-        <div class="col">4</div>
-        <div class="col">5</div>
+        <div class="col">Problems List</div>
+        <div class="col"></div>
       </div>
 
-      <!-- Flex row containing 5 flex columns with center column containing 3 inner flex rows -->
       <div class="spc spc5"></div>
-      <div class="row">
-        <div class="col">1</div>
-        <div class="col">2</div>
-        <div class="icc">
-          <div class="icr">3</div>
-          <div class="icr">4</div>
-          <div class="icr">5</div>
-        </div>
-        <div class="col">6</div>
-        <div class="col">7</div>
-      </div>
+      <problem></problem>
 
-      <!-- Non flex row -->
-      <div class="spc"></div>
+      <div class="spc spc5"></div>
+      <problem-input></problem-input>
+
+      <div class="spc spc25"></div>
       <div class="nfr">
         <div class="nfc">
-          Some Text
+          End
         </div>
       </div>
 
       <div class="spc spc5"></div>
+      <!-- Sure Footer and Friends -->
+      <div class="row rowFlip">
+        <div class="col colNavText colShrink" v-on:click="handleBack">&lt;&lt; Back</div>
+      </div>
+      <div class="nfr nfrDivider"></div>
+      <sure-footer></sure-footer>
+
 
     </div>
   </div>
@@ -42,10 +37,12 @@
 <!--xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx-->
 <script>
 // import { mapGetters, mapActions } from 'vuex'
-// import HelloChild from './HelloChild'
+import Problem from './Problem'
+import ProblemInput from './ProblemInput'
+import SureFooter from '../SureFooter'
 
 export default {
-  name: 'grid-template-component',
+  name: 'problems-list-component',
   props: ['propsIn'],
   data () {
     return {
@@ -59,28 +56,31 @@ export default {
   },
   methods: {
     // ...mapActions(['setTitle'])
+    handleBack () {
+      this.$router.go(-1)
+    }
   },
   filters: {
 
   },
   components: {
-    // HelloChild
+    Problem,
+    ProblemInput,
+    SureFooter
   }
 }
 </script>
 <!--xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx-->
 <style scoped>
 
-.grid-template-component {
-  --width-percent-for-margin: 95%;
-  height: 100vh;
-  background-color: #262626;
-  color: white;
+.problems-list-component {
+  --width-percent-for-margin: 85%;
+  background-color: white;
+  color: #262626;
 }
 
 /* Flex defaults for SureVote's custom grid template  */
 .super-container {
-  height: 100vh;
   display: flex;
   flex-direction: column;
 }
@@ -88,7 +88,7 @@ export default {
   width: var(--width-percent-for-margin);
   margin: 0 auto;
   flex: 1000 1000 auto;
-  border: 1px solid yellow;
+  /*border: 1px solid yellow;*/
 }
 .row {
   width: var(--width-percent-for-margin);
@@ -99,7 +99,7 @@ export default {
 }
 .col {
   flex: 1 1 auto;
-  border: 1px solid white;
+  /*border: 1px solid #262626;*/
 }
 .icc {
   flex: 1 1 auto;
@@ -108,7 +108,7 @@ export default {
 }
 .icr {
   flex: 1 1 auto;
-  border: 1px solid white;
+  /*border: 1px solid #262626;*/
 }
 .nfr {
   width: var(--width-percent-for-margin);
@@ -119,17 +119,36 @@ export default {
 }
 
 /* Individual col or row styliing */
+.rowFlip {
+  flex-direction: row-reverse;
+}
 .col1 {
   max-width: 1vw;
 }
+.colShrink {
+  flex: 0 1000 auto;
+}
 .colMargin {
   width: calc((100% - var(--width-percent-for-margin))/2);
+}
+.colNavText {
+  text-align: right;
+  padding-top: 1vh;
+  padding-bottom: 1vh;
+  cursor: pointer;
+}
+.nfrDivider {
+  height: 1px;
+  background-color: white;
 }
 
 /* Individual spacer sizing */
 /* If height is NOT set in super-container use min-height in spacers */
 .spc5 {
-  max-height: 5vh;
+  min-height: 5vh;
+}
+.spc25 {
+  min-height: 25vh;
 }
 
 </style>

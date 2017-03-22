@@ -1,25 +1,32 @@
 <template>
-  <div class="solution-component">
+  <div class="problem-details-component">
     <div class="super-container">
 
+      <div class="spc spc5"></div>
       <div class="row">
-        <div class="col">Individual Solution</div>
-        <div class="col3"></div>
-        <div class="col"><router-link to="solution-details">...see details</router-link></div>
-      </div>
-      <div class="row">
-        <div class="col"><i class="fa fa-chevron-up"></i></div>
-        <div class="col3"></div>
-        <div class="col twoLineMax">Solution fooobar, this is the title/summary and should be 70 characters.</div>
-      </div>
-      <div class="row">
-        <div class="col">numVotes</div>
-        <div class="col"><i class="fa fa-check vcoin"></i>myVotes</div>
-      </div>
-      <div class="row">
-        <div class="col">activity (#votes/day)</div>
+        <div class="col">Problem Details</div>
         <div class="col"></div>
       </div>
+
+      <div class="spc spc5"></div>
+      <div class="row">
+        <div class="col">Title/Summary</div>
+        <div class="col"></div>
+      </div>  <div class="row">
+          <div class="col">Description</div>
+          <div class="col"></div>
+        </div>
+
+      <div class="spc spc5"></div>
+      <solutions-list></solutions-list>
+
+      <div class="spc spc5"></div>
+      <!-- Sure Footer and Friends -->
+      <div class="row rowFlip">
+        <div class="col colNavText colShrink" v-on:click="handleBack">&lt;&lt; Back</div>
+      </div>
+      <div class="nfr nfrDivider"></div>
+      <sure-footer></sure-footer>
 
     </div>
   </div>
@@ -27,10 +34,11 @@
 <!--xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx-->
 <script>
 // import { mapGetters, mapActions } from 'vuex'
-// import HelloChild from './HelloChild'
+import SureFooter from '../SureFooter'
+import SolutionsList from './SolutionsList'
 
 export default {
-  name: 'solution-component',
+  name: 'problem-details-component',
   props: ['propsIn'],
   data () {
     return {
@@ -44,22 +52,32 @@ export default {
   },
   methods: {
     // ...mapActions(['setTitle'])
+    handleBack () {
+      this.$router.go(-1)
+    }
   },
   filters: {
 
   },
   components: {
-    // HelloChild
+    SolutionsList,
+    SureFooter
   }
 }
 </script>
 <!--xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx-->
 <style scoped>
 
-.solution-component {
-  --width-percent-for-margin: 85%;
-  background-color: palegreen;
+.problem-details-component {
+  --width-percent-for-margin: 90%;
+  background-color: lightskyblue;
   color: #262626;
+}
+.twoLineMax {
+  font-size: .9em;
+  word-wrap: break-word;
+  word-break: break-word;
+  hyphens: auto;
 }
 
 /* Flex defaults for SureVote's custom grid template  */
@@ -102,14 +120,27 @@ export default {
 }
 
 /* Individual col or row styliing */
+.rowFlip {
+  flex-direction: row-reverse;
+}
 .col1 {
   max-width: 1vw;
 }
 .col3 {
   min-width: 3vw;
+  max-width: 3vw;
 }
 .colMargin {
   width: calc((100% - var(--width-percent-for-margin))/2);
+}
+.colShrink {
+  flex: 0 1000 auto;
+}
+.colNavText {
+  text-align: right;
+  padding-top: 1vh;
+  padding-bottom: 1vh;
+  cursor: pointer;
 }
 
 /* Individual spacer sizing */

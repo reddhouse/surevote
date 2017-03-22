@@ -46,8 +46,7 @@
           <div class="icr icrGrow"></div>
           <div class="icr">
             <div class="center">
-              These are excuses at best,<br>
-              and lies at worst.
+              Excuses are a distraction.<br>
             </div>
           </div>
           <div class="icr icrGrow"></div>
@@ -62,13 +61,13 @@
 
       <div class="nfr">
         <div>
-          The truth is, at the end of the day, regardless of our identity or political
-          persuasion, we all want to feel happy, healthy, and secure in the places
+          The truth is, regardless of your identity or political
+          persuasion, we ALL want to feel happy, healthy, and secure in the places
           where we live and work.
         </div>
         <br>
         <div>
-          Sadly, the happiest, healthiest, and most secure among are sometimes
+          Sadly, the happiest, healthiest, and most secure among are often
           less motivated to fix the problems that many of us face every day.
         </div>
         <br>

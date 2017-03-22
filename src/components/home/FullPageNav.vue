@@ -21,71 +21,52 @@
       </div>
 
       <div class="spc spc2"></div>
-      <!-- Section Heading -->
-      <div class="nfr">Top Problems/Solutions</div>
-      <!-- Problem #1 -->
+      <div class="nfr"><strong>Our Priorities</strong></div>
       <div class="row">
         <div class="col colShrink">#1&nbsp;&nbsp;&nbsp;</div>
-        <div class="col wrap-hyphen">Problem foobar, this is the title/summary and should be 70 characters.</div>
+        <div class="col wrap-hyphen">This is the title/summary of an improvement, limited to 80 characters in length.</div>
       </div>
       <div class="row">
         <div class="col"><i class="fa fa-chevron-up"></i> numvotes</div>
       </div>
-      <!-- Solution #1 -->
-      <div class="row">
-        <div class="col col5"></div>
-        <div class="col colShrink">#1&nbsp;&nbsp;&nbsp;</div>
-        <div class="col wrap-hyphen">Solution fooobar, this is the answer to the problem, at 70 characters.</div>
-      </div>
-      <div class="row">
-        <div class="col col5"></div>
-        <div class="col"><i class="fa fa-chevron-up"></i> numvotes</div>
-      </div>
-      <!-- Solution #2-->
-      <div class="row">
-        <div class="col col5"></div>
-        <div class="col colShrink">#2&nbsp;&nbsp;&nbsp;</div>
-        <div class="col wrap-hyphen">Solution fooobar, this is the answer to the problem, at 70 characters.</div>
-      </div>
-      <div class="row">
-        <div class="col col5"></div>
-        <div class="col"><i class="fa fa-chevron-up"></i> numvotes</div>
-      </div>
-      <!-- Problem #2 & 3 -->
       <div class="row">
         <div class="col colShrink">#2&nbsp;&nbsp;&nbsp;</div>
-        <div class="col wrap-hyphen">Problem foobar, this is the title/summary and should be 70 characters.</div>
+        <div class="col wrap-hyphen">This is the title/summary of an improvement, limited to 80 characters in length.</div>
       </div>
       <div class="row">
         <div class="col"><i class="fa fa-chevron-up"></i> numvotes</div>
       </div>
       <div class="row">
         <div class="col colShrink">#3&nbsp;&nbsp;&nbsp;</div>
-        <div class="col wrap-hyphen">Problem foobar, this is the title/summary and should be 70 characters.</div>
+        <div class="col wrap-hyphen">This is the title/summary of an improvement, limited to 80 characters in length.</div>
       </div>
       <div class="row">
         <div class="col"><i class="fa fa-chevron-up"></i> numvotes</div>
         <div class="col">
-          <router-link to="problems">...view all</router-link>
+          <router-link to="/improvements/all">...view all improvements</router-link>
         </div>
       </div>
-      <!-- Link to More -->
+
+
       <div class="spc spc2"></div>
-      <!-- Section Heading -->
-      <div class="nfr"><strong>Your (displayRegion) Lawmakers</strong></div>
+      <div class="nfr"><strong>Our Pledge</strong></div>
       <div class="row">
-        <div class="col">Average Score:</div>
-        <div class="col">avgScore</div>
+        <div class="col">We are 30,506 SureVote users and counting (20% of the voting age population in [region]).</div>
       </div>
-      <!-- Total Number of Laws -->
       <div class="row">
-        <div class="col colShrink">999&nbsp;&nbsp;&nbsp;</div>
-        <div class="col">Laws introduced this year</div>
+        <div class="col">
+          <br>
+          There are 250 [regional] lawmakers are up for re-election, of which 249 of them currently have failing scores</div>
       </div>
-      <!-- Targeted Number of Laws -->
       <div class="row">
-        <div class="col">001&nbsp;&nbsp;&nbsp;</div>
-        <div class="col">Laws introduced this year that specifically address the SureVote Top 10 Problems &amp; Solutions</div>
+        <div class="col">
+          <br>
+          As it stands, we pledge to remove 249 lawmakers from office on 11/6/18.
+        </div>
+      </div>
+      <div class="row rowJustify">
+        <div class="col"></div>
+        <div class="col colShrink"><router-link to="/lawmakers">...view lawmaker scores</router-link></div>
       </div>
 
       <div class="spc"></div>
@@ -143,17 +124,6 @@ a {
   word-wrap: break-word;
   word-break: break-word;
   hyphens: auto;
-}
-.logo-sure {
-  color: firebrick;
-  font-size: 1.25em;
-  font-weight: 500;
-}
-
-.logo-vote {
-  color: #262626;
-  font-size: 1.25em;
-  font-weight: 500;
 }
 
 /* Flex defaults for SureVote's custom grid template  */

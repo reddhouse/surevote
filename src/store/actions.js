@@ -36,7 +36,17 @@ export const setTitle = ({ commit }, { title }) => {
 export const setUser = ({ commit }, payload) => {
   commit('mutateUser', payload)
 }
-
 export const setHomeView = ({ commit }, payload) => {
   commit('mutateHomeView', payload)
+}
+export const getImprovements = ({ commit }) => {
+  let baseURL = 'https://surevote.firebaseio.com/improvements'
+  return axios.get(baseURL + '.json')
+    .then(res => {
+      let asArray = Object.values(res.data)
+      commit('populateImprovements', asArray)
+    })
+}
+export const addNewImp = ({ commit }, payload) => {
+  commit('addImprovement', payload)
 }

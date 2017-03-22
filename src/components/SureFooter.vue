@@ -21,7 +21,7 @@
         <div class="col"></div>
         <div class="col">
           <div class="icc">
-            <div class="icr"><router-link to="problems">Problems &amp; Solutions</router-link></div>
+            <div class="icr"><router-link to="improvements/all">Improvements</router-link></div>
             <div class="icr">Lawmakers</div>
             <div class="icr">My Account</div>
           </div>

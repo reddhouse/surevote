@@ -29,7 +29,12 @@ export const receiveSearchResults = (state, { artists }) => {
 export const mutateUser = (state, userObj) => {
   state.user = userObj
 }
-
 export const mutateHomeView = (state, newViewObj) => {
   state.homeView = newViewObj
+}
+export const addImprovement = (state, newImp) => {
+  state.improvements.push(newImp)
+}
+export const populateImprovements = (state, impList) => {
+  state.improvements = impList
 }

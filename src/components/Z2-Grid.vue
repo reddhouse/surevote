@@ -125,6 +125,9 @@ export default {
 .colMargin {
   width: calc((100% - var(--width-percent-for-margin))/2);
 }
+.colShrink {
+  flex: 0 1000 auto;
+}
 
 /* Individual spacer sizing */
 /* If height is NOT set in super-container use min-height in spacers */

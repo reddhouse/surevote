@@ -1,25 +1,27 @@
 <template>
-  <div class="solution-component">
+  <div class="solutions-list-component">
     <div class="super-container">
 
+      <!-- Standard flex row containing 5 flex columns -->
+      <div class="spc spc5"></div>
       <div class="row">
-        <div class="col">Individual Solution</div>
-        <div class="col3"></div>
-        <div class="col"><router-link to="solution-details">...see details</router-link></div>
-      </div>
-      <div class="row">
-        <div class="col"><i class="fa fa-chevron-up"></i></div>
-        <div class="col3"></div>
-        <div class="col twoLineMax">Solution fooobar, this is the title/summary and should be 70 characters.</div>
-      </div>
-      <div class="row">
-        <div class="col">numVotes</div>
-        <div class="col"><i class="fa fa-check vcoin"></i>myVotes</div>
-      </div>
-      <div class="row">
-        <div class="col">activity (#votes/day)</div>
+        <div class="col">Solutions List</div>
         <div class="col"></div>
       </div>
+
+      <div class="spc spc2"></div>
+      <div class="row">
+        <div class="col"></div>
+        <div class="col colShrink colRegion">Top</div>
+        <div class="col colShrink colRegion">Trending</div>
+        <div class="col"></div>
+      </div>
+
+      <div class="spc spc5"></div>
+      <solution></solution>
+
+      <div class="spc spc5"></div>
+      <solution-input></solution-input>
 
     </div>
   </div>
@@ -27,10 +29,12 @@
 <!--xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx-->
 <script>
 // import { mapGetters, mapActions } from 'vuex'
-// import HelloChild from './HelloChild'
+import Solution from './Solution'
+import SolutionInput from './SolutionInput'
+import SureFooter from '../SureFooter'
 
 export default {
-  name: 'solution-component',
+  name: 'solutions-list-component',
   props: ['propsIn'],
   data () {
     return {
@@ -44,21 +48,26 @@ export default {
   },
   methods: {
     // ...mapActions(['setTitle'])
+    handleBack () {
+      this.$router.go(-1)
+    }
   },
   filters: {
 
   },
   components: {
-    // HelloChild
+    Solution,
+    SolutionInput,
+    SureFooter
   }
 }
 </script>
 <!--xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx-->
 <style scoped>
 
-.solution-component {
-  --width-percent-for-margin: 85%;
-  background-color: palegreen;
+.solutions-list-component {
+  --width-percent-for-margin: 90%;
+  background-color: mediumaquamarine;
   color: #262626;
 }
 
@@ -102,14 +111,30 @@ export default {
 }
 
 /* Individual col or row styliing */
+.rowFlip {
+  flex-direction: row-reverse;
+}
 .col1 {
   max-width: 1vw;
 }
-.col3 {
-  min-width: 3vw;
+.colShrink {
+  flex: 0 1000 auto;
 }
 .colMargin {
   width: calc((100% - var(--width-percent-for-margin))/2);
+}
+.colNavText {
+  text-align: right;
+  padding-top: 1vh;
+  padding-bottom: 1vh;
+  cursor: pointer;
+}
+.colRegion {
+  padding: 1vh 6vw 1vh 6vw;
+}
+.nfrDivider {
+  height: 1px;
+  background-color: white;
 }
 
 /* Individual spacer sizing */

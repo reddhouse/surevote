@@ -1,36 +1,29 @@
 <template>
-  <div class="solution-component">
+  <div class="improvements-root-component">
     <div class="super-container">
 
+      <sure-header></sure-header>
+
+      <div class="spc spc5"></div>
       <div class="row">
-        <div class="col">Individual Solution</div>
-        <div class="col3"></div>
-        <div class="col"><router-link to="solution-details">...see details</router-link></div>
+        <div class="col">Improvements Root</div>
+        <div class="col"><router-link to="/improvements/new">+ Add New</router-link></div>
       </div>
-      <div class="row">
-        <div class="col"><i class="fa fa-chevron-up"></i></div>
-        <div class="col3"></div>
-        <div class="col twoLineMax">Solution fooobar, this is the title/summary and should be 70 characters.</div>
-      </div>
-      <div class="row">
-        <div class="col">numVotes</div>
-        <div class="col"><i class="fa fa-check vcoin"></i>myVotes</div>
-      </div>
-      <div class="row">
-        <div class="col">activity (#votes/day)</div>
-        <div class="col"></div>
-      </div>
+
+      <router-view></router-view>
+
+      <div class="spc spc5"></div>
 
     </div>
   </div>
 </template>
 <!--xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx-->
 <script>
-// import { mapGetters, mapActions } from 'vuex'
-// import HelloChild from './HelloChild'
+import { mapGetters } from 'vuex'
+import SureHeader from '../SureHeader'
 
 export default {
-  name: 'solution-component',
+  name: 'improvements-root-component',
   props: ['propsIn'],
   data () {
     return {
@@ -40,25 +33,25 @@ export default {
     }
   },
   computed: {
-    // ...mapGetters(['titleState'])
+    ...mapGetters(['improvements'])
   },
   methods: {
-    // ...mapActions(['setTitle'])
+    // ...mapActions(['getImprovements'])
   },
   filters: {
 
   },
   components: {
-    // HelloChild
+    SureHeader
   }
 }
 </script>
 <!--xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx-->
 <style scoped>
 
-.solution-component {
-  --width-percent-for-margin: 85%;
-  background-color: palegreen;
+.improvements-root-component {
+  --width-percent-for-margin: 90%;
+  background-color: white;
   color: #262626;
 }
 
@@ -82,7 +75,7 @@ export default {
 }
 .col {
   flex: 1 1 auto;
-  /*border: 1px solid #262626;*/
+  /*border: 1px solid white;*/
 }
 .icc {
   flex: 1 1 auto;
@@ -91,7 +84,7 @@ export default {
 }
 .icr {
   flex: 1 1 auto;
-  /*border: 1px solid #262626;*/
+  /*border: 1px solid white;*/
 }
 .nfr {
   width: var(--width-percent-for-margin);
@@ -102,23 +95,26 @@ export default {
 }
 
 /* Individual col or row styliing */
+.rowFlip {
+  flex-direction: row-reverse;
+}
 .col1 {
   max-width: 1vw;
 }
-.col3 {
-  min-width: 3vw;
+.colShrink {
+  flex: 0 1000 auto;
 }
-.colMargin {
-  width: calc((100% - var(--width-percent-for-margin))/2);
+.colRegion {
+  padding: 1vh 6vw 1vh 6vw;
 }
 
 /* Individual spacer sizing */
 /* If height is NOT set in super-container use min-height in spacers */
+.spc2 {
+  min-height: 2vh;
+}
 .spc5 {
   min-height: 5vh;
-}
-.spc25 {
-  min-height: 25vh;
 }
 
 </style>

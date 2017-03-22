@@ -22,7 +22,9 @@ const state = {
     Intro2Why: true,
     Intro2How: true,
     NavFooter: false
-  }
+  },
+  improvements: [],
+  conditions: []
 }
 
 const store = new Vuex.Store({

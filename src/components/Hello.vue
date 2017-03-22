@@ -89,7 +89,7 @@ export default {
     ...mapGetters(['artists', 'isBusy'])
   },
   methods: {
-    // ...mapActions(['setTitle'])
+    // ...mapActions(['setUser'])
     handleLogout () {
       myFirebase.firebase.auth().signOut()
         .then(() => {

@@ -1,23 +1,13 @@
 <template>
-  <div class="solution-component">
+  <div class="imp-item-component">
     <div class="super-container">
 
       <div class="row">
-        <div class="col">Individual Solution</div>
-        <div class="col3"></div>
-        <div class="col"><router-link to="solution-details">...see details</router-link></div>
-      </div>
-      <div class="row">
-        <div class="col"><i class="fa fa-chevron-up"></i></div>
-        <div class="col3"></div>
-        <div class="col twoLineMax">Solution fooobar, this is the title/summary and should be 70 characters.</div>
-      </div>
-      <div class="row">
-        <div class="col">numVotes</div>
-        <div class="col"><i class="fa fa-check vcoin"></i>myVotes</div>
-      </div>
-      <div class="row">
-        <div class="col">activity (#votes/day)</div>
+        <!-- Votes are synced in real-time with Firebase DB, the rest if the improvement comes from app state -->
+        <div class="col">{{ fireImpObj.votes }}</div>
+        <div class="col" v-on:click="sendToDetails">
+          <div>{{ improvement.title }}</div>
+        </div>
         <div class="col"></div>
       </div>
 
@@ -27,11 +17,12 @@
 <!--xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx-->
 <script>
 // import { mapGetters, mapActions } from 'vuex'
+import myFirebase from '../../myFirebase'
 // import HelloChild from './HelloChild'
 
 export default {
-  name: 'solution-component',
-  props: ['propsIn'],
+  name: 'imp-item-component',
+  props: ['improvement'],
   data () {
     return {
       propsOut: {
@@ -41,9 +32,25 @@ export default {
   },
   computed: {
     // ...mapGetters(['titleState'])
+    improvementsRef () {
+      const rootRef = myFirebase.db.ref()
+      return rootRef.child('improvements')
+    }
+  },
+  firebase () {
+    return {
+      fireImpObj: {
+        source: this.improvementsRef.child(`${this.improvement.iid}`),
+        asObject: true,
+        cancelCallback () { console.log('Error getting stuff from firebase') }
+      }
+    }
   },
   methods: {
     // ...mapActions(['setTitle'])
+    sendToDetails () {
+      this.$router.push(`/improvements/${this.improvement.iid}`)
+    }
   },
   filters: {
 
@@ -56,9 +63,9 @@ export default {
 <!--xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx-->
 <style scoped>
 
-.solution-component {
-  --width-percent-for-margin: 85%;
-  background-color: palegreen;
+.imp-item-component {
+  --width-percent-for-margin: 95%;
+  background-color: white;
   color: #262626;
 }
 
@@ -71,7 +78,7 @@ export default {
   width: var(--width-percent-for-margin);
   margin: 0 auto;
   flex: 1000 1000 auto;
-  /*border: 1px solid yellow;*/
+  border: 1px solid yellow;
 }
 .row {
   width: var(--width-percent-for-margin);
@@ -82,7 +89,7 @@ export default {
 }
 .col {
   flex: 1 1 auto;
-  /*border: 1px solid #262626;*/
+  border: 1px solid #262626;
 }
 .icc {
   flex: 1 1 auto;
@@ -91,7 +98,7 @@ export default {
 }
 .icr {
   flex: 1 1 auto;
-  /*border: 1px solid #262626;*/
+  border: 1px solid #262626;
 }
 .nfr {
   width: var(--width-percent-for-margin);
@@ -105,9 +112,6 @@ export default {
 .col1 {
   max-width: 1vw;
 }
-.col3 {
-  min-width: 3vw;
-}
 .colMargin {
   width: calc((100% - var(--width-percent-for-margin))/2);
 }
@@ -116,9 +120,6 @@ export default {
 /* If height is NOT set in super-container use min-height in spacers */
 .spc5 {
   min-height: 5vh;
-}
-.spc25 {
-  min-height: 25vh;
 }
 
 </style>

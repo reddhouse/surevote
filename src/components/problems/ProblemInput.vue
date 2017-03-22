@@ -7,7 +7,15 @@
         <div class="col"></div>
       </div>
       <div class="row">
+        <div class="col">Category</div>
+        <div class="col"></div>
+      </div>
+      <div class="row">
         <div class="col">Title</div>
+        <div class="col"></div>
+      </div>
+      <div class="row">
+        <div class="col">Description</div>
         <div class="col"></div>
       </div>
       <div class="row">
@@ -15,11 +23,12 @@
         <div class="col"></div>
       </div>
       <div class="row">
-        <div class="col">Timestamp</div>
+        <div class="col">UUID</div>
         <div class="col"></div>
+        <div class="col">Timestamp</div>
       </div>
       <div class="row">
-        <div class="col">Author(user)</div>
+        <div class="col">Author(userID)</div>
         <div class="col"></div>
       </div>
 
@@ -36,8 +45,11 @@ export default {
   props: ['propsIn'],
   data () {
     return {
-      propsOut: {
-
+      localProblem: {
+        id: '',
+        category: '',
+        title: '',
+        description: ''
       }
     }
   },
@@ -60,7 +72,7 @@ export default {
 
 .problem-input-component {
   --width-percent-for-margin: inherit;
-  background-color: white;
+  background-color: paleturquoise;
   color: #262626;
 }
 

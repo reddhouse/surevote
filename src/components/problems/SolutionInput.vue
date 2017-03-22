@@ -1,23 +1,30 @@
 <template>
-  <div class="solution-component">
+  <div class="solution-input-component">
     <div class="super-container">
 
       <div class="row">
-        <div class="col">Individual Solution</div>
-        <div class="col3"></div>
-        <div class="col"><router-link to="solution-details">...see details</router-link></div>
+        <div class="col">Solution Input</div>
+        <div class="col"></div>
       </div>
       <div class="row">
-        <div class="col"><i class="fa fa-chevron-up"></i></div>
-        <div class="col3"></div>
-        <div class="col twoLineMax">Solution fooobar, this is the title/summary and should be 70 characters.</div>
+        <div class="col">Title</div>
+        <div class="col"></div>
       </div>
       <div class="row">
-        <div class="col">numVotes</div>
-        <div class="col"><i class="fa fa-check vcoin"></i>myVotes</div>
+        <div class="col">Description</div>
+        <div class="col"></div>
       </div>
       <div class="row">
-        <div class="col">activity (#votes/day)</div>
+        <div class="col">Needed vars, but not visible</div>
+        <div class="col"></div>
+      </div>
+      <div class="row">
+        <div class="col">UUID</div>
+        <div class="col col3"></div>
+        <div class="col">Timestamp</div>
+      </div>
+      <div class="row">
+        <div class="col">Author(userID)</div>
         <div class="col"></div>
       </div>
 
@@ -30,7 +37,7 @@
 // import HelloChild from './HelloChild'
 
 export default {
-  name: 'solution-component',
+  name: 'solution-input-component',
   props: ['propsIn'],
   data () {
     return {
@@ -56,9 +63,9 @@ export default {
 <!--xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx-->
 <style scoped>
 
-.solution-component {
-  --width-percent-for-margin: 85%;
-  background-color: palegreen;
+.solution-input-component {
+  --width-percent-for-margin: inherit;
+  background-color: springgreen;
   color: #262626;
 }
 

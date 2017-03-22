@@ -9,6 +9,23 @@
         <div class="col"></div>
       </div>
 
+      <div class="spc spc2"></div>
+      <div class="row">
+        <div class="col"></div>
+        <div class="col colShrink colRegion">National</div>
+        <div class="col colShrink colRegion">State</div>
+        <div class="col colShrink colRegion">Local</div>
+        <div class="col"></div>
+      </div>
+
+      <div class="spc spc2"></div>
+      <div class="row">
+        <div class="col"></div>
+        <div class="col colShrink colRegion">Top</div>
+        <div class="col colShrink colRegion">Trending</div>
+        <div class="col"></div>
+      </div>
+
       <div class="spc spc5"></div>
       <problem></problem>
 
@@ -136,6 +153,9 @@ export default {
   padding-top: 1vh;
   padding-bottom: 1vh;
   cursor: pointer;
+}
+.colRegion {
+  padding: 1vh 6vw 1vh 6vw;
 }
 .nfrDivider {
   height: 1px;

@@ -4,12 +4,16 @@
 
       <div class="row">
         <div class="col">Individual Problem</div>
+        <div class="col"><router-link to="problem-details">...see details</router-link></div>
+      </div>
+      <div class="row">
+        <div class="col">#1 (rank)</div>
         <div class="col"></div>
       </div>
       <div class="row">
         <div class="col"><i class="fa fa-chevron-up"></i></div>
-        <div class="col3"></div>
-        <div class="col twoLineMax">Problem foobar, this is the title/summary and should be 70 characters.</div>
+        <div class="col col3"></div>
+        <div class="col wrap-hyphen">Problem foobar, this is the title/summary and should be 70 characters.</div>
       </div>
       <div class="row">
         <div class="col">numVotes</div>
@@ -17,7 +21,7 @@
       </div>
       <div class="row">
         <div class="col">activity (#votes/day)</div>
-        <div class="col"></div>
+        <div class="col">supporters (unique)</div>
       </div>
 
     </div>
@@ -57,11 +61,10 @@ export default {
 
 .problem-component {
   --width-percent-for-margin: inherit;
-  background-color: white;
+  background-color: deepskyblue;
   color: #262626;
 }
-.twoLineMax {
-  font-size: .9em;
+.wrap-hyphen {
   word-wrap: break-word;
   word-break: break-word;
   hyphens: auto;

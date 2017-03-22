@@ -1,12 +1,20 @@
 <template>
   <div class="user-account-component">
-    <p>Hello, this is the user account</p>
+    <div>UserAccount Component</div>
+    <div>Welcome, {{ this.user.email }}!</div>
+
+    <div>Your Improvements:</div>
+    <div v-for="imp in myImps">
+      <imp-item v-bind:improvement="imp"></imp-item>
+    </div>
+
   </div>
 </template>
 <!--xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx-->
 <script>
-// import { mapGetters, mapActions } from 'vuex'
-// import HelloChild from './HelloChild'
+import { mapGetters } from 'vuex'
+import _ from 'lodash'
+import ImpItem from './improvements/ImpItem'
 
 export default {
   name: 'user-account-component',
@@ -19,7 +27,11 @@ export default {
     }
   },
   computed: {
-    // ...mapGetters(['titleState'])
+    ...mapGetters(['user', 'improvements']),
+    myImps () {
+      let myImprovements = _.filter(this.improvements, _.matches({ author: this.user.uid }))
+      return myImprovements
+    }
   },
   methods: {
     // ...mapActions(['setTitle'])
@@ -28,7 +40,7 @@ export default {
 
   },
   components: {
-    // HelloChild
+    ImpItem
   }
 }
 </script>

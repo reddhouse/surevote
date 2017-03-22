@@ -22,3 +22,4 @@ export const isBusy = state => state.isBusy
 // SureVote Global Getters -----------------------------------------------------
 export const user = state => state.user
 export const homeView = state => state.homeView
+export const improvements = state => state.improvements

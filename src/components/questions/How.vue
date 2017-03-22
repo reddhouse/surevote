@@ -25,8 +25,7 @@
       <div class="spc spc1"></div>
       <div class="row">
         <div class="col colPadded">
-          - Agree (by number of <span class="nobr"><i class="fa fa-check vcoin"></i>otes</span>)
-          on the <strong>#1 problem</strong> we'd like our lawmakers to solve <strong>right now</strong>.
+          - Agree on the <strong>#1 Improvement</strong> we'd like our lawmakers to make <strong>right now</strong> to fix a common problem.
         </div>
         <div class="col"></div>
       </div>
@@ -38,7 +37,7 @@
       </div>
       <div class="row">
         <div class="col">
-          - Move on to <strong>problem #2</strong>; often, idealogically different than its predecessor.
+          - Move on to <strong>Improvement #2</strong> and repeat. Often, the next highest ranked Improvement is idealogically dissimilar to its predecessor.
         </div>
         <div class="col"></div>
       </div>
@@ -77,23 +76,29 @@
       </div>
       <div class="row">
         <div class="col colPadded">
-          Problems and Solutions are not the only places to spend
+          Improvements are not the only places to spend
           <span class="nobr"><i class="fa fa-check vcoin"></i>otes.</span>
-          <strong>Virtually all information on SureVote is democratically stack-ranked</strong>, including Pro/Con arguments, and links to supporting data, etc.
+          <strong>Virtually all information on SureVote is democratically stack-ranked</strong>, including pro/con arguments, and links to supporting data, etc.
         </div>
         <div class="col"></div>
       </div>
       <div class="row">
         <div class="col">
-          Most importantly, users who might disagree with a "top" Problem can:
+          Most importantly, users who disagree with a "top" Improvement can:
         </div>
         <div class="col"></div>
       </div>
       <div class="row">
-        <div class="col colIndent">
-          - Spend their √otes on better Solutions to that problem,<br>
-          - Elevate other problems further down the list (down-list Problems will eventually surface to the top with enough steady support), or<br>
+        <div class="col colIndent colPadded">
+          - Identify a better solution to the particular problem at hand,<br>
+          - Elevate entirely different Improvements to the top of the priority list, or,<br>
           - Spend their √otes at the state or local level.<br>
+        </div>
+        <div class="col"></div>
+      </div>
+      <div class="row">
+        <div class="col">
+          To encourage participation, <span class="nobr"><i class="fa fa-check vcoin"></i>otes</span> you don't use by the end of the month will be divided equally among active users.
         </div>
         <div class="col"></div>
       </div>

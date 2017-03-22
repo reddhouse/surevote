@@ -1,25 +1,40 @@
 <template>
-  <div class="solution-component">
+  <div class="lawmakers-component">
     <div class="super-container">
 
+      <!-- Standard flex row containing 5 flex columns -->
+      <div class="spc spc5"></div>
       <div class="row">
-        <div class="col">Individual Solution</div>
-        <div class="col3"></div>
-        <div class="col"><router-link to="solution-details">...see details</router-link></div>
+        <div class="col">1</div>
+        <div class="col">2</div>
+        <div class="col">This is the Lawmakers component</div>
+        <div class="col">4</div>
+        <div class="col">5</div>
       </div>
+
+      <!-- Flex row containing 5 flex columns with center column containing 3 inner flex rows -->
+      <div class="spc spc5"></div>
       <div class="row">
-        <div class="col"><i class="fa fa-chevron-up"></i></div>
-        <div class="col3"></div>
-        <div class="col twoLineMax">Solution fooobar, this is the title/summary and should be 70 characters.</div>
+        <div class="col">1</div>
+        <div class="col">2</div>
+        <div class="icc">
+          <div class="icr">3</div>
+          <div class="icr">4</div>
+          <div class="icr">5</div>
+        </div>
+        <div class="col">6</div>
+        <div class="col">7</div>
       </div>
-      <div class="row">
-        <div class="col">numVotes</div>
-        <div class="col"><i class="fa fa-check vcoin"></i>myVotes</div>
+
+      <!-- Non flex row -->
+      <div class="spc"></div>
+      <div class="nfr">
+        <div class="nfc">
+          Some Text
+        </div>
       </div>
-      <div class="row">
-        <div class="col">activity (#votes/day)</div>
-        <div class="col"></div>
-      </div>
+
+      <div class="spc spc5"></div>
 
     </div>
   </div>
@@ -30,7 +45,7 @@
 // import HelloChild from './HelloChild'
 
 export default {
-  name: 'solution-component',
+  name: 'lawmakers-component',
   props: ['propsIn'],
   data () {
     return {
@@ -56,14 +71,16 @@ export default {
 <!--xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx-->
 <style scoped>
 
-.solution-component {
-  --width-percent-for-margin: 85%;
-  background-color: palegreen;
-  color: #262626;
+.lawmakers-component {
+  --width-percent-for-margin: 95%;
+  height: 100vh;
+  background-color: #262626;
+  color: white;
 }
 
 /* Flex defaults for SureVote's custom grid template  */
 .super-container {
+  height: 100vh;
   display: flex;
   flex-direction: column;
 }
@@ -71,7 +88,7 @@ export default {
   width: var(--width-percent-for-margin);
   margin: 0 auto;
   flex: 1000 1000 auto;
-  /*border: 1px solid yellow;*/
+  border: 1px solid yellow;
 }
 .row {
   width: var(--width-percent-for-margin);
@@ -82,7 +99,7 @@ export default {
 }
 .col {
   flex: 1 1 auto;
-  /*border: 1px solid #262626;*/
+  border: 1px solid white;
 }
 .icc {
   flex: 1 1 auto;
@@ -91,7 +108,7 @@ export default {
 }
 .icr {
   flex: 1 1 auto;
-  /*border: 1px solid #262626;*/
+  border: 1px solid white;
 }
 .nfr {
   width: var(--width-percent-for-margin);
@@ -105,9 +122,6 @@ export default {
 .col1 {
   max-width: 1vw;
 }
-.col3 {
-  min-width: 3vw;
-}
 .colMargin {
   width: calc((100% - var(--width-percent-for-margin))/2);
 }
@@ -115,10 +129,7 @@ export default {
 /* Individual spacer sizing */
 /* If height is NOT set in super-container use min-height in spacers */
 .spc5 {
-  min-height: 5vh;
-}
-.spc25 {
-  min-height: 25vh;
+  max-height: 5vh;
 }
 
 </style>

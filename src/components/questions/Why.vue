@@ -103,7 +103,7 @@
 <!--xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx-->
 <script>
 import { mapGetters, mapActions } from 'vuex'
-import SureFooter from '../SureFooter'
+import SureFooter from '../home/SureFooter'
 
 export default {
   name: 'why-component',
@@ -118,7 +118,7 @@ export default {
   mounted () {
     // Alter the layout of the home page based on where the user has visited
     let newHomeView = this.homeView
-    newHomeView.Intro2Why = false
+    newHomeView.intro2Why = false
     this.setHomeView(newHomeView)
   },
   computed: {

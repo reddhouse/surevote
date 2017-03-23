@@ -38,3 +38,6 @@ export const addImprovement = (state, newImp) => {
 export const populateImprovements = (state, impList) => {
   state.improvements = impList
 }
+export const mutateFocus = (state, newFocus) => {
+  state.focus = newFocus
+}

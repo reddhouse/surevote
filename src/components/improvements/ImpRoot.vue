@@ -10,7 +10,7 @@
         <div class="col"><router-link to="/improvements/new">+ Add New</router-link></div>
       </div>
 
-      <router-view></router-view>
+      <router-view v-bind:propsLimit="impListLimit"></router-view>
 
       <div class="spc spc5"></div>
 
@@ -20,15 +20,16 @@
 <!--xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx-->
 <script>
 import { mapGetters } from 'vuex'
-import SureHeader from '../SureHeader'
+import SureHeader from '../home/SureHeader'
 
 export default {
   name: 'improvements-root-component',
   props: ['propsIn'],
   data () {
     return {
-      propsOut: {
-
+      impListLimit: {
+        start: 0,
+        through: 100
       }
     }
   },

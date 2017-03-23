@@ -41,8 +41,9 @@
 </template>
 <!--xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx-->
 <script>
+import { mapGetters } from 'vuex'
 import myFirebase from '../myFirebase'
-// import { mapGetters, mapActions } from 'vuex'
+import _ from 'lodash'
 // import HelloChild from './HelloChild'
 
 export default {
@@ -59,7 +60,20 @@ export default {
     }
   },
   computed: {
-    // ...mapGetters(['titleState'])
+    ...mapGetters(['user']),
+    usersRef () {
+      const rootRef = myFirebase.db.ref()
+      return rootRef.child('users')
+    }
+  },
+  firebase () {
+    return {
+      fireUsers: {
+        source: this.usersRef,
+        asObject: false,
+        cancelCallback () { console.log('Error getting stuff from firebase') }
+      }
+    }
   },
   methods: {
     // ...mapActions(['setTitle'])
@@ -68,6 +82,7 @@ export default {
       myFirebase.firebase.auth().createUserWithEmailAndPassword(this.signUpEmail, this.signUpPassword)
         .then(() => {
           console.log('Signup was successful')
+          setTimeout(() => (this.setNewFireUser()), 500)
         })
         .catch(error => {
           console.log(error.code)
@@ -84,6 +99,16 @@ export default {
           console.log(error.code)
           this.loginError = error.message
         })
+    },
+    setNewFireUser () {
+      let isRecord = _.some(this.fireUsers, { '.key': this.user.uid })
+      if (!isRecord) {
+        this.usersRef.child(`${this.user.uid}`).set({
+          'numVotes': 50,
+          'refreshedVotes': Date.now(),
+          'votedOn': 'empty'
+        })
+      }
     }
   },
   filters: {

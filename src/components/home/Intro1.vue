@@ -4,7 +4,7 @@
 
       <div class="spc spc25"></div>
       <div class="nfr title">
-        <div class="nfc">"I think they just figured out how to fix everything"</div>
+        <div class="nfc">What happens when 200&nbsp;million Americans agree for 5&nbsp;minutes?</div>
         <div class="nfc"></div>
         <div class="nfc"></div>
       </div>
@@ -12,7 +12,7 @@
       <div class="spc"></div>
       <div class="nfr">
         <div class="nfc">
-          <a href="#" v-on:click="emitScrollEvent">Cool. Let's do this.</a>
+          <a href="#" v-on:click="emitScrollEvent">We win.</a>
         </div>
       </div>
 
@@ -100,7 +100,7 @@ a {
 /* Individual col or row styliing */
 .nfr.title {
   width: 90%;
-  font-size: 2em;
+  font-size: 1.5em;
 }
 
 /* Individual spacer sizing */

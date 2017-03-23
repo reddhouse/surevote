@@ -2,22 +2,24 @@
   <div class="home-component">
 
     <div id="top"></div>
-    <intro-one v-if="homeView.Intro1" v-on:scroll-two="goScrolling('two')"></intro-one>
+    <intro-one v-if="homeView.intro1" v-on:scroll-two="goScrolling('two')"></intro-one>
     <div id="two"></div>
-    <intro-two v-if="homeView.Intro2Why || homeView.Intro2How" v-on:scroll-three="goScrolling('three')"></intro-two>
+    <intro-two v-if="homeView.intro2Why || homeView.intro2How" v-on:scroll-three="goScrolling('three')"></intro-two>
+    <full-page-nav2></full-page-nav2>
     <full-page-nav></full-page-nav>
     <div id="three"></div>
 
-    <sure-footer v-if="!homeView.Intro2Why && !homeView.Intro2How"></sure-footer>
+    <sure-footer v-if="homeView.sureFooter"></sure-footer>
 
   </div>
 </template>
 <!--xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx-->
 <script>
 import { mapGetters, mapActions } from 'vuex'
-import IntroOne from './home/Intro1'
-import IntroTwo from './home/Intro2'
-import FullPageNav from './home/FullPageNav'
+import IntroOne from './Intro1'
+import IntroTwo from './Intro2'
+import FullPageNav from './FullPageNav'
+import FullPageNav2 from './FullPageNav2'
 import SureFooter from './SureFooter'
 import vueScrollTo from 'vue-scrollTo'
 
@@ -51,12 +53,14 @@ export default {
     introOne: IntroOne, // Useful way to list components if I'm going to use dynamic components and the :is directive
     IntroTwo,
     FullPageNav,
+    FullPageNav2,
     SureFooter
   },
   beforeDestroy () {
     // Alter the layout of the home page based on where the user has visited
     let newHomeView = this.homeView
-    newHomeView.Intro1 = false
+    newHomeView.intro1 = false
+    newHomeView.sureFooter = true
     this.setHomeView(newHomeView)
   }
 }

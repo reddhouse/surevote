@@ -50,3 +50,6 @@ export const getImprovements = ({ commit }) => {
 export const addNewImp = ({ commit }, payload) => {
   commit('addImprovement', payload)
 }
+export const changeFocus = ({ commit }, strVal) => {
+  commit('mutateFocus', strVal)
+}

@@ -25,19 +25,19 @@
       <div class="spc spc1"></div>
       <div class="row">
         <div class="col colPadded">
-          - Agree on the <strong>#1 Improvement</strong> we'd like our lawmakers to make <strong>right now</strong> to fix a common problem.
+          <span class="mini">1. </span>Agree on the <strong>#1 Improvement</strong> we'd like our lawmakers to make <strong>right&nbsp;now</strong> to fix a common problem.
         </div>
         <div class="col"></div>
       </div>
       <div class="row">
         <div class="col colPadded">
-          - Remind lawmakers that we're keeping score, and remove them from office if they refuse to take our priorities seriously.
+          <span class="mini">2. </span>Remind lawmakers that we're keeping score, and remove them from office if they refuse to take our priorities seriously.
         </div>
         <div class="col"></div>
       </div>
       <div class="row">
         <div class="col">
-          - Move on to <strong>Improvement #2</strong> and repeat. Often, the next highest ranked Improvement is idealogically dissimilar to its predecessor.
+          <span class="mini">3. </span>Move on to <strong>Improvement #2</strong> and repeat. Often, the next Improvement is idealogically different than its predecessor.
         </div>
         <div class="col"></div>
       </div>
@@ -175,7 +175,7 @@
 <script>
 import moment from 'moment'
 import { mapGetters, mapActions } from 'vuex'
-import SureFooter from '../SureFooter'
+import SureFooter from '../home/SureFooter'
 
 export default {
   name: 'how-component',
@@ -190,7 +190,7 @@ export default {
   mounted () {
     // Alter the layout of the home page based on where the user has visited
     let newHomeView = this.homeView
-    newHomeView.Intro2How = false
+    newHomeView.intro2How = false
     this.setHomeView(newHomeView)
   },
   computed: {
@@ -235,6 +235,10 @@ a {
 }
 .heading {
   color: #262626;
+}
+.mini {
+  font-size: .8em;
+  color: firebrick;
 }
 
 /* Flex defaults for SureVote's custom grid template  */

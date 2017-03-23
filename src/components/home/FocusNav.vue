@@ -1,83 +1,69 @@
 <template>
-  <div class="problem-details-component">
+  <div class="focus-nav-component">
     <div class="super-container">
 
-      <div class="spc spc5"></div>
       <div class="row">
-        <div class="col">Problem Details</div>
+        <div class="col"></div>
+        <div class="col colShrink focus-tab" v-bind:class="{ 'active-tab': isNation }" v-on:click="selectFocus('nation')">National</div>
+        <div class="col col5"></div>
+        <div class="col colShrink focus-tab" v-bind:class="{ 'active-tab': isState }" v-on:click="selectFocus('state')">State</div>
+        <div class="col col5"></div>
+        <div class="col colShrink focus-tab" v-bind:class="{ 'active-tab': isLocal }" v-on:click="selectFocus('local')">Local</div>
         <div class="col"></div>
       </div>
-
-      <div class="spc spc5"></div>
-      <div class="row">
-        <div class="col">Title/Summary</div>
-        <div class="col"></div>
-      </div>  <div class="row">
-          <div class="col">Description</div>
-          <div class="col"></div>
-        </div>
-
-      <div class="spc spc5"></div>
-      <solutions-list></solutions-list>
-
-      <div class="spc spc5"></div>
-      <!-- Sure Footer and Friends -->
-      <div class="row rowFlip">
-        <div class="col colNavText colShrink" v-on:click="handleBack">&lt;&lt; Back</div>
-      </div>
-      <div class="nfr nfrDivider"></div>
-      <sure-footer></sure-footer>
 
     </div>
   </div>
 </template>
 <!--xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx-->
 <script>
-// import { mapGetters, mapActions } from 'vuex'
-import SureFooter from '../SureFooter'
-import SolutionsList from './SolutionsList'
+import { mapGetters, mapActions } from 'vuex'
+// import HelloChild from './HelloChild'
 
 export default {
-  name: 'problem-details-component',
+  name: 'focus-nav-component',
   props: ['propsIn'],
   data () {
     return {
-      propsOut: {
 
-      }
     }
   },
   computed: {
-    // ...mapGetters(['titleState'])
+    ...mapGetters(['focus']),
+    isNation () { return this.focus === 'nation' },
+    isState () { return this.focus === 'state' },
+    isLocal () { return this.focus === 'local' }
   },
   methods: {
-    // ...mapActions(['setTitle'])
-    handleBack () {
-      this.$router.go(-1)
+    ...mapActions(['changeFocus']),
+    selectFocus (focus) {
+      this.changeFocus(focus)
     }
   },
   filters: {
 
   },
   components: {
-    SolutionsList,
-    SureFooter
+    // HelloChild
   }
 }
 </script>
 <!--xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx-->
 <style scoped>
 
-.problem-details-component {
-  --width-percent-for-margin: 90%;
-  background-color: lightskyblue;
+.focus-nav-component {
+  --width-percent-for-margin: inherit;
+  background-color: white;
   color: #262626;
 }
-.twoLineMax {
-  font-size: .9em;
-  word-wrap: break-word;
-  word-break: break-word;
-  hyphens: auto;
+.focus-tab {
+  padding-left: 4px;
+  padding-right: 4px;
+  text-align: center;
+  width: 60px;
+}
+.active-tab {
+  color: blue;
 }
 
 /* Flex defaults for SureVote's custom grid template  */
@@ -120,15 +106,11 @@ export default {
 }
 
 /* Individual col or row styliing */
-.rowFlip {
-  flex-direction: row-reverse;
-}
 .col1 {
   max-width: 1vw;
 }
-.col3 {
-  min-width: 3vw;
-  max-width: 3vw;
+.col5 {
+  max-width: 5vw;
 }
 .colMargin {
   width: calc((100% - var(--width-percent-for-margin))/2);
@@ -136,20 +118,17 @@ export default {
 .colShrink {
   flex: 0 1000 auto;
 }
-.colNavText {
-  text-align: right;
-  padding-top: 1vh;
-  padding-bottom: 1vh;
-  cursor: pointer;
-}
 
 /* Individual spacer sizing */
 /* If height is NOT set in super-container use min-height in spacers */
+.spc1 {
+  min-height: 1vh;
+}
+.spc2 {
+  min-height: 2vh;
+}
 .spc5 {
   min-height: 5vh;
-}
-.spc25 {
-  min-height: 25vh;
 }
 
 </style>

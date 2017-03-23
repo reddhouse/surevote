@@ -1,46 +1,43 @@
 <template>
-  <div class="solution-component">
+  <div class="full-page-nav-component">
     <div class="super-container">
 
-      <div class="row">
-        <div class="col">Individual Solution</div>
-        <div class="col3"></div>
-        <div class="col"><router-link to="solution-details">...see details</router-link></div>
-      </div>
-      <div class="row">
-        <div class="col"><i class="fa fa-chevron-up"></i></div>
-        <div class="col3"></div>
-        <div class="col twoLineMax">Solution fooobar, this is the title/summary and should be 70 characters.</div>
-      </div>
-      <div class="row">
-        <div class="col">numVotes</div>
-        <div class="col"><i class="fa fa-check vcoin"></i>myVotes</div>
-      </div>
-      <div class="row">
-        <div class="col">activity (#votes/day)</div>
-        <div class="col"></div>
-      </div>
+      <sure-header></sure-header>
+      <div class="spc spc1"></div>
+      <focus-nav></focus-nav>
+
+      <div class="spc spc1"></div>
+      <imp-list v-bind:propsLimit="impListLimit"></imp-list>
+
+      <div class="spc"></div>
 
     </div>
   </div>
 </template>
 <!--xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx-->
 <script>
-// import { mapGetters, mapActions } from 'vuex'
-// import HelloChild from './HelloChild'
+import { mapGetters } from 'vuex'
+import SureHeader from './SureHeader'
+import FocusNav from './FocusNav'
+import ImpList from '../improvements/ImpList'
 
 export default {
-  name: 'solution-component',
+  name: 'full-page-nav-component',
   props: ['propsIn'],
   data () {
     return {
-      propsOut: {
-
+      impListLimit: {
+        start: 0,
+        through: 3
       }
     }
   },
   computed: {
-    // ...mapGetters(['titleState'])
+    ...mapGetters(['user']),
+    localUser () {
+      console.log(localStorage.surevote_user.uid)
+      return localStorage.surevote_user.uid
+    }
   },
   methods: {
     // ...mapActions(['setTitle'])
@@ -49,21 +46,25 @@ export default {
 
   },
   components: {
-    // HelloChild
+    SureHeader,
+    FocusNav,
+    ImpList
   }
 }
 </script>
 <!--xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx-->
 <style scoped>
 
-.solution-component {
-  --width-percent-for-margin: 85%;
-  background-color: palegreen;
+.full-page-nav-component {
+  --width-percent-for-margin: 95%;
+  height: 100vh;
+  background-color: white;
   color: #262626;
 }
 
 /* Flex defaults for SureVote's custom grid template  */
 .super-container {
+  height: 100vh;
   display: flex;
   flex-direction: column;
 }
@@ -71,7 +72,7 @@ export default {
   width: var(--width-percent-for-margin);
   margin: 0 auto;
   flex: 1000 1000 auto;
-  /*border: 1px solid yellow;*/
+  border: 1px solid yellow;
 }
 .row {
   width: var(--width-percent-for-margin);
@@ -82,7 +83,7 @@ export default {
 }
 .col {
   flex: 1 1 auto;
-  /*border: 1px solid #262626;*/
+  border: 1px solid #262626;
 }
 .icc {
   flex: 1 1 auto;
@@ -91,7 +92,7 @@ export default {
 }
 .icr {
   flex: 1 1 auto;
-  /*border: 1px solid #262626;*/
+  border: 1px solid #262626;
 }
 .nfr {
   width: var(--width-percent-for-margin);
@@ -105,20 +106,20 @@ export default {
 .col1 {
   max-width: 1vw;
 }
-.col3 {
-  min-width: 3vw;
-}
 .colMargin {
   width: calc((100% - var(--width-percent-for-margin))/2);
+}
+.colShrink {
+  flex: 0 1000 auto;
 }
 
 /* Individual spacer sizing */
 /* If height is NOT set in super-container use min-height in spacers */
-.spc5 {
-  min-height: 5vh;
+.spc1 {
+  max-height: 1vh;
 }
-.spc25 {
-  min-height: 25vh;
+.spc5 {
+  max-height: 5vh;
 }
 
 </style>

@@ -9,16 +9,7 @@
       </div>
 
       <div class="spc spc2"></div>
-      <div class="row">
-        <div class="col"></div>
-        <div class="col colShrink colRegion">National</div>
-        <div class="col colShrink colRegion">State</div>
-        <div class="col colShrink colRegion">Local</div>
-        <div class="col"></div>
-      </div>
-
-      <div class="spc spc2"></div>
-      <div v-for="imp in improvements">
+      <div v-for="imp in limitedImprovements">
         <imp-item v-bind:improvement="imp"></imp-item>
       </div>
 
@@ -30,20 +21,27 @@
 <!--xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx-->
 <script>
 import { mapGetters } from 'vuex'
+import _ from 'lodash'
 import ImpItem from './ImpItem'
 
 export default {
   name: 'improvement-list-component',
-  props: ['propsIn'],
+  props: ['propsLimit'],
   data () {
     return {
-      propsOut: {
 
-      }
     }
   },
   computed: {
-    ...mapGetters(['improvements'])
+    ...mapGetters(['improvements']),
+    orderedByVotes () {
+      let orderedImprovements = _.orderBy(this.improvements, ['votes'], ['desc'])
+      return orderedImprovements
+    },
+    limitedImprovements () {
+      let limitedList = _.slice(this.orderedByVotes, this.propsLimit.start, this.propsLimit.through)
+      return limitedList
+    }
   },
   methods: {
     // ...mapActions(['getImprovements'])

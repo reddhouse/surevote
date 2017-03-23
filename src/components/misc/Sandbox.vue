@@ -1,7 +1,7 @@
 <template>
-  <div class="hello-component">
+  <div class="sandbox-component">
     <!-- This component tests if Vuex and Axios are wired-up correctly -->
-    <p>Hello/Sandbox Component</p>
+    <p>Sandbox Component</p>
 
     <counter></counter>
 
@@ -70,13 +70,13 @@
 </template>
 <!--xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx-->
 <script>
-import { mapGetters } from 'vuex'
-import myFirebase from '../myFirebase'
+import { mapGetters, mapActions } from 'vuex'
+import myFirebase from '../../myFirebase'
 import Counter from './Counter'
 import ArtistSearch from './ArtistSearch'
 
 export default {
-  name: 'hello-component',
+  name: 'sandbox-component',
   props: ['propsIn'],
   data () {
     return {
@@ -89,11 +89,13 @@ export default {
     ...mapGetters(['artists', 'isBusy'])
   },
   methods: {
-    // ...mapActions(['setUser'])
+    ...mapActions(['setUser']),
     handleLogout () {
       myFirebase.firebase.auth().signOut()
         .then(() => {
           console.log('Log Out was successful')
+          // Reset user property in global app state to empty object
+          this.setUser({})
           this.$router.push('/')
         })
     }
@@ -110,7 +112,7 @@ export default {
 <!--xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx-->
 <style scoped>
 
-.hello-component {
+.sandbox-component {
   --width-percent-for-margin: 95%;
 }
 .gradient1 {

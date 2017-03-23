@@ -23,3 +23,4 @@ export const isBusy = state => state.isBusy
 export const user = state => state.user
 export const homeView = state => state.homeView
 export const improvements = state => state.improvements
+export const focus = state => state.focus

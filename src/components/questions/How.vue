@@ -227,9 +227,6 @@ export default {
 a {
   color: dodgerblue;
 }
-.mono {
-  font-family: 'Cousine', Courier, monospace;
-}
 .center {
   text-align: center;
 }

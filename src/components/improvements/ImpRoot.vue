@@ -51,7 +51,7 @@ export default {
 <style scoped>
 
 .improvements-root-component {
-  --width-percent-for-margin: 90%;
+  --width-percent-for-margin: 90vw;
   background-color: white;
   color: #262626;
 }

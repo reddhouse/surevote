@@ -70,7 +70,7 @@ export default {
 
 .home-component {
   /* Do not delete. SureFooter inherits from this value */
-  --width-percent-for-margin: 95%;
+  --width-percent-for-margin: 95vw;
 }
 
 </style>

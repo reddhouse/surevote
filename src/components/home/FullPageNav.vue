@@ -109,21 +109,13 @@ export default {
 <style scoped>
 
 .full-page-nav-component {
-  --width-percent-for-margin: 90%;
+  --width-percent-for-margin: inherit;
   height: 100vh;
   background-color: white;
   color: #262626;
 }
 a {
   color: dodgerblue;
-}
-.mono {
-  font-family: 'Cousine', Courier, monospace;
-}
-.wrap-hyphen {
-  word-wrap: break-word;
-  word-break: break-word;
-  hyphens: auto;
 }
 
 /* Flex defaults for SureVote's custom grid template  */

@@ -34,7 +34,7 @@
       </div>
       <div>
         <div>Supporting Links</div>
-        <input type="text" v-model="tempLink" placeholder="Link">
+        <input type="text" v-model="tempLink" placeholder="Link" maxlength="80">
         <button v-on:click="handleAddLink">Add Link</button>
       </div>
       <button v-on:click="handleSubmitCondition">Submit Condition</button>

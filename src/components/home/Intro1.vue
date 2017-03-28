@@ -57,6 +57,7 @@ export default {
 <style scoped>
 
 .intro-component {
+  --width-percent-for-margin: inherit;
   height: 100vh;
   background-color: #262626;
   color: white;
@@ -72,14 +73,14 @@ a {
   height: 100vh;
 }
 .spc {
-  width: 95%;
+  width: var(--width-percent-for-margin);
   margin: 0 auto;
   /* Spacers prefer to fill empty space 1000 to 1 */
   flex: 1000 1000 auto;
   /*border: 1px solid yellow;*/
 }
 .row {
-  width: 95%;
+  width: var(--width-percent-for-margin);
   margin: 0 auto;
   flex: 1 1 auto;
   display: flex;
@@ -90,7 +91,7 @@ a {
   border: 1px solid white;
 }
 .nfr {
-  width: 95%;
+  width: var(--width-percent-for-margin);
   margin: 0 auto;
 }
 .nfc {

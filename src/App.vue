@@ -77,6 +77,14 @@ export default {
   font-size: 100%;
   color: #262626;
 }
+.mono {
+  font-family: 'Cousine', Courier, monospace;
+}
+.wrap-hyphen {
+  word-wrap: break-word;
+  word-break: break-word;
+  hyphens: auto;
+}
 .logo-sure {
   color: firebrick;
   font-size: 1.25em;

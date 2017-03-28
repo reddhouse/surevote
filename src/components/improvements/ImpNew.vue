@@ -28,7 +28,7 @@
       </div>
       <div>
         <div>Title</div>
-        <input type="text" v-model="localImp.title" placeholder="Title/Summary">
+        <input type="text" v-model="localImp.title" placeholder="Title/Summary" maxlength="80">
       </div>
       <div>
         <div>Description</div>

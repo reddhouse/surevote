@@ -4,8 +4,8 @@
 
       <!-- <div class="spc spc2"></div> -->
       <div class="row rowTopNav">
-        <div class="col colGrow"></div>
-        <div class="col colTab colShrink" v-on:click="handleBack">Why?</div>
+        <div class="col"></div>
+        <div class="col colTab colShrink">Why?</div>
         <!-- <div class="col colMargin"></div> -->
       </div>
 
@@ -149,9 +149,6 @@ export default {
 a {
   color: dodgerblue;
 }
-.mono {
-  font-family: 'Cousine', Courier, monospace;
-}
 .heading {
   color: #262626;
   font-weight: 700;
@@ -185,7 +182,7 @@ a {
 .spc {
   width: var(--width-percent-for-margin);
   margin: 0 auto;
-  /*border: 1px solid yellow;*/
+  border: 1px solid yellow;
 }
 .row {
   width: var(--width-percent-for-margin);
@@ -238,9 +235,6 @@ a {
 }
 .colShrink {
   flex: 0 1000 auto;
-}
-.colGrow {
-  flex: 1000 1 auto;
 }
 .colFlip {
   align-self: flex-end;

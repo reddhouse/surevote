@@ -5,9 +5,9 @@
       <div class="row">
         <div class="col"></div>
         <div class="col colShrink focus-tab" v-bind:class="{ 'active-tab': isNation }" v-on:click="selectFocus('nation')">National</div>
-        <div class="col col5"></div>
+        <div class="col colShrink">-</div>
         <div class="col colShrink focus-tab" v-bind:class="{ 'active-tab': isState }" v-on:click="selectFocus('state')">State</div>
-        <div class="col col5"></div>
+        <div class="col colShrink">-</div>
         <div class="col colShrink focus-tab" v-bind:class="{ 'active-tab': isLocal }" v-on:click="selectFocus('local')">Local</div>
         <div class="col"></div>
       </div>

@@ -2,14 +2,20 @@
   <div class="imp-item-component">
     <div class="super-container">
 
-      <div class="row">
-        <!-- Votes are synced in real-time with Firebase DB, the rest if the improvement comes from app state -->
-        <div class="col">{{ fireImpObj.votes }}</div>
-        <div class="col" v-on:click="sendToDetails">
-          <div>{{ improvement.title }}</div>
+      <div class="row" v-on:click="sendToDetails">
+        <div class="icc iccFixed">
+          <div class="icr icrShrink icrRank mono">#{{ impIndex + 1}}</div>
+          <div class="icr"></div>
         </div>
-        <div class="col"></div>
+        <div class="icc">
+          <div class="icr">
+            <div class="wrap-hyphen">{{ improvement.title }}</div>
+          </div>
+          <div class="icr icrVotes mono">{{ fireImpObj.votes }}</div>
+        </div>
       </div>
+
+      <div class="spc spc1"></div>
 
     </div>
   </div>
@@ -22,12 +28,10 @@ import myFirebase from '../../myFirebase'
 
 export default {
   name: 'imp-item-component',
-  props: ['improvement'],
+  props: ['improvement', 'impIndex'],
   data () {
     return {
-      propsOut: {
 
-      }
     }
   },
   computed: {
@@ -64,7 +68,7 @@ export default {
 <style scoped>
 
 .imp-item-component {
-  --width-percent-for-margin: 95%;
+  --width-percent-for-margin: inherit;
   background-color: white;
   color: #262626;
 }
@@ -78,7 +82,7 @@ export default {
   width: var(--width-percent-for-margin);
   margin: 0 auto;
   flex: 1000 1000 auto;
-  border: 1px solid yellow;
+  /*border: 1px solid yellow;*/
 }
 .row {
   width: var(--width-percent-for-margin);
@@ -89,7 +93,7 @@ export default {
 }
 .col {
   flex: 1 1 auto;
-  border: 1px solid #262626;
+  /*border: 1px solid #262626;*/
 }
 .icc {
   flex: 1 1 auto;
@@ -98,7 +102,7 @@ export default {
 }
 .icr {
   flex: 1 1 auto;
-  border: 1px solid #262626;
+  /*border: 1px solid #262626;*/
 }
 .nfr {
   width: var(--width-percent-for-margin);
@@ -115,9 +119,28 @@ export default {
 .colMargin {
   width: calc((100% - var(--width-percent-for-margin))/2);
 }
+.iccFixed {
+  border-right: 1px solid #262626;
+  margin-right: 4px;
+  text-align: center;
+}
+.icrShrink {
+  flex: 0 1000 auto;
+}
+.icrRank {
+  padding: 8px;
+  border-bottom: 1px solid #262626;
+  font-weight: 600;
+}
+.icrVotes {
+  color: firebrick;
+}
 
 /* Individual spacer sizing */
 /* If height is NOT set in super-container use min-height in spacers */
+.spc1 {
+  min-height: 1vh;
+}
 .spc5 {
   min-height: 5vh;
 }

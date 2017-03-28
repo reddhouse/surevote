@@ -2,18 +2,15 @@
   <div class="improvement-list-component">
     <div class="super-container">
 
-      <div class="spc spc5"></div>
       <div class="row">
-        <div class="col">Improvements List</div>
+        <div class="col"></div>
+        <div class="col">
+          <div v-for="(imp, index) in limitedImprovements">
+            <imp-item v-bind:improvement="imp" v-bind:impIndex="index"></imp-item>
+          </div>
+        </div>
         <div class="col"></div>
       </div>
-
-      <div class="spc spc2"></div>
-      <div v-for="imp in limitedImprovements">
-        <imp-item v-bind:improvement="imp"></imp-item>
-      </div>
-
-      <div class="spc spc5"></div>
 
     </div>
   </div>
@@ -58,7 +55,7 @@ export default {
 <style scoped>
 
 .improvement-list-component {
-  --width-percent-for-margin: 90%;
+  --width-percent-for-margin: inherit;
   background-color: white;
   color: #262626;
 }

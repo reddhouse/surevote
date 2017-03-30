@@ -2,13 +2,23 @@
   <div class="con-details-component">
     <div class="super-container">
 
-      <div class="spc spc5"></div>
+      <div class="spc spc2"></div>
       <div class="row">
-        <div class="col">Condition Details Component</div>
+        <div class="col">{{ condition.description }}</div>
         <div class="col"></div>
       </div>
 
-      <div class="spc spc5"></div>
+      <div class="spc spc2"></div>
+      <div class="row">
+        <div class="col">
+          <div v-for="link in condition.links">
+            <a v-bind:href="link">{{ link }}</a>
+          </div>
+        </div>
+        <div class="col"></div>
+      </div>
+
+      <div class="spc spc2"></div>
 
     </div>
 
@@ -95,14 +105,10 @@
 
 export default {
   name: 'con-details-component',
-  props: ['propsIn'],
+  props: ['condition'],
   data () {
     return {
-      // Vuefire properties are added to the Vue instance after the watchers are
-      // created, so to make the watcher work, we purposely add the following
-      // (empty) data property with the same key as our Vuefire property.
-      fireImpObj: {},
-      isVoting: false
+
     }
   },
   watch: {
@@ -158,25 +164,13 @@ export default {
 <style scoped>
 
 .con-details-component {
-  --width-percent-for-margin: 95%;
+  --width-percent-for-margin: inherit;
   background-color: white;
-  color: #262626;
+  color: #001a33;
 }
 
-.vote {
-  transition:all 0.07s;
-  color: #262626;
-  line-height: 2em;
-}
-
-.voting {
-  transform:scale(2.0);
-  font-size: 2em;
-  color: #ffbf00;
-  /*box-shadow: 0 0 10px #ffc600;*/
-}
-.hidden {
-  visibility: hidden;
+a, a:hover, a:focus, a:visited {
+  color: #005cb3;
 }
 
 /* Flex defaults for SureVote's custom grid template  */
@@ -185,58 +179,25 @@ export default {
   flex-direction: column;
 }
 .spc {
-  width: var(--width-percent-for-margin);
-  margin: 0 auto;
-  flex: 1000 1000 auto;
-  border: 1px solid yellow;
+  width: calc(var(--width-percent-for-margin) - 5vw);
+  /*border: 1px solid yellow;*/
 }
 .row {
-  width: var(--width-percent-for-margin);
-  margin: 0 auto;
-  flex: 1 1 auto;
-  display: flex;
-  flex-direction: row;
+  width: calc(var(--width-percent-for-margin) - 5vw);
 }
 .col {
-  flex: 1 1 auto;
-  border: 1px solid #262626;
-}
-.icc {
-  flex: 1 1 auto;
-  display: flex;
-  flex-direction: column;
+  /*border: 1px solid #262626;*/
 }
 .icr {
-  flex: 1 1 auto;
-  border: 1px solid #262626;
+  /*border: 1px solid #262626;*/
 }
 .nfr {
-  width: var(--width-percent-for-margin);
-  margin: 0 auto;
-}
-.nfrTemp {
-  display: flex;
-  flex-direction: row;
+  width: calc(var(--width-percent-for-margin) - 5vw);
 }
 
 /* Individual col or row styliing */
-.col1 {
-  max-width: 1vw;
-}
-.col5 {
-  max-width: 5vw;
-}
 .colMargin {
-  width: calc((100% - var(--width-percent-for-margin))/2);
-}
-.colShrink {
-  flex: 0 1000 auto;
-}
-
-/* Individual spacer sizing */
-/* If height is NOT set in super-container use min-height in spacers */
-.spc5 {
-  min-height: 5vh;
+  width: calc((100% - (var(--width-percent-for-margin) - 5vw))/2);
 }
 
 </style>

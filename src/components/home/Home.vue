@@ -5,7 +5,6 @@
     <intro-one v-if="homeView.intro1" v-on:scroll-two="goScrolling('two')"></intro-one>
     <div id="two"></div>
     <intro-two v-if="homeView.intro2Why || homeView.intro2How" v-on:scroll-three="goScrolling('three')"></intro-two>
-    <full-page-nav2></full-page-nav2>
     <full-page-nav></full-page-nav>
     <div id="three"></div>
 
@@ -19,7 +18,6 @@ import { mapGetters, mapActions } from 'vuex'
 import IntroOne from './Intro1'
 import IntroTwo from './Intro2'
 import FullPageNav from './FullPageNav'
-import FullPageNav2 from './FullPageNav2'
 import SureFooter from './SureFooter'
 import vueScrollTo from 'vue-scrollTo'
 
@@ -53,7 +51,6 @@ export default {
     introOne: IntroOne, // Useful way to list components if I'm going to use dynamic components and the :is directive
     IntroTwo,
     FullPageNav,
-    FullPageNav2,
     SureFooter
   },
   beforeDestroy () {
@@ -70,7 +67,7 @@ export default {
 
 .home-component {
   /* Do not delete. SureFooter inherits from this value */
-  --width-percent-for-margin: 95vw;
+  --width-percent-for-margin: 90vw;
 }
 
 </style>

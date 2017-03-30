@@ -95,9 +95,6 @@ export default {
 a {
   color: white;
 }
-.center {
-  text-align: center;
-}
 .logo-sure {
   color: firebrick;
   font-size: 2em;
@@ -132,37 +129,19 @@ a {
 }
 .spc {
   width: var(--width-percent-for-margin);
-  margin: 0 auto;
-  /* Spacers prefer to fill empty space 1000 to 1 */
-  flex: 1000 1000 auto;
   /*border: 1px solid yellow;*/
 }
 .row {
   width: var(--width-percent-for-margin);
-  margin: 0 auto;
-  flex: 1 1 auto;
-  display: flex;
-  flex-direction: row;
 }
 .col {
-  flex: 1 1 auto;
   /*border: 1px solid white;*/
 }
-.icc {
-  flex: 1 1 auto;
-  display: flex;
-  flex-direction: column;
-}
 .icr {
-  flex: 1 1 auto;
   /*border: 1px solid white;*/
 }
 .nfr {
   width: var(--width-percent-for-margin);
-  margin: 0 auto;
-}
-.nfc {
-  text-align: center;
 }
 
 /* Individual col or row styliing */
@@ -177,9 +156,6 @@ a {
 .col1 {
   max-width: 1vw;
 }
-.colShrink {
-  flex: 0 1000 auto;
-}
 .colFlip {
   align-self: flex-end;
 }
@@ -191,21 +167,6 @@ a {
 }
 
 /* Individual spacer sizing */
-.spc1 {
-  max-height: 1vh;
-}
-.spc2 {
-  max-height: 2vh;
-}
-.spc5 {
-  max-height: 5vh;
-}
-.spc20 {
-  max-height: 20vh;
-}
-.spc25 {
-  max-height: 25vh;
-}
 .spcTopBar {
   width: 100%;
   background-color: white;

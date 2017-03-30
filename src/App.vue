@@ -80,6 +80,9 @@ export default {
 .mono {
   font-family: 'Cousine', Courier, monospace;
 }
+.avenir {
+  font-family: 'Avenir', Helvetica, Arial, sans-serif;
+}
 .wrap-hyphen {
   word-wrap: break-word;
   word-break: break-word;
@@ -103,6 +106,97 @@ i.vcoin {
   background-color: #ffbf00;
   color: black;
 }
+.center {
+  text-align: center;
+}
+
+/* Spc */
+.spc {
+  margin: 0 auto;
+  flex: 1000 1000 auto;
+}
+.spc05 {
+  min-height: .5vh;
+  max-height: .5vh;
+}
+.spc1 {
+  min-height: 1vh;
+  max-height: 1vh;
+}
+.spc2 {
+  min-height: 2vh;
+  max-height: 2vh;
+}
+.spc3 {
+  min-height: 3vh;
+  max-height: 3vh;
+}
+.spc4 {
+  min-height: 4vh;
+  max-height: 4vh;
+}
+.spc5 {
+  min-height: 5vh;
+  max-height: 5vh;
+}
+.spc8 {
+  min-height: 8vh;
+  max-height: 8vh;
+}
+.spc10 {
+  min-height: 10vh;
+  max-height: 10vh;
+}
+.spc15 {
+  min-height: 15vh;
+  max-height: 15vh;
+}
+.spc20 {
+  min-height: 20vh;
+  max-height: 20vh;
+}
+.spc25 {
+  min-height: 25vh;
+  max-height: 25vh;
+}
+
+/* Row */
+.row {
+  margin: 0 auto;
+  flex: 1 0 auto;
+  display: flex;
+  flex-direction: row;
+}
+.rowJustify {
+  justify-content: space-between;
+}
+
+/* Col */
+.col {
+  flex: 1 1 auto;
+}
+.colShrink {
+  flex: 0 1000 auto;
+}
+.colSpc {
+  flex: 1000 1000 auto;
+}
+
+/* Icc */
+.icc {
+  flex: 1 1 auto;
+  display: flex;
+  flex-direction: column;
+}
+.icr {
+  flex: 1 0 auto;
+}
+
+/* Nfr */
+.nfr {
+  margin: 0 auto;
+}
+
 /* Media Queries */
 @media (min-width: 321px) {
 

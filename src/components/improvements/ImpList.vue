@@ -67,36 +67,19 @@ export default {
 }
 .spc {
   width: var(--width-percent-for-margin);
-  margin: 0 auto;
-  flex: 1000 1000 auto;
   /*border: 1px solid yellow;*/
 }
 .row {
   width: var(--width-percent-for-margin);
-  margin: 0 auto;
-  flex: 1 1 auto;
-  display: flex;
-  flex-direction: row;
 }
 .col {
-  flex: 1 1 auto;
   /*border: 1px solid white;*/
 }
-.icc {
-  flex: 1 1 auto;
-  display: flex;
-  flex-direction: column;
-}
 .icr {
-  flex: 1 1 auto;
   /*border: 1px solid white;*/
 }
 .nfr {
   width: var(--width-percent-for-margin);
-  margin: 0 auto;
-}
-.nfc {
-  text-align: center;
 }
 
 /* Individual col or row styliing */
@@ -106,20 +89,8 @@ export default {
 .col1 {
   max-width: 1vw;
 }
-.colShrink {
-  flex: 0 1000 auto;
-}
 .colRegion {
   padding: 1vh 6vw 1vh 6vw;
-}
-
-/* Individual spacer sizing */
-/* If height is NOT set in super-container use min-height in spacers */
-.spc2 {
-  min-height: 2vh;
-}
-.spc5 {
-  min-height: 5vh;
 }
 
 </style>

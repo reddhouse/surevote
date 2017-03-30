@@ -4,8 +4,6 @@ export const blankImpObj = {
   timestamp: 0,
   title: '',
   description: '',
-  problem: '',
-  result: '',
   links: [],
   votes: 0
 }
@@ -15,7 +13,7 @@ export const firstBlankConObj = {
   belongsTo: '',
   author: '',
   timestamp: 0,
-  title: 'None (Full Support)',
+  title: 'No Conditions (Full Support)',
   description: 'This improvement is acceptable as originally proposed',
   links: [],
   votes: 1,

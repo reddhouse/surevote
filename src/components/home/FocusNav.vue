@@ -63,7 +63,7 @@ export default {
   width: 60px;
 }
 .active-tab {
-  color: blue;
+  color: firebrick;
 }
 
 /* Flex defaults for SureVote's custom grid template  */
@@ -73,36 +73,19 @@ export default {
 }
 .spc {
   width: var(--width-percent-for-margin);
-  margin: 0 auto;
-  flex: 1000 1000 auto;
   /*border: 1px solid yellow;*/
 }
 .row {
   width: var(--width-percent-for-margin);
-  margin: 0 auto;
-  flex: 1 1 auto;
-  display: flex;
-  flex-direction: row;
 }
 .col {
-  flex: 1 1 auto;
   /*border: 1px solid #262626;*/
 }
-.icc {
-  flex: 1 1 auto;
-  display: flex;
-  flex-direction: column;
-}
 .icr {
-  flex: 1 1 auto;
   /*border: 1px solid #262626;*/
 }
 .nfr {
   width: var(--width-percent-for-margin);
-  margin: 0 auto;
-}
-.nfc {
-  text-align: center;
 }
 
 /* Individual col or row styliing */
@@ -114,21 +97,6 @@ export default {
 }
 .colMargin {
   width: calc((100% - var(--width-percent-for-margin))/2);
-}
-.colShrink {
-  flex: 0 1000 auto;
-}
-
-/* Individual spacer sizing */
-/* If height is NOT set in super-container use min-height in spacers */
-.spc1 {
-  min-height: 1vh;
-}
-.spc2 {
-  min-height: 2vh;
-}
-.spc5 {
-  min-height: 5vh;
 }
 
 </style>

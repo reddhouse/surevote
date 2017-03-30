@@ -3,7 +3,7 @@
     <div class="super-container">
 
       <div class="row rowTopNav">
-        <div class="col colGrow"></div>
+        <div class="col"></div>
         <div class="col colTab colShrink" v-on:click="handleBack">How?</div>
         <!-- <div class="col colMargin"></div> -->
       </div>
@@ -74,17 +74,19 @@
         </div>
         <div class="col"></div>
       </div>
-      <div class="row">
+
+      <!-- <div class="row">
         <div class="col colPadded">
           Improvements are not the only places to spend
           <span class="nobr"><i class="fa fa-check vcoin"></i>otes.</span>
           <strong>Virtually all information on SureVote is democratically stack-ranked</strong>, including pro/con arguments, and links to supporting data, etc.
         </div>
         <div class="col"></div>
-      </div>
+      </div> -->
+
       <div class="row">
         <div class="col">
-          Most importantly, users who disagree with a "top" Improvement can:
+          Users who disagree with a "top" Improvement can:
         </div>
         <div class="col"></div>
       </div>
@@ -149,7 +151,7 @@
         <div class="col"></div>
       </div>
 
-      <div class="spc spc2"></div>
+      <div class="spc spc4"></div>
       <div class="row">
         <div class="col">
           <div>Want to learn more?</div>
@@ -227,9 +229,6 @@ export default {
 a {
   color: dodgerblue;
 }
-.center {
-  text-align: center;
-}
 .heading {
   color: #262626;
 }
@@ -246,35 +245,19 @@ a {
 }
 .spc {
   width: var(--width-percent-for-margin);
-  margin: 0 auto;
   /*border: 1px solid yellow;*/
 }
 .row {
   width: var(--width-percent-for-margin);
-  margin: 0 auto;
-  flex: 1 1 auto;
-  display: flex;
-  flex-direction: row;
 }
 .col {
-  flex: 1 1 auto;
   /*border: 1px solid white;*/
 }
-.icc {
-  flex: 1 1 auto;
-  display: flex;
-  flex-direction: column;
-}
 .icr {
-  flex: 1 1 auto;
   /*border: 1px solid white;*/
 }
 .nfr {
   width: var(--width-percent-for-margin);
-  margin: 0 auto;
-}
-.nfc {
-  text-align: center;
 }
 
 /* Individual col or row styliing */
@@ -284,12 +267,6 @@ a {
 .rowTopNav {
   width: 100%;
   border-top: 1vh solid #001a33;
-}
-.colShrink {
-  flex: 0 1000 auto;
-}
-.colGrow {
-  flex: 1000 1 auto;
 }
 .colNavText {
   text-align: right;
@@ -335,30 +312,6 @@ a {
 }
 .icrPadded {
   padding-left: 1vw;
-}
-
-/* Individual spacer sizing */
-/* If height is NOT set in super-container use min-height in spacers*/
-.spc1 {
-  min-height: 1vw;
-}
-.spc2 {
-  min-height: 2vh;
-}
-.spc4 {
-  min-height: 4vh;
-}
-.spc5 {
-  min-height: 5vh;
-}
-.spc10 {
-  min-height: 10vh;
-}
-.spc15 {
-  min-height: 15vh;
-}
-.spc25 {
-  min-height: 25vh;
 }
 
 </style>

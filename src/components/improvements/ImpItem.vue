@@ -2,6 +2,7 @@
   <div class="imp-item-component">
     <div class="super-container">
 
+      <div class="spc spc1"></div>
       <div class="row" v-on:click="sendToDetails">
         <div class="icc iccFixed">
           <div class="icr icrShrink icrRank mono">#{{ impIndex + 1}}</div>
@@ -13,9 +14,8 @@
           </div>
           <div class="icr icrVotes mono">{{ fireImpObj.votes }}</div>
         </div>
+        <div class="col colSpc"></div>
       </div>
-
-      <div class="spc spc1"></div>
 
     </div>
   </div>
@@ -80,36 +80,19 @@ export default {
 }
 .spc {
   width: var(--width-percent-for-margin);
-  margin: 0 auto;
-  flex: 1000 1000 auto;
   /*border: 1px solid yellow;*/
 }
 .row {
   width: var(--width-percent-for-margin);
-  margin: 0 auto;
-  flex: 1 1 auto;
-  display: flex;
-  flex-direction: row;
 }
 .col {
-  flex: 1 1 auto;
   /*border: 1px solid #262626;*/
 }
-.icc {
-  flex: 1 1 auto;
-  display: flex;
-  flex-direction: column;
-}
 .icr {
-  flex: 1 1 auto;
   /*border: 1px solid #262626;*/
 }
 .nfr {
   width: var(--width-percent-for-margin);
-  margin: 0 auto;
-}
-.nfc {
-  text-align: center;
 }
 
 /* Individual col or row styliing */
@@ -134,15 +117,6 @@ export default {
 }
 .icrVotes {
   color: firebrick;
-}
-
-/* Individual spacer sizing */
-/* If height is NOT set in super-container use min-height in spacers */
-.spc1 {
-  min-height: 1vh;
-}
-.spc5 {
-  min-height: 5vh;
 }
 
 </style>

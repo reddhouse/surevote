@@ -1,40 +1,15 @@
 <template>
-  <div class="grid-template-component">
+  <div class="pledge-component">
     <div class="super-container">
 
-      <!-- Standard flex row containing 5 flex columns -->
-      <div class="spc spc5"></div>
       <div class="row">
-        <div class="col">1</div>
-        <div class="col">2</div>
-        <div class="col">3</div>
-        <div class="col">4</div>
-        <div class="col">5</div>
-      </div>
-
-      <!-- Flex row containing 5 flex columns with center column containing 3 inner flex rows -->
-      <div class="spc spc5"></div>
-      <div class="row">
-        <div class="col">1</div>
-        <div class="col">2</div>
-        <div class="icc">
-          <div class="icr">3</div>
-          <div class="icr">4</div>
-          <div class="icr">5</div>
+        <div class="col colShrink">
+          <div>We are {{ fireUsers.length }} SureVote users and counting, representing {{ percentage }}% of the voting age population in the US.</div>
+          <div class="padded">There are 468 federal lawmakers up for re-election, of which 467 currently have failing SureVote scores.</div>
+          <div>As it stands, we pledge to remove 467 lawmakers from office on 11/6/18.</div>
         </div>
-        <div class="col">6</div>
-        <div class="col">7</div>
+        <div class="col"></div>
       </div>
-
-      <!-- Non flex row -->
-      <div class="spc"></div>
-      <div class="nfr">
-        <div class="nfc">
-          Some Text
-        </div>
-      </div>
-
-      <div class="spc spc5"></div>
 
     </div>
   </div>
@@ -42,10 +17,12 @@
 <!--xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx-->
 <script>
 // import { mapGetters, mapActions } from 'vuex'
+import _ from 'lodash'
+import myFirebase from '../../myFirebase'
 // import HelloChild from './HelloChild'
 
 export default {
-  name: 'grid-template-component',
+  name: 'pledge-component',
   props: ['propsIn'],
   data () {
     return {
@@ -56,6 +33,23 @@ export default {
   },
   computed: {
     // ...mapGetters(['titleState'])
+    usersRef () {
+      const rootRef = myFirebase.db.ref()
+      return rootRef.child('users')
+    },
+    percentage () {
+      let result = (this.fireUsers.length / 235248000) * 100
+      return _.ceil(result, 7)
+    }
+  },
+  firebase () {
+    return {
+      fireUsers: {
+        source: this.usersRef,
+        asObject: false,
+        cancelCallback () { console.log('Error getting stuff from firebase') }
+      }
+    }
   },
   methods: {
     // ...mapActions(['setTitle'])
@@ -71,16 +65,18 @@ export default {
 <!--xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx-->
 <style scoped>
 
-.grid-template-component {
-  --width-percent-for-margin: 90%;
-  height: 100vh;
+.pledge-component {
+  --width-percent-for-margin: inherit;
   background-color: white;
   color: #262626;
+}
+.padded {
+  padding-top: 2vh;
+  padding-bottom: 2vh;
 }
 
 /* Flex defaults for SureVote's custom grid template  */
 .super-container {
-  height: 100vh;
   display: flex;
   flex-direction: column;
 }

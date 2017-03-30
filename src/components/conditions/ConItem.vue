@@ -3,29 +3,50 @@
     <div class="super-container">
 
       <div class="row">
-        <div class="col" v-on:click="addVote"><i class="fa fa-chevron-up"></i></div>
-        <div class="col" v-on:click="showingDetails = true">
-          <span class="vote" v-bind:class="{ voting: isVoting }">{{ condition ? condition.votes : 0 }}</span>
-          <span>
-            total&nbsp;|&nbsp;{{ myVotes }}
-            <span class="nobr"><i class="fa fa-check vcoin"></i></span>
-          </span>
+        <div class="col col1"></div>
+        <div class="icc iccVoteBox" v-on:click="addVote">
+          <div class="icr icrMax"></div>
+          <div class="icr chevron-box"><i class="fa fa-chevron-up"></i></div>
+          <div class="icr"></div>
         </div>
-        <div class="col" v-on:click="showingDetails = true">{{ condition ? condition.title : 'loading...' }}</div>
+        <div class="col col3"></div>
+
+        <div class="icc" v-on:click="showingDetails = true">
+          <div class="icr">{{ condition ? condition.title : 'loading...' }}</div>
+          <div class="icr icrDetails" v-if="!showingDetails">View Details [+]</div>
+          <div class="icr icr05" v-else></div>
+          <div class="icr icr05"></div>
+          <div class="icr">
+            <span class ="vote" v-bind:class="{ voting: isVoting }">
+              {{ condition ? condition.votes : 0 }}
+            </span>
+            <span>
+              &nbsp;|&nbsp;
+            </span>
+            <span class ="vote" v-bind:class="{ voting: isVoting }">
+              {{ myVotes }}
+            </span>
+            <span class="nobr"><i class="fa fa-check vcoin"></i></span>
+          </div>
+        </div>
         <div class="col"></div>
       </div>
 
       <div class="row" v-if="showingDetails">
         <div class="col">
-          <con-details></con-details>
+          <con-details v-bind:condition="condition"></con-details>
         </div>
       </div>
 
+      <div class="spc spc1"></div>
       <div class="row" v-if="showingDetails">
-        <div class="col" v-on:click="showingDetails = false">
-          [-] Hide Details
+        <div class="col icrDetails" v-on:click="showingDetails = false">
+          [&ndash;] Hide Details
         </div>
       </div>
+
+      <div class="spc spc8" v-if="showingDetails"></div>
+      <div class="spc spc4"></div>
 
     </div>
   </div>
@@ -39,7 +60,7 @@ import ConDetails from './ConDetails'
 
 export default {
   name: 'con-item-component',
-  props: ['condition', 'topCon'],
+  props: ['condition'],
   data () {
     return {
       showingDetails: false,
@@ -131,20 +152,22 @@ export default {
 <style scoped>
 
 .con-item-component {
-  --width-percent-for-margin: 95%;
+  --width-percent-for-margin: inherit;
   background-color: white;
-  color: #262626;
+  color: #001a33;
 }
 .vote {
   transition:all 0.07s;
-  color: #262626;
-  line-height: 2em;
+  color: #001a33;
 }
 .voting {
-  transform:scale(2.0);
-  font-size: 1.5em;
   color: firebrick;
-  /*box-shadow: 0 0 10px #ffc600;*/
+}
+.chevron-box {
+  max-height: 20px;
+  text-align: center;
+  background-color: firebrick;
+  color: white;
 }
 
 /* Flex defaults for SureVote's custom grid template  */
@@ -154,50 +177,45 @@ export default {
 }
 .spc {
   width: var(--width-percent-for-margin);
-  margin: 0 auto;
-  flex: 1000 1000 auto;
-  border: 1px solid yellow;
+  /*border: 1px solid yellow;*/
 }
 .row {
   width: var(--width-percent-for-margin);
-  margin: 0 auto;
-  flex: 1 1 auto;
-  display: flex;
-  flex-direction: row;
 }
 .col {
-  flex: 1 1 auto;
-  border: 1px solid #262626;
-}
-.icc {
-  flex: 1 1 auto;
-  display: flex;
-  flex-direction: column;
+  /*border: 1px solid #262626;*/
 }
 .icr {
-  flex: 1 1 auto;
-  border: 1px solid #262626;
+  /*border: 1px solid #262626;*/
 }
 .nfr {
   width: var(--width-percent-for-margin);
-  margin: 0 auto;
-}
-.nfc {
-  text-align: center;
 }
 
 /* Individual col or row styliing */
 .col1 {
+  min-width: 1vw;
   max-width: 1vw;
+}
+.col3 {
+  max-width: 3vw;
 }
 .colMargin {
   width: calc((100% - var(--width-percent-for-margin))/2);
 }
-
-/* Individual spacer sizing */
-/* If height is NOT set in super-container use min-height in spacers */
-.spc5 {
-  min-height: 5vh;
+.iccVoteBox {
+  max-width: 40px;
+}
+.icrMax {
+  max-height: 3px;
+}
+.icrDetails {
+  font-size: .9em;
+  color: dodgerblue;
+  cursor: pointer;
+}
+.icr05 {
+  min-height: .5vh;
 }
 
 </style>

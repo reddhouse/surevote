@@ -77,7 +77,7 @@
           normal to be angry and point fingers.
         </div>
         <br>
-        <div>
+        <div class="avenir">
           Enough is enough.
         </div>
         <br>
@@ -150,12 +150,10 @@ a {
   color: dodgerblue;
 }
 .heading {
+  font-family: 'Avenir', Helvetica, Arial, sans-serif;
   color: #262626;
-  font-weight: 700;
+  font-weight: 600;
   margin-bottom: 2vh;
-}
-.center {
-  text-align: center;
 }
 .triangle-down {
   /* Not visible. Left here for future styling */
@@ -177,41 +175,22 @@ a {
 .super-container {
   display: flex;
   flex-direction: column;
-  /*height: 100vh;*/
 }
 .spc {
   width: var(--width-percent-for-margin);
-  margin: 0 auto;
-  border: 1px solid yellow;
+  /*border: 1px solid yellow;*/
 }
 .row {
   width: var(--width-percent-for-margin);
-  margin: 0 auto;
-  flex: 1 1 auto;
-  display: flex;
-  flex-direction: row;
 }
 .col {
-  flex: 1 1 auto;
   /*border: 1px solid white;*/
 }
-.icc {
-  flex: 1 1 auto;
-  display: flex;
-  flex-direction: column;
-}
 .icr {
-  flex: 1 1 auto;
   /*border: 1px solid black;*/
 }
-
 .nfr {
   width: var(--width-percent-for-margin);
-  margin: 0 auto;
-}
-
-.nfc {
-  text-align: center;
 }
 
 /* Individual col or row styliing */
@@ -232,9 +211,6 @@ a {
 .col10 {
   min-width: 10vw;
   max-width: 100px
-}
-.colShrink {
-  flex: 0 1000 auto;
 }
 .colFlip {
   align-self: flex-end;
@@ -261,27 +237,6 @@ a {
 .nfrDivider {
   height: 1px;
   background-color: white;
-}
-
-/* Individual spacer sizing */
-/* If height is NOT set in super-container use min-height in spacers*/
-.spc2 {
-  min-height: 2vh;
-}
-.spc4 {
-  min-height: 4vh;
-}
-.spc7 {
-  min-height: 7vh;
-}
-.spc8 {
-  min-height: 8vh;
-}
-.spc10 {
-  min-height: 10vh;
-}
-.spc25 {
-  min-height: 25vh;
 }
 
 </style>

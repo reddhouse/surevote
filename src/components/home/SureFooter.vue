@@ -6,23 +6,30 @@
         <div class="col colLogo" v-on:click="handleLogoClick">
           <span class="logo-sure">Sure</span><span class="logo-vote">Vote</span>
         </div>
-        <div class="col colGrowMore"></div>
+        <div class="col"></div>
       </div>
 
       <div class="row smallerText">
-        <div class="col col0"></div>
-        <div class="col">
+        <div class="col colShrink">
           <div class="icc">
-            <div class="icr"><router-link to="why">Why</router-link></div>
-            <div class="icr"><router-link to="how">How</router-link></div>
-            <div class="icr">About Us</div>
+            <div class="icr"><router-link to="/why">Why</router-link></div>
+            <div class="icr"><router-link to="/how">How</router-link></div>
+            <div class="icr">About</div>
           </div>
         </div>
         <div class="col"></div>
-        <div class="col">
+        <div class="col colShrink">
           <div class="icc">
-            <div class="icr"><router-link to="improvements/all">Improvements</router-link></div>
-            <div class="icr">Lawmakers</div>
+            <div class="icr"><router-link to="/improvements/all">Improvements</router-link></div>
+            <div class="icr"><router-link to="/lawmakers">Lawmakers</router-link></div>
+            <div class="icr">&nbsp;</div>
+          </div>
+        </div>
+        <div class="col"></div>
+        <div class="col colShrink">
+          <div class="icc">
+            <div class="icr"><router-link to="/login">Sign In</router-link></div>
+            <div class="icr">&nbsp;</div>
             <div class="icr">My Account</div>
           </div>
         </div>
@@ -97,59 +104,33 @@ a {
 }
 .spc {
   width: var(--width-percent-for-margin);
-  margin: 0 auto;
-  flex: 1000 1000 auto;
   /*border: 1px solid yellow;*/
 }
 .row {
   width: var(--width-percent-for-margin);
-  margin: 0 auto;
-  flex: 1 1 auto;
-  display: flex;
-  flex-direction: row;
 }
 .col {
-  flex: 1 1 auto;
   /*border: 1px solid white;*/
 }
-.icc {
-  flex: 1 1 auto;
-  display: flex;
-  flex-direction: column;
-}
 .icr {
-  flex: 1 1 auto;
   padding: .5vh .5vh .5vh 0vh;
   /*border: 1px solid white;*/
 }
 .nfr {
   width: var(--width-percent-for-margin);
-  margin: 0 auto;
-}
-.nfc {
-
 }
 
 /* Individual col or row styliing */
 .col0 {
   max-width: 0vw;
 }
-.colGrow {
-  flex: 3 1 auto;
-}
-.colGrowMore {
-  flex: 1000 1 auto;
-}
 .colLogo {
   padding-top: 1vh;
   padding-bottom: 1vh;
   cursor: pointer;
 }
-
-/* Individual spacer sizing */
-/* If height is NOT set in super-container use min-height in spacers */
-.spc1 {
-  min-height: 1vh;
+.colGrow {
+  flex: 2 1 auto;
 }
 
 </style>

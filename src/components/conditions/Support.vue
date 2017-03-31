@@ -6,31 +6,34 @@
         <div class="icc">
           <div class="icr heading">Support</div>
           <div class="icr icr1"></div>
-          <div class="icr support-sub-text">
+          <div class="icr support-sub-text avenir">
             Use the
             <span class="arrow-box"><i class="fa fa-chevron-up"></i></span>
-            's to conditionally, or unconditionally support this improvement. </div>
+            's to conditionally, or unconditionally support this improvement.
+            <br>
+            Each up-vote will deduct a vote from your monthly vote balance.
+          </div>
           <div class="icr"></div>
         </div>
         <div class="col"></div>
       </div>
 
-      <div class="spc spc2"></div>
+      <div class="spc2"></div>
       <div class="row rowVoteMax">
         <div class="col col2"></div>
-        <div class="col colShrink vote" v-bind:class="{ voting: isVoting }">{{ fireImpObj.votes }}</div>
+        <div class="col colShrink vote mono" v-bind:class="{ voting: isVoting }">{{ fireImpObj.votes }}</div>
         <div class="col col1"></div>
         <div class="col" v-bind:class="{ hidden: isVoting }">&nbsp;&nbsp;Sum total of conditional votes</div>
       </div>
 
-      <div class="spc spc4"></div>
+      <div class="spc4"></div>
       <div class="nfr">
         <div v-for="con in orderedConditions">
           <con-item v-bind:condition="con"></con-item>
         </div>
       </div>
 
-      <div class="spc spc10"></div>
+      <div class="spc10"></div>
       <div class="row">
         <div class="col"></div>
         <div class="col colShrink">
@@ -159,10 +162,13 @@ export default {
 .support-sub-text {
   margin-bottom: 4px;
   font-size: .9em;
+  font-style: italic;
 }
 .vote {
   transition:all 0.07s;
   color: firebrick;
+  font-size: 1.1em;
+  font-weight: 600;
 }
 .voting {
   transform:scale(1.2);
@@ -186,12 +192,12 @@ export default {
   flex-direction: column;
   /*border: 1px solid #001a33;*/
 }
-.spc {
-  width: var(--width-percent-for-margin);
-  /*border: 1px solid yellow;*/
-}
 .row {
   width: var(--width-percent-for-margin);
+}
+div[class^="spc"] {
+  width: var(--width-percent-for-margin);
+  /*border: 1px solid yellow;*/
 }
 .col {
   /*border: 1px solid #262626;*/

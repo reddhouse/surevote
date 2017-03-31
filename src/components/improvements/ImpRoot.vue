@@ -4,16 +4,15 @@
 
       <sure-header></sure-header>
 
-      <div class="spc spc5"></div>
+      <div class="spc5"></div>
       <div class="row" v-if="$route.path == '/improvements/all'">
         <div class="col"></div>
         <div class="col colShrink"><router-link to="/improvements/new">+ Add New Improvement</router-link></div>
       </div>
 
-      <div class="spc spc4"></div>
       <router-view v-bind:propsLimit="impListLimit"></router-view>
 
-      <div class="spc spc25"></div>
+      <div class="spc25"></div>
       <sure-footer></sure-footer>
 
     </div>
@@ -68,12 +67,12 @@ a {
   display: flex;
   flex-direction: column;
 }
-.spc {
-  width: var(--width-percent-for-margin);
-  /*border: 1px solid yellow;*/
-}
 .row {
   width: var(--width-percent-for-margin);
+}
+div[class^="spc"] {
+  width: var(--width-percent-for-margin);
+  /*border: 1px solid yellow;*/
 }
 .col {
   /*border: 1px solid white;*/
@@ -94,6 +93,27 @@ a {
 }
 .colRegion {
   padding: 1vh 6vw 1vh 6vw;
+}
+
+@media (min-width: 321px) {
+  .improvements-root-component {
+    --width-percent-for-margin: 85vw;
+  }
+}
+@media (min-width: 600px) {
+  .improvements-root-component {
+    --width-percent-for-margin: 75vw;
+  }
+}
+@media (min-width: 769px) {
+  .improvements-root-component {
+    --width-percent-for-margin: 60vw;
+  }
+}
+@media (min-width: 1250px) {
+  .improvements-root-component {
+    --width-percent-for-margin: 50vw;
+  }
 }
 
 </style>

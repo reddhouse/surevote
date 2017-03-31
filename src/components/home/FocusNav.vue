@@ -4,7 +4,7 @@
 
       <div class="row">
         <div class="col"></div>
-        <div class="col colShrink focus-tab" v-bind:class="{ 'active-tab': isNation }" v-on:click="selectFocus('nation')">National</div>
+        <div class="col colShrink focus-tab2" v-bind:class="{ 'active-tab': isNation }" v-on:click="selectFocus('nation')">National</div>
         <div class="col colShrink">-</div>
         <div class="col colShrink focus-tab" v-bind:class="{ 'active-tab': isState }" v-on:click="selectFocus('state')">State</div>
         <div class="col colShrink">-</div>
@@ -62,6 +62,12 @@ export default {
   text-align: center;
   width: 60px;
 }
+.focus-tab2 {
+  padding-left: 4px;
+  padding-right: 8px;
+  text-align: center;
+  width: 66px;
+}
 .active-tab {
   color: firebrick;
 }
@@ -71,12 +77,12 @@ export default {
   display: flex;
   flex-direction: column;
 }
-.spc {
-  width: var(--width-percent-for-margin);
-  /*border: 1px solid yellow;*/
-}
 .row {
   width: var(--width-percent-for-margin);
+}
+div[class^="spc"] {
+  width: var(--width-percent-for-margin);
+  /*border: 1px solid yellow;*/
 }
 .col {
   /*border: 1px solid #262626;*/

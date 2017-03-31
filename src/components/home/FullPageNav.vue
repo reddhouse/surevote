@@ -6,38 +6,38 @@
         <sure-header></sure-header>
       </div>
 
-      <div class="spc spc3"></div>
+      <div class="spc5"></div>
       <div class="row rowJustify">
-        <div class="col colShrink heading">Priorities</div>
+        <div class="col colShrink avenir heading">Priorities</div>
         <div class="col"></div>
         <div class="col colShrink">
           <router-link to="/improvements/all">View All Improvements</router-link>
         </div>
       </div>
 
-      <div class="spc spc1"></div>
+      <div class="spc4"></div>
       <div class="nfr">
         <imp-list v-bind:propsLimit="impListLimit"></imp-list>
       </div>
 
-      <div class="spc spc3"></div>
+      <div class="spc5"></div>
       <div class="row rowJustify">
-        <div class="col colShrink heading">Our Pledge</div>
+        <div class="col colShrink avenir heading">Pledge</div>
         <div class="col"></div>
         <div class="col colShrink">
           <router-link to="lawmakers">View Lawmakers</router-link>
         </div>
       </div>
 
-      <div class="spc spc2"></div>
+      <div class="spc4"></div>
       <pledge></pledge>
 
-      <div class="spc"></div>
-
+      <div class="spc10"></div>
+      <div class="spcX"></div>
       <div class="nfr">
         <focus-nav></focus-nav>
       </div>
-      <div class="spc spc1"></div>
+      <div class="spc2"></div>
 
     </div>
   </div>
@@ -83,7 +83,6 @@ export default {
 
 .full-page-nav-component {
   --width-percent-for-margin: inherit;
-  height: 100vh;
   background-color: white;
   color: #262626;
 }
@@ -97,16 +96,15 @@ a {
 
 /* Flex defaults for SureVote's custom grid template  */
 .super-container {
-  height: 100vh;
   display: flex;
   flex-direction: column;
 }
-.spc {
-  width: var(--width-percent-for-margin);
-  /*border: 1px solid yellow;*/
-}
 .row {
   width: var(--width-percent-for-margin);
+}
+div[class^="spc"] {
+  width: var(--width-percent-for-margin);
+  /*border: 1px solid yellow;*/
 }
 .col {
   /*border: 1px solid #262626;*/
@@ -140,8 +138,27 @@ a {
   cursor: pointer;
 }
 
-/* Individual spacer sizing */
-/* If height is NOT set in super-container use min-height in spacers */
+/* Media Queries */
+@media (min-width: 321px) {
 
+}
+
+@media (min-width: 600px) {
+  .full-page-nav-component {
+    height: 80vh;
+  }
+  .super-container {
+    height: 80vh;
+  }
+}
+
+@media (min-width: 769px) {
+  .full-page-nav-component {
+    height: 80vh;
+  }
+  .super-container {
+    height: 80vh;
+  }
+}
 
 </style>

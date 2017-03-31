@@ -47,4 +47,26 @@ export default {
 <!--xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx-->
 <style scoped>
 
+/* Media Queries */
+@media (min-width: 321px) {
+  .user-account-component {
+    --width-percent-for-margin: 85vw;
+  }
+}
+@media (min-width: 600px) {
+  .user-account-component {
+    --width-percent-for-margin: 75vw;
+  }
+}
+@media (min-width: 769px) {
+  .user-account-component {
+    --width-percent-for-margin: 60vw;
+  }
+}
+@media (min-width: 1250px) {
+  .user-account-component {
+    --width-percent-for-margin: 50vw;
+  }
+}
+
 </style>

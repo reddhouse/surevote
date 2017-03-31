@@ -17,13 +17,13 @@
           <div class="icr icr05" v-else></div>
           <div class="icr icr05"></div>
           <div class="icr">
-            <span class ="vote" v-bind:class="{ voting: isVoting }">
+            <span class="vote mono" v-bind:class="{ voting: isVoting }">
               {{ condition ? condition.votes : 0 }}
             </span>
             <span>
               &nbsp;|&nbsp;
             </span>
-            <span class ="vote" v-bind:class="{ voting: isVoting }">
+            <span class="vote mono" v-bind:class="{ voting: isVoting }">
               {{ myVotes }}
             </span>
             <span class="nobr"><i class="fa fa-check vcoin"></i></span>
@@ -38,15 +38,15 @@
         </div>
       </div>
 
-      <div class="spc spc1"></div>
+      <div class="spc1"></div>
       <div class="row" v-if="showingDetails">
         <div class="col icrDetails" v-on:click="showingDetails = false">
           [&ndash;] Hide Details
         </div>
       </div>
 
-      <div class="spc spc8" v-if="showingDetails"></div>
-      <div class="spc spc4"></div>
+      <div class="spc8" v-if="showingDetails"></div>
+      <div class="spc2"></div>
 
     </div>
   </div>
@@ -121,6 +121,9 @@ export default {
   methods: {
     // ...mapActions(['setTitle'])
     addVote () {
+      if (!this.user.uid) {
+        this.$router.push({ path: '/login', query: { redirect: this.$route.fullPath } })
+      }
       // Users with 0 votes in the bank cannot upvote improvements, etc.
       if (this.fireBank['.value'] > 0) {
         // Lots of client side data-syncing needed here because, well, firebase
@@ -175,12 +178,12 @@ export default {
   display: flex;
   flex-direction: column;
 }
-.spc {
-  width: var(--width-percent-for-margin);
-  /*border: 1px solid yellow;*/
-}
 .row {
   width: var(--width-percent-for-margin);
+}
+div[class^="spc"] {
+  width: var(--width-percent-for-margin);
+  /*border: 1px solid yellow;*/
 }
 .col {
   /*border: 1px solid #262626;*/
@@ -198,12 +201,14 @@ export default {
   max-width: 1vw;
 }
 .col3 {
+  min-width: 3vw;
   max-width: 3vw;
 }
 .colMargin {
   width: calc((100% - var(--width-percent-for-margin))/2);
 }
 .iccVoteBox {
+  min-width: 40px;
   max-width: 40px;
 }
 .icrMax {

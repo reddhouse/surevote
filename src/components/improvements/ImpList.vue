@@ -2,6 +2,7 @@
   <div class="improvement-list-component">
     <div class="super-container">
 
+      <div v-if="$route.path != '/'" class="spc4"></div>
       <div class="row">
         <div class="col"></div>
         <div class="col">
@@ -65,12 +66,12 @@ export default {
   display: flex;
   flex-direction: column;
 }
-.spc {
-  width: var(--width-percent-for-margin);
-  /*border: 1px solid yellow;*/
-}
 .row {
   width: var(--width-percent-for-margin);
+}
+div[class^="spc"] {
+  width: var(--width-percent-for-margin);
+  /*border: 1px solid yellow;*/
 }
 .col {
   /*border: 1px solid white;*/

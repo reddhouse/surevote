@@ -9,6 +9,7 @@
         <div class="col"></div>
       </div>
 
+      <div class="spc1"></div>
       <div class="row smallerText">
         <div class="col colShrink">
           <div class="icc">
@@ -17,7 +18,7 @@
             <div class="icr">About</div>
           </div>
         </div>
-        <div class="col"></div>
+        <div class="col colSpc"></div>
         <div class="col colShrink">
           <div class="icc">
             <div class="icr"><router-link to="/improvements/all">Improvements</router-link></div>
@@ -25,7 +26,7 @@
             <div class="icr">&nbsp;</div>
           </div>
         </div>
-        <div class="col"></div>
+        <div class="col colSpc"></div>
         <div class="col colShrink">
           <div class="icc">
             <div class="icr"><router-link to="/login">Sign In</router-link></div>
@@ -33,10 +34,10 @@
             <div class="icr">My Account</div>
           </div>
         </div>
-        <div class="col colGrow"></div>
+        <div class="col colSpc"></div>
       </div>
 
-      <div id="footer" class="spc spc1"></div>
+      <div id="footer" class="spc1"></div>
 
     </div>
   </div>
@@ -102,12 +103,12 @@ a {
   display: flex;
   flex-direction: column;
 }
-.spc {
-  width: var(--width-percent-for-margin);
-  /*border: 1px solid yellow;*/
-}
 .row {
   width: var(--width-percent-for-margin);
+}
+div[class^="spc"] {
+  width: var(--width-percent-for-margin);
+  /*border: 1px solid yellow;*/
 }
 .col {
   /*border: 1px solid white;*/
@@ -129,8 +130,24 @@ a {
   padding-bottom: 1vh;
   cursor: pointer;
 }
-.colGrow {
-  flex: 2 1 auto;
+
+/* Media Queries */
+@media (min-width: 321px) {
+  .sure-footer-component {
+    height: 20vh;
+  }
+}
+
+@media (min-width: 600px) {
+  .sure-footer-component {
+    height: 20vh;
+  }
+}
+
+@media (min-width: 769px) {
+  .sure-footer-component {
+    height: 20vh;
+  }
 }
 
 </style>

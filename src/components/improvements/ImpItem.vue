@@ -2,13 +2,14 @@
   <div class="imp-item-component">
     <div class="super-container">
 
-      <div class="spc spc1"></div>
-      <div class="row" v-on:click="sendToDetails">
+      <div class="spc2"></div>
+      <div class="row rowStandard" v-on:click="sendToDetails">
         <div class="icc iccFixed">
           <div class="icr icrShrink icrRank mono">#{{ impIndex + 1}}</div>
           <div class="icr"></div>
         </div>
         <div class="icc">
+          <div class="icr"></div>
           <div class="icr">
             <div class="wrap-hyphen">{{ improvement.title }}</div>
           </div>
@@ -78,12 +79,12 @@ export default {
   display: flex;
   flex-direction: column;
 }
-.spc {
-  width: var(--width-percent-for-margin);
-  /*border: 1px solid yellow;*/
-}
 .row {
   width: var(--width-percent-for-margin);
+}
+div[class^="spc"] {
+  width: var(--width-percent-for-margin);
+  /*border: 1px solid yellow;*/
 }
 .col {
   /*border: 1px solid #262626;*/
@@ -96,6 +97,9 @@ export default {
 }
 
 /* Individual col or row styliing */
+.rowStandard {
+  min-height: 60px;
+}
 .col1 {
   max-width: 1vw;
 }

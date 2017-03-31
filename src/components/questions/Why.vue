@@ -9,33 +9,33 @@
         <!-- <div class="col colMargin"></div> -->
       </div>
 
-      <div id="header" class="spc spc4"></div>
+      <div id="header" class="spc4"></div>
       <div class="nfr">
         <div class="heading">Because this is happening...</div>
         <br>
         <div>"Those people are basically ruining everything."</div>
       </div>
-      <div class="spc spc2"></div>
+      <div class="spc2"></div>
       <div class="row">
         <div class="col col10"></div>
         <div class="col mono">- 90% of news/social media since 2004.</div>
         <div class="col"></div>
       </div>
 
-      <div class="spc spc8"></div>
+      <div class="spc6"></div>
       <div class="nfr">
         <div class="heading">...and this</div>
         <br>
         <div>"We tried to fix things, but the other party wouldn't cooperate."</div>
       </div>
-      <div class="spc spc2"></div>
+      <div class="spc2"></div>
       <div class="row">
         <div class="col col10"></div>
         <div class="col mono">- 100% of partisan politics since 1787.</div>
         <div class="col"></div>
       </div>
 
-      <div class="spc spc8"></div>
+      <div class="spc8"></div>
 
       <div class="row rowPoint">
         <div class="col"></div>
@@ -45,7 +45,7 @@
         <div class="icc">
           <div class="icr icrGrow"></div>
           <div class="icr">
-            <div class="center">
+            <div class="avenir excuses">
               Excuses are a distraction.<br>
             </div>
           </div>
@@ -57,7 +57,7 @@
         <div class="col"></div>
       </div>
 
-      <div class="spc spc8"></div>
+      <div class="spc8"></div>
 
       <div class="nfr">
         <div>
@@ -88,7 +88,7 @@
         </div>
       </div>
 
-      <div class="spc spc25"></div>
+      <div class="spc25"></div>
       <div class="row rowFlip">
         <div class="col colNavText colShrink" v-on:click="handleBack">&lt;&lt; Back</div>
       </div>
@@ -176,18 +176,18 @@ a {
   display: flex;
   flex-direction: column;
 }
-.spc {
-  width: var(--width-percent-for-margin);
-  /*border: 1px solid yellow;*/
-}
 .row {
   width: var(--width-percent-for-margin);
+}
+div[class^="spc"] {
+  width: var(--width-percent-for-margin);
+  /*border: 1px solid yellow;*/
 }
 .col {
   /*border: 1px solid white;*/
 }
 .icr {
-  /*border: 1px solid black;*/
+  /*border: 1px solid white;*/
 }
 .nfr {
   width: var(--width-percent-for-margin);
@@ -237,6 +237,34 @@ a {
 .nfrDivider {
   height: 1px;
   background-color: white;
+}
+
+/* Media Queries */
+@media (min-width: 321px) {
+  .why-component {
+    --width-percent-for-margin: 85vw;
+  }
+  .excuses {
+    font-size: 1.1em;
+  }
+}
+@media (min-width: 600px) {
+  .why-component {
+    --width-percent-for-margin: 75vw;
+  }
+  .excuses {
+    font-size: 1.25em;
+  }
+}
+@media (min-width: 769px) {
+  .why-component {
+    --width-percent-for-margin: 60vw;
+  }
+}
+@media (min-width: 1250px) {
+  .why-component {
+    --width-percent-for-margin: 50vw;
+  }
 }
 
 </style>

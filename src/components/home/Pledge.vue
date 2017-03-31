@@ -4,9 +4,10 @@
 
       <div class="row">
         <div class="col colShrink">
-          <div>We are {{ fireUsers.length }} SureVote users and counting, representing {{ percentage }}% of the voting age population in the US.</div>
-          <div class="padded">There are 468 federal lawmakers up for re-election, of which 467 currently have failing SureVote scores.</div>
-          <div>As it stands, we pledge to remove 467 lawmakers from office on 11/6/18.</div>
+          <div class="padded">We are {{ fireUsers.length }} SureVote users and counting, representing {{ percentage }}% of the voting age population in the US.</div>
+          <div class="padded">There are 468 federal lawmakers up for re-election, of which <strong>467</strong> currently have failing scores.</div>
+          <div class="padded">There is still time for lawmakers to act on our priorities, but as things stand today...</div>
+          <div>We pledge to remove <strong>467</strong> lawmakers from office on 11/6/18.</div>
         </div>
         <div class="col"></div>
       </div>
@@ -71,7 +72,6 @@ export default {
   color: #262626;
 }
 .padded {
-  padding-top: 2vh;
   padding-bottom: 2vh;
 }
 
@@ -80,12 +80,12 @@ export default {
   display: flex;
   flex-direction: column;
 }
-.spc {
-  width: var(--width-percent-for-margin);
-  /*border: 1px solid yellow;*/
-}
 .row {
   width: var(--width-percent-for-margin);
+}
+div[class^="spc"] {
+  width: var(--width-percent-for-margin);
+  /*border: 1px solid yellow;*/
 }
 .col {
   /*border: 1px solid #262626;*/
@@ -98,11 +98,5 @@ export default {
 }
 
 /* Individual col or row styliing */
-.col1 {
-  max-width: 1vw;
-}
-.colMargin {
-  width: calc((100% - var(--width-percent-for-margin))/2);
-}
 
 </style>

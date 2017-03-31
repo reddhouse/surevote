@@ -22,7 +22,7 @@ const state = {
     intro1: true,
     intro2Why: true,
     intro2How: true,
-    sureFooter: false
+    sureFooter: true
   },
   improvements: [],
   conditions: []

@@ -2,14 +2,14 @@
   <div class="lawmakers-component">
     <div class="super-container">
 
-      <div class="spc spc5"></div>
+      <div class="spc5"></div>
       <div class="row">
         <div class="col"></div>
         <div class="col center">Coming Soon...</div>
         <div class="col"></div>
       </div>
 
-      <div class="spc spc5"></div>
+      <div class="spc5"></div>
 
     </div>
   </div>
@@ -57,12 +57,12 @@ export default {
   display: flex;
   flex-direction: column;
 }
-.spc {
-  width: var(--width-percent-for-margin);
-  /*border: 1px solid yellow;*/
-}
 .row {
   width: var(--width-percent-for-margin);
+}
+div[class^="spc"] {
+  width: var(--width-percent-for-margin);
+  /*border: 1px solid yellow;*/
 }
 .col {
   /*border: 1px solid #262626;*/
@@ -80,6 +80,28 @@ export default {
 }
 .colMargin {
   width: calc((100% - var(--width-percent-for-margin))/2);
+}
+
+/* Media Queries */
+@media (min-width: 321px) {
+  .lawmakers-component {
+    --width-percent-for-margin: 85vw;
+  }
+}
+@media (min-width: 600px) {
+  .lawmakers-component {
+    --width-percent-for-margin: 75vw;
+  }
+}
+@media (min-width: 769px) {
+  .lawmakers-component {
+    --width-percent-for-margin: 60vw;
+  }
+}
+@media (min-width: 1250px) {
+  .lawmakers-component {
+    --width-percent-for-margin: 50vw;
+  }
 }
 
 </style>

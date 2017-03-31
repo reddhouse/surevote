@@ -33,7 +33,7 @@
       <hr>
       <div>Super Container between horizontal rules in this section only.</div>
       <div class="super-container">
-        <div class="spc spc4"></div>
+        <div class="spc4"></div>
         <div class="row">
           <div class="col gradient1"></div>
         </div>
@@ -41,7 +41,7 @@
           <div class="col colNavText colShrink">Problems</div>
         </div>
 
-        <div class="spc spc4"></div>
+        <div class="spc4"></div>
         <div class="row">
           <div class="col gradient2"></div>
         </div>
@@ -49,7 +49,7 @@
           <div class="col colNavText colShrink">Solutions</div>
         </div>
 
-        <div class="spc spc4"></div>
+        <div class="spc4"></div>
         <div class="row">
           <div class="col gradient3"></div>
         </div>
@@ -57,7 +57,7 @@
           <div class="col colNavText colShrink">Representation</div>
         </div>
 
-        <div class="spc spc4"></div>
+        <div class="spc4"></div>
         <div class="nfr" style="font-size: 1em;">
           <span class="nobr"><i class="fa fa-check vcoin"></i>ote</span>
         </div>
@@ -137,12 +137,12 @@ export default {
   flex-direction: column;
   /*height: 100vh;*/
 }
-.spc {
-  width: var(--width-percent-for-margin);
-  /*border: 1px solid yellow;*/
-}
 .row {
   width: var(--width-percent-for-margin);
+}
+div[class^="spc"] {
+  width: var(--width-percent-for-margin);
+  /*border: 1px solid yellow;*/
 }
 .col {
   /*border: 1px solid #262626;*/

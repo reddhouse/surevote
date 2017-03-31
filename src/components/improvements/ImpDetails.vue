@@ -7,7 +7,7 @@
         <div class="col"></div>
       </div>
 
-      <div class="spc spc5"></div>
+      <div class="spc5"></div>
       <div class="row">
         <div class="col colShrink colDivider1"></div>
         <div class="col col1"></div>
@@ -15,13 +15,13 @@
         <div class="col"></div>
       </div>
 
-      <div class="spc spc5"></div>
+      <div class="spc5"></div>
       <div class="row">
         <div class="col avenir" style="white-space: pre-wrap">{{ impObj.description }}</div>
         <div class="col"></div>
       </div>
 
-      <div class="spc spc5"></div>
+      <div class="spc5"></div>
       <div class="row">
         <div class="col colShrink colDivider1"></div>
         <div class="col col1"></div>
@@ -29,7 +29,7 @@
         <div class="col"></div>
       </div>
 
-      <div class="spc spc5"></div>
+      <div class="spc5"></div>
       <div class="row">
         <div class="col colShrink avenir more-info">More Info:</div>
         <div class="col"></div>
@@ -44,59 +44,54 @@
         <div class="col"></div>
       </div>
 
-      <div class="spc spc5"></div>
-      <div class="row">
-        <div class="col colShrink colDivider1"></div>
-        <div class="col col1"></div>
-        <div class="col colShrink colDivider2"></div>
-        <div class="col"></div>
-      </div>
-
-      <div class="spc spc5"></div>
-      <support></support>
-
-      <div class="spc spc5"></div>
-      <div class="row">
-        <div class="col colShrink colDivider1"></div>
-        <div class="col col1"></div>
-        <div class="col colShrink colDivider2"></div>
-        <div class="col"></div>
-      </div>
-
-      <div class="spc spc2"></div>
+      <div class="spc2"></div>
       <div class="nfr meta-info">
         <div>IID: {{ $route.params.iid }}</div>
         <div>Created: {{ readableDate }}</div>
       </div>
 
-      <div class="spc spc25"></div>
+      <div class="spc5"></div>
+      <div class="row">
+        <div class="col colShrink colDivider1"></div>
+        <div class="col col1"></div>
+        <div class="col colShrink colDivider2"></div>
+        <div class="col"></div>
+      </div>
+
+      <div class="spc5"></div>
+      <support></support>
+
+      <div class="spc5"></div>
+      <div class="row">
+        <div class="col colShrink colDivider1"></div>
+        <div class="col col1"></div>
+        <div class="col colShrink colDivider2"></div>
+        <div class="col"></div>
+      </div>
+
+      <div class="spc5"></div>
+      <div class="row">
+        <div class="col avenir">
+          <div><strong>Coming Soon...</strong></div>
+          <br>
+          <div><strong>Future Assesment</strong></div>
+          <div>Revisit this issue in ____ years, and report to us if ______ has improved.</div>
+          <div>The people who collect this data should be random citizens, selected and paid for by _____.</div>
+
+          <br>
+          <div><strong>Laws</strong></div>
+          <div>Your lawmakers have proposed/passed the following law(s) to adddress this issue:</div>
+          <div>Link to law 1 ...., etc.</div>
+
+          <br>
+          <div><strong>"Close" this Improvement</strong></div>
+          <div>Vote: Yes, recent laws sufficiently address the improvement and conditions.</div>
+          <div>Vote: No, lawmakers need to try again.</div>
+        </div>
+        <div class="col"></div>
+      </div>
 
     </div>
-
-    <!-- Temp, outside of super-container -->
-    <div id="temporary-container" class="nfr">
-
-      <p>------------------------------</p>
-      <div><strong>Coming Soon...</strong></div>
-      <p>------------------------------</p>
-
-      <div><strong>Future Assesment</strong></div>
-      <div>Revisit this issue in ____ years, and report to us if ______ has improved</div>
-      <div>The people who collect this data should be random citizens selected and paid for by _____</div>
-
-      <br>
-      <div><strong>Laws</strong></div>
-      <div>Your lawmakers have proposed/passed the following law(s) to adddress this issue:</div>
-      <div>Link to law 1 ...., etc.</div>
-
-      <br>
-      <div><strong>"Close" this Improvement</strong></div>
-      <div>Vote: Yes, recent laws sufficiently address the improvement and conditions</div>
-      <div>Vote: No, lawmakers need to try again</div>
-
-    </div>
-
-
   </div>
 </template>
 <!--xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx-->
@@ -142,7 +137,7 @@ export default {
 <style scoped>
 
 .imp-details-component {
-  --width-percent-for-margin: 90vw;
+  --width-percent-for-margin: inherit;
   background-color: white;
   color: #262626;
 }
@@ -176,12 +171,12 @@ a, a:hover, a:focus, a:visited {
   display: flex;
   flex-direction: column;
 }
-.spc {
-  width: var(--width-percent-for-margin);
-  /*border: 1px solid yellow;*/
-}
 .row {
   width: var(--width-percent-for-margin);
+}
+div[class^="spc"] {
+  width: var(--width-percent-for-margin);
+  /*border: 1px solid yellow;*/
 }
 .col {
   /*border: 1px solid #262626;*/

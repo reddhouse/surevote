@@ -57,7 +57,8 @@ export default {
     // Alter the layout of the home page based on where the user has visited
     let newHomeView = this.homeView
     newHomeView.intro1 = false
-    newHomeView.sureFooter = true
+    // Uncomment if you change default app state to surefooter: false
+    // newHomeView.sureFooter = true
     this.setHomeView(newHomeView)
   }
 }
@@ -68,6 +69,28 @@ export default {
 .home-component {
   /* Do not delete. SureFooter inherits from this value */
   --width-percent-for-margin: 90vw;
+}
+
+/* Media Queries */
+@media (min-width: 321px) {
+  .home-component {
+    --width-percent-for-margin: 85vw;
+  }
+}
+@media (min-width: 600px) {
+  .home-component {
+    --width-percent-for-margin: 75vw;
+  }
+}
+@media (min-width: 769px) {
+  .home-component {
+    --width-percent-for-margin: 60vw;
+  }
+}
+@media (min-width: 1250px) {
+  .home-component {
+    --width-percent-for-margin: 50vw;
+  }
 }
 
 </style>

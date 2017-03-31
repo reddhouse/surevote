@@ -2,17 +2,15 @@
   <div class="sure-header-component">
     <div class="super-container">
 
-      <div class="spc2"></div>
-      <div class="row">
+      <div class="spc spc2"></div>
+      <div class="row rowJustify">
+        <div class="col colShrink colPointer" v-on:click="handleGoHome">
+          <span class="logo-sure">Sure</span><span class="logo-vote">Vote</span>
+        </div>
         <div class="col"></div>
-        <div class="icc iccShrink">
-          <div class="icr icrRight icrPointer" v-on:click="handleGoHome">
-            <span class="logo-sure">Sure</span><span class="logo-vote">Vote</span>
-          </div>
-          <div class="icr icrTopPad">
-            {{ coinCount }}<span class="nobr"><i class="fa fa-check vcoin"></i></span>
-            <span class="mini"> {{ glassHalf }} in {{ daysUntilExpire + 1 }} days</span>
-          </div>
+        <div class="col colShrink colTopPad">
+          {{ coinCount }}<span class="nobr"><i class="fa fa-check vcoin"></i></span>
+          <span class="mini"> {{ glassHalf }} in {{ daysUntilExpire }} days</span>
         </div>
       </div>
 
@@ -104,12 +102,12 @@ export default {
   display: flex;
   flex-direction: column;
 }
-.row {
-  width: var(--width-percent-for-margin);
-}
-div[class^="spc"] {
+.spc {
   width: var(--width-percent-for-margin);
   /*border: 1px solid yellow;*/
+}
+.row {
+  width: var(--width-percent-for-margin);
 }
 .col {
   /*border: 1px solid #262626;*/
@@ -122,17 +120,20 @@ div[class^="spc"] {
 }
 
 /* Individual col or row styliing */
-.iccShrink {
-  flex: 0 1000 auto;
+.col1 {
+  max-width: 1vw;
 }
-.icrTopPad {
+.col5 {
+  max-width: 5vw;
+}
+.colMargin {
+  width: calc((100% - var(--width-percent-for-margin))/2);
+}
+.colTopPad {
   padding-top: 3px;
 }
-.icrPointer {
+.colPointer {
   cursor: pointer;
-}
-.icrRight {
-  text-align: right;
 }
 
 </style>

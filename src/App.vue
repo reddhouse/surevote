@@ -68,6 +68,7 @@ export default {
 </script>
 <!--xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx-->
 <style>
+
 #app {
   /*font-family: 'Avenir', Helvetica, Arial, sans-serif;*/
   font-family: 'Arimo', Helvetica, Arial, sans-serif;
@@ -76,6 +77,20 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   font-size: 100%;
   color: #262626;
+}
+a {
+  /* These are technically the same, but use both */
+   overflow-wrap: break-word;
+   word-wrap: break-word;
+
+   -ms-word-break: break-all;
+   word-break: break-word;
+
+   /* Adds a hyphen where the word breaks, if supported (No Blink) */
+   -ms-hyphens: auto;
+   -moz-hyphens: auto;
+   -webkit-hyphens: auto;
+   hyphens: auto;
 }
 .mono {
   font-family: 'Cousine', Courier, monospace;
@@ -111,53 +126,57 @@ i.vcoin {
 }
 
 /* Spc */
-.spc {
+.spcX {
   margin: 0 auto;
   flex: 1000 1000 auto;
 }
 .spc05 {
-  min-height: .5vh;
-  max-height: .5vh;
+  margin: 0 auto;
+  flex: 1 1000 .5vh;
 }
 .spc1 {
-  min-height: 1vh;
-  max-height: 1vh;
+  margin: 0 auto;
+  flex: 1 1000 1vh;
 }
 .spc2 {
-  min-height: 2vh;
-  max-height: 2vh;
+  margin: 0 auto;
+  flex: 1 1000 2vh;
 }
 .spc3 {
-  min-height: 3vh;
-  max-height: 3vh;
+  margin: 0 auto;
+  flex: 1 1000 3vh;
 }
 .spc4 {
-  min-height: 4vh;
-  max-height: 4vh;
+  margin: 0 auto;
+  flex: 1 1000 4vh;
 }
 .spc5 {
-  min-height: 5vh;
-  max-height: 5vh;
+  margin: 0 auto;
+  flex: 1 1000 5vh;
+}
+.spc6 {
+  margin: 0 auto;
+  flex: 1 1000 6vh;
 }
 .spc8 {
-  min-height: 8vh;
-  max-height: 8vh;
+  margin: 0 auto;
+  flex: 1 1000 8vh;
 }
 .spc10 {
-  min-height: 10vh;
-  max-height: 10vh;
+  margin: 0 auto;
+  flex: 1 1000 10vh;
 }
 .spc15 {
-  min-height: 15vh;
-  max-height: 15vh;
+  margin: 0 auto;
+  flex: 1 1000 15vh;
 }
 .spc20 {
-  min-height: 20vh;
-  max-height: 20vh;
+  margin: 0 auto;
+  flex: 1 1000 20vh;
 }
 .spc25 {
-  min-height: 25vh;
-  max-height: 25vh;
+  margin: 0 auto;
+  flex: 1 1000 25vh;
 }
 
 /* Row */
@@ -197,18 +216,4 @@ i.vcoin {
   margin: 0 auto;
 }
 
-/* Media Queries */
-@media (min-width: 321px) {
-
-  #app {
-    font-size: 100%;
-  }
-}
-
-@media (min-width: 600px) {
-
-  #app {
-    font-size: 100%;
-  }
-}
 </style>

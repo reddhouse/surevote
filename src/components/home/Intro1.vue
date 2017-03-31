@@ -2,21 +2,21 @@
   <div class="intro-component">
     <div class="super-container">
 
-      <div class="spc spc25"></div>
+      <div class="spc25"></div>
       <div class="nfr title">
         <div class="center">What happens when 200&nbsp;million Americans agree for 5&nbsp;minutes?</div>
         <div class="nfc"></div>
         <div class="nfc"></div>
       </div>
 
-      <div class="spc"></div>
+      <div class="spcX"></div>
       <div class="nfr">
         <div class="center">
           <a href="#" v-on:click="emitScrollEvent">We win.</a>
         </div>
       </div>
 
-      <div class="spc spc5"></div>
+      <div class="spc5"></div>
 
     </div>
   </div>
@@ -72,12 +72,12 @@ a {
   flex-direction: column;
   height: 100vh;
 }
-.spc {
-  width: var(--width-percent-for-margin);
-  /*border: 1px solid yellow;*/
-}
 .row {
   width: var(--width-percent-for-margin);
+}
+div[class^="spc"] {
+  width: var(--width-percent-for-margin);
+  /*border: 1px solid yellow;*/
 }
 .col {
   border: 1px solid white;
@@ -88,7 +88,6 @@ a {
 
 /* Individual col or row styliing */
 .nfr.title {
-  width: 90%;
   font-size: 1.5em;
 }
 

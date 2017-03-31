@@ -3,14 +3,14 @@
     <div class="super-container">
 
       <!-- Standard flex row containing 5 flex columns -->
-      <div class="spc spc5"></div>
+      <div class="spc5"></div>
       <div class="row">
         <div class="col"></div>
         <div class="col">New Improvement Component</div>
         <div class="col"></div>
       </div>
 
-      <div class="spc spc5"></div>
+      <div class="spc5"></div>
 
     </div>
     <!-- Temp outside of super-container -->
@@ -127,12 +127,12 @@ export default {
   display: flex;
   flex-direction: column;
 }
-.spc {
-  width: var(--width-percent-for-margin);
-  border: 1px solid yellow;
-}
 .row {
   width: var(--width-percent-for-margin);
+}
+div[class^="spc"] {
+  width: var(--width-percent-for-margin);
+  border: 1px solid yellow;
 }
 .col {
   border: 1px solid #262626;

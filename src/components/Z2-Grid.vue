@@ -3,7 +3,7 @@
     <div class="super-container">
 
       <!-- Standard flex row containing 5 flex columns -->
-      <div class="spc spc5"></div>
+      <div class="spc5"></div>
       <div class="row">
         <div class="col">1</div>
         <div class="col">2</div>
@@ -13,7 +13,7 @@
       </div>
 
       <!-- Flex row containing 5 flex columns with center column containing 3 inner flex rows -->
-      <div class="spc spc5"></div>
+      <div class="spc5"></div>
       <div class="row">
         <div class="col">1</div>
         <div class="col">2</div>
@@ -27,14 +27,14 @@
       </div>
 
       <!-- Non flex row -->
-      <div class="spc"></div>
+      <div class="spcX"></div>
       <div class="nfr">
         <div class="nfc">
           Some Text
         </div>
       </div>
 
-      <div class="spc spc5"></div>
+      <div class="spc5"></div>
 
     </div>
   </div>
@@ -84,12 +84,12 @@ export default {
   display: flex;
   flex-direction: column;
 }
-.spc {
-  width: var(--width-percent-for-margin);
-  /*border: 1px solid yellow;*/
-}
 .row {
   width: var(--width-percent-for-margin);
+}
+div[class^="spc"] {
+  width: var(--width-percent-for-margin);
+  /*border: 1px solid yellow;*/
 }
 .col {
   /*border: 1px solid #262626;*/

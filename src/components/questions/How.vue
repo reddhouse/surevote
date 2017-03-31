@@ -8,7 +8,7 @@
         <!-- <div class="col colMargin"></div> -->
       </div>
 
-      <div class="spc spc2"></div>
+      <div class="spc2"></div>
       <div class="row">
         <div class="icc iccShrinkWidth">
           <div class="icr"></div>
@@ -22,7 +22,7 @@
         </div>
       </div>
 
-      <div class="spc spc1"></div>
+      <div class="spc1"></div>
       <div class="row">
         <div class="col colPadded">
           <span class="mini">1. </span>Agree on the <strong>#1 Improvement</strong> we'd like our lawmakers to make <strong>right&nbsp;now</strong> to fix a common problem.
@@ -43,14 +43,14 @@
       </div>
 
       <!-- End 3 Basic Steps -->
-      <div class="spc spc5"></div>
+      <div class="spc5"></div>
       <div class="row">
         <div class="col"></div>
         <div class="col colDivider"></div>
         <div class="col"></div>
       </div>
 
-      <div class="spc spc2"></div>
+      <div class="spc2"></div>
       <div class="row">
         <div class="icc iccShrinkWidth">
           <div class="icr"></div>
@@ -64,7 +64,7 @@
         </div>
       </div>
 
-      <div class="spc spc1"></div>
+      <div class="spc1"></div>
       <div class="row">
         <div class="col colPadded">
           Each month SureVote users get an allowance of <span class="mono">50</span>
@@ -107,14 +107,14 @@
 
       <!-- End 50 Ways to voice your opinion -->
 
-      <div class="spc spc5"></div>
+      <div class="spc5"></div>
       <div class="row">
         <div class="col"></div>
         <div class="col colDivider"></div>
         <div class="col"></div>
       </div>
 
-      <div class="spc spc2"></div>
+      <div class="spc2"></div>
       <div class="row">
         <div class="icc iccShrinkWidth">
           <div class="icr"></div>
@@ -128,7 +128,7 @@
         </div>
       </div>
 
-      <div class="spc spc1"></div>
+      <div class="spc1"></div>
       <div class="row">
         <div class="col colPadded">
           SureVote sends weekly reports to every lawmaker in every federal, state, and local jurisdiction in the country to help them understand their constituents' priorities.
@@ -144,14 +144,14 @@
 
       <!-- End Days until elections-->
 
-      <div class="spc spc5"></div>
+      <div class="spc5"></div>
       <div class="row">
         <div class="col"></div>
         <div class="col colDivider"></div>
         <div class="col"></div>
       </div>
 
-      <div class="spc spc4"></div>
+      <div class="spc4"></div>
       <div class="row">
         <div class="col">
           <div>Want to learn more?</div>
@@ -161,7 +161,7 @@
         <div class="col"></div>
       </div>
 
-      <div class="spc spc25"></div>
+      <div class="spc25"></div>
       <div class="row rowFlip">
         <div class="col colNavText colShrink" v-on:click="handleBack">&lt;&lt; Back</div>
       </div>
@@ -243,12 +243,12 @@ a {
   flex-direction: column;
   /*height: 100vh;*/
 }
-.spc {
-  width: var(--width-percent-for-margin);
-  /*border: 1px solid yellow;*/
-}
 .row {
   width: var(--width-percent-for-margin);
+}
+div[class^="spc"] {
+  width: var(--width-percent-for-margin);
+  /*border: 1px solid yellow;*/
 }
 .col {
   /*border: 1px solid white;*/
@@ -312,6 +312,28 @@ a {
 }
 .icrPadded {
   padding-left: 1vw;
+}
+
+/* Media Queries */
+@media (min-width: 321px) {
+  .how-component {
+    --width-percent-for-margin: 85vw;
+  }
+}
+@media (min-width: 600px) {
+  .how-component {
+    --width-percent-for-margin: 75vw;
+  }
+}
+@media (min-width: 769px) {
+  .how-component {
+    --width-percent-for-margin: 60vw;
+  }
+}
+@media (min-width: 1250px) {
+  .how-component {
+    --width-percent-for-margin: 50vw;
+  }
 }
 
 </style>

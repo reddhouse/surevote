@@ -1,8 +1,8 @@
 <template>
-  <div class="intro-component">
+  <div class="intro2-component">
     <div class="super-container">
 
-      <div class="spc spcTopBar spc20"></div>
+      <div class="spc20 top-bar"></div>
       <div class="row rowLogo">
         <div class="col"></div>
         <div class="col colShrink">
@@ -23,7 +23,7 @@
         <div class="col"></div>
       </div>
 
-      <div class="spc spc2"></div>
+      <div class="spc2"></div>
       <div class="row">
         <div class="col"></div>
         <div class="col center">
@@ -34,14 +34,14 @@
         <div class="col"></div>
       </div>
 
-      <div class="spc"></div>
+      <div class="spcX"></div>
       <!-- <div class="nfr">
         <div class="nfc">
           <a href="#" v-on:click="emitScrollEvent">Just Show Me</a>
         </div>
       </div> -->
 
-      <div class="spc spc5"></div>
+      <div class="spc5"></div>
 
     </div>
   </div>
@@ -52,7 +52,7 @@
 // import HelloChild from './HelloChild'
 
 export default {
-  name: 'intro-component',
+  name: 'intro2-component',
   props: ['propsIn'],
   data () {
     return {
@@ -85,11 +85,10 @@ export default {
 <!--xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx-->
 <style scoped>
 
-.intro-component {
-  --width-percent-for-margin: 90%;
+.intro2-component {
+  --width-percent-for-margin: 90vw;
   height: 100vh;
   background-color: #001a33;
-  /*background-color: #242442;*/
   color: white;
 }
 a {
@@ -127,12 +126,12 @@ a {
   flex-direction: column;
   height: 100vh;
 }
-.spc {
-  width: var(--width-percent-for-margin);
-  /*border: 1px solid yellow;*/
-}
 .row {
   width: var(--width-percent-for-margin);
+}
+.spc20, .spc2, .spc5, .spcX {
+  width: var(--width-percent-for-margin);
+  /*border: 1px solid yellow;*/
 }
 .col {
   /*border: 1px solid white;*/
@@ -167,7 +166,7 @@ a {
 }
 
 /* Individual spacer sizing */
-.spcTopBar {
+.top-bar {
   width: 100%;
   background-color: white;
 }

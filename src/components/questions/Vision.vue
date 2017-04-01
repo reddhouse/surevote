@@ -1,41 +1,26 @@
 <template>
-  <div class="user-account-component">
+  <div class="vision-component">
     <div class="super-container">
-
-      <div class="nfr">
-        <sure-header></sure-header>
-      </div>
 
       <div class="spc5"></div>
       <div class="row">
-        <div class="col">
-          <div>Welcome, {{ this.user.email }}!</div>
-          <br>
-          <div>Improvements you've authored:</div>
-          <div v-if="myImps.length == 0">None, yet...</div>
-          <div v-else v-for="imp in myImps">
-            <imp-item v-bind:improvement="imp" v-bind:impIndex="'Mine!'"></imp-item>
-          </div>
-        </div>
+        <div class="col"></div>
+        <div class="col center">Coming Soon...&nbsp;&nbsp;:)</div>
         <div class="col"></div>
       </div>
 
-      <div class="spc25"></div>
-      <sure-footer></sure-footer>
+      <div class="spc5"></div>
 
     </div>
   </div>
 </template>
 <!--xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx-->
 <script>
-import { mapGetters } from 'vuex'
-import _ from 'lodash'
-import ImpItem from './improvements/ImpItem'
-import SureHeader from './home/SureHeader'
-import SureFooter from './home/SureFooter'
+// import { mapGetters, mapActions } from 'vuex'
+// import HelloChild from './HelloChild'
 
 export default {
-  name: 'user-account-component',
+  name: 'vision-component',
   props: ['propsIn'],
   data () {
     return {
@@ -45,11 +30,7 @@ export default {
     }
   },
   computed: {
-    ...mapGetters(['user', 'improvements']),
-    myImps () {
-      let myImprovements = _.filter(this.improvements, _.matches({ author: this.user.uid }))
-      return myImprovements
-    }
+    // ...mapGetters(['titleState'])
   },
   methods: {
     // ...mapActions(['setTitle'])
@@ -58,16 +39,14 @@ export default {
 
   },
   components: {
-    ImpItem,
-    SureHeader,
-    SureFooter
+    // HelloChild
   }
 }
 </script>
 <!--xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx-->
 <style scoped>
 
-.user-account-component {
+.vision-component {
   --width-percent-for-margin: 90vw;
   background-color: white;
   color: #262626;
@@ -105,22 +84,22 @@ div[class^="spc"] {
 
 /* Media Queries */
 @media (min-width: 321px) {
-  .user-account-component {
+  .vision-component {
     --width-percent-for-margin: 85vw;
   }
 }
 @media (min-width: 600px) {
-  .user-account-component {
+  .vision-component {
     --width-percent-for-margin: 75vw;
   }
 }
 @media (min-width: 769px) {
-  .user-account-component {
+  .vision-component {
     --width-percent-for-margin: 60vw;
   }
 }
 @media (min-width: 1250px) {
-  .user-account-component {
+  .vision-component {
     --width-percent-for-margin: 50vw;
   }
 }

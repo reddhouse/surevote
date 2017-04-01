@@ -5,15 +5,20 @@
       <div class="spc2"></div>
       <div class="row rowStandard" v-on:click="sendToDetails">
         <div class="icc iccFixed">
-          <div class="icr icrShrink icrRank mono">#{{ impIndex + 1}}</div>
+          <div class="icr icrShrink icrRank mono" v-if="impIndex == 'Mine!'">{{ impIndex }}</div>
+          <div class="icr icrShrink icrRank mono" v-else>#{{ impIndex + 1}}</div>
           <div class="icr"></div>
         </div>
         <div class="icc">
           <div class="icr"></div>
           <div class="icr">
-            <div class="wrap-hyphen">{{ improvement.title }}</div>
+            <div class="wrap-hyphen">
+              {{ improvement.title }}<span class="more-info">&nbsp;details...</span>
+            </div>
           </div>
-          <div class="icr icrVotes mono">{{ fireImpObj.votes }}</div>
+          <div class="icr icrVotes mono">
+            {{ fireImpObj.votes }}<span class="nobr"><i class="fa fa-check vcoin"></i></span>
+          </div>
         </div>
         <div class="col colSpc"></div>
       </div>
@@ -73,6 +78,11 @@ export default {
   background-color: white;
   color: #262626;
 }
+.more-info {
+  font-size: .9em;
+  color: grey;
+  cursor: pointer;
+}
 
 /* Flex defaults for SureVote's custom grid template  */
 .super-container {
@@ -99,6 +109,7 @@ div[class^="spc"] {
 /* Individual col or row styliing */
 .rowStandard {
   min-height: 60px;
+  cursor: pointer
 }
 .col1 {
   max-width: 1vw;

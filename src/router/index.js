@@ -5,6 +5,8 @@ import Sandbox from '../components/misc/Sandbox'
 import Login from '../components/Login'
 import Why from '../components/questions/Why'
 import How from '../components/questions/How'
+import Faqs from '../components/questions/Faqs'
+import Vision from '../components/questions/Vision'
 import ImpRoot from '../components/improvements/ImpRoot'
 import ImpList from '../components/improvements/ImpList'
 import ImpDetails from '../components/improvements/ImpDetails'
@@ -77,6 +79,18 @@ const router = new VueRouter({
       path: '/lawmakers',
       name: 'lawmakers',
       component: Lawmakers,
+      meta: { requiresAuth: false }
+    },
+    {
+      path: '/faqs',
+      name: 'faqs',
+      component: Faqs,
+      meta: { requiresAuth: false }
+    },
+    {
+      path: '/vision',
+      name: 'vision',
+      component: Vision,
       meta: { requiresAuth: false }
     },
     {

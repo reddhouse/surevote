@@ -8,7 +8,7 @@
 
       <div class="spc5"></div>
       <div class="row rowJustify">
-        <div class="col colShrink avenir heading">Priorities</div>
+        <div class="col colShrink avenir heading">Top 3 Improvements</div>
         <div class="col"></div>
         <div class="col colShrink">
           <router-link to="/improvements/all">View All Improvements</router-link>

@@ -5,7 +5,7 @@
       <div class="spc5"></div>
       <div class="row">
         <div class="col"></div>
-        <div class="col center">Coming Soon...</div>
+        <div class="col center">Coming Soon...&nbsp;&nbsp;:)</div>
         <div class="col"></div>
       </div>
 

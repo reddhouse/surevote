@@ -1,50 +1,96 @@
 <template>
   <div class="login-component">
+    <div id="conditional-container" class="super-container" v-if="!user.uid">
 
-    <div class="title">Login</div>
-    <form v-on:submit.prevent="handleLogin">
-      <div class="alert" v-if="loginError">{{ loginError }}</div>
-      <div class="flex1">
-        <div class="flex1a">Email </div>
-        <div class="flex1b"><input type="email" placeholder="Email" autofocus v-model="loginEmail"></div>
+      <div class="nfr">
+        <sure-header></sure-header>
       </div>
-      <div class="flex1">
-        <div class="flex1a">Password </div>
-        <div class="flex1b"><input type="password" placeholder="Password" autofocus v-model="loginPassword"></div>
-      </div>
-      <div class="flex1">
-        <div class="flex1a"></div>
-        <div class="flex1b"><button>Log In</button><div>
-      </div>
-    </form>
 
-    <div class="spacer">New SureVote user?<br>Sign up below to create an account.</div>
+      <div class="spc5"></div>
+      <div class="row">
+        <div class="col avenir impact">Login</div>
+        <div class="col"></div>
+      </div>
 
-    <div class="title">Signup</div>
-    <form v-on:submit.prevent="handleRegister">
-      <div class="alert" v-if="signUpError">{{ signUpError }}</div>
-      <div class="flex1">
-        <div class="flex1a">Email </div>
-        <div class="flex1b"><input type="email" placeholder="Email" autofocus v-model="signUpEmail"></div>
+      <div class="spc1"></div>
+      <div class="row">
+        <div class="icc iccShrink iccGrey">
+          <div class="icr icrField1">Email</div>
+          <div class="icr icrField2">Password</div>
+          <div class="icr icrButton"></div>
+        </div>
+        <div class="icc iccBlue">
+        <form v-on:submit.prevent="handleLogin">
+          <div class="icr icrInput1"><input type="email" placeholder="Email" autofocus v-model="loginEmail"></div>
+          <div class="icr icrInput2"><input type="password" placeholder="Password" autofocus v-model="loginPassword"></div>
+          <div class="icr icrButton"><button class="green">Log In</button></div>
+        </form>
+        </div>
+        <div class="col"></div>
       </div>
-      <div class="flex1">
-        <div class="flex1a">Password </div>
-        <div class="flex1b"><input type="password" placeholder="Password" autofocus v-model="signUpPassword"></div>
-      </div>
-      <div class="flex1">
-        <div class="flex1a"></div>
-        <div class="flex1b"><button>Sign Up</button><div>
-      </div>
-    </form>
 
+      <div class="spc5"></div>
+      <div class="row">
+        <div class="col">
+          <div class="alert" v-if="signUpError">{{ signUpError }}</div>
+          <div class="alert" v-else-if="loginError">{{ loginError }}</div>
+          <div class="avenir" v-else>New <span class="logo-sure-reg">Sure</span><span class="logo-vote-reg">Vote</span> user?<br>Sign up below to create an account.</div>
+        </div>
+        <div class="col"></div>
+      </div>
+
+      <div class="spc5"></div>
+      <div class="row">
+        <div class="col avenir impact">Signup</div>
+        <div class="col"></div>
+      </div>
+
+      <div class="spc1"></div>
+      <div class="row">
+        <div class="icc iccShrink iccGrey">
+          <div class="icr icrField1">Email</div>
+          <div class="icr icrField2">Password</div>
+          <div class="icr icrButton"></div>
+        </div>
+        <div class="icc iccBlue">
+        <form v-on:submit.prevent="handleRegister">
+          <div class="icr icrInput1"><input type="email" placeholder="Email" autofocus v-model="signUpEmail"></div>
+          <div class="icr icrInput2"><input type="password" placeholder="Password" autofocus v-model="signUpPassword"></div>
+          <div class="icr icrButton"><button class="green">Sign Up</button></div>
+        </form>
+        </div>
+        <div class="col"></div>
+      </div>
+
+    <!-- Close Conditional Container. If logged in, only show logout button. -->
+    </div>
+    <div class="super-container" v-else>
+      <div class="nfr">
+        <sure-header></sure-header>
+      </div>
+
+      <div class="spc5"></div>
+      <div class="row">
+        <div class="col">
+          <div>Later Gator!</div>
+          <br>
+          <button class="red" v-on:click="handleLogout">Log Out</button>
+        </div>
+        <div class="col"></div>
+      </div>
+    </div>
+
+    <div class="spc5"></div>
+
+    </div>
   </div>
 </template>
 <!--xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx-->
 <script>
-import { mapGetters } from 'vuex'
+import { mapGetters, mapActions } from 'vuex'
 import myFirebase from '../myFirebase'
 import _ from 'lodash'
-// import HelloChild from './HelloChild'
+import SureHeader from './home/SureHeader'
 
 export default {
   name: 'login-component',
@@ -76,7 +122,7 @@ export default {
     }
   },
   methods: {
-    // ...mapActions(['setTitle'])
+    ...mapActions(['setUser']),
     handleRegister () {
       this.signUpError = null
       myFirebase.firebase.auth().createUserWithEmailAndPassword(this.signUpEmail, this.signUpPassword)
@@ -100,6 +146,15 @@ export default {
           this.loginError = error.message
         })
     },
+    handleLogout () {
+      myFirebase.firebase.auth().signOut()
+        .then(() => {
+          console.log('Log Out was successful')
+          // Reset user property in global app state to empty object
+          this.setUser({})
+          this.$router.push('/')
+        })
+    },
     setNewFireUser () {
       let isRecord = _.some(this.fireUsers, { '.key': this.user.uid })
       if (!isRecord) {
@@ -115,7 +170,7 @@ export default {
 
   },
   components: {
-    // HelloChild
+    SureHeader
   }
 }
 </script>
@@ -123,76 +178,146 @@ export default {
 <style scoped>
 
 .login-component {
-  text-align: center;
+  --width-percent-for-margin: 90vw;
+  background-color: white;
+  color: #001a33;
 }
-
-.title {
-  font-size: 1.5em;
-  text-align: left;
-  margin: 1rem;
-}
-
 .alert {
   color: red;
 }
-
-.flex1 {
-  max-width: 320px;
-  width: 95%;
-  margin: 0 auto;
-  display: flex;
-  background-color: lightsteelblue;
+.impact {
+  font-size: 1.2em;
+  font-weight: 600;
 }
-
-.flex1a {
-  width: 120px;
-  text-align: right;
-  padding: 4px;
-  background-color: gainsboro;
-}
-
-.flex1b {
-  width: 200px;
-  text-align: left;
-  padding: 2px;
-}
-
-input {
-  border: 1px solid #2c3e50;
+button.green {
+  background-color: white;
+  color: #001a33;
+  border: 1px solid #4CAF50;
+  border-radius: 3px;
   padding: 2px 4px;
-  margin: 1px 2px;
-}
-
-button {
-  background-color: #2c3e50;
-  color: white;
-  border: 1px solid #2c3e50;
-  padding: 2px 8px;
   text-align: center;
   text-decoration: none;
+  display: inline-block;
   font-size: .7em;
-  font-weight: 500;
-  margin: 1px 2px;
+  font-weight: 600;
+  margin: 4px 0px;
   -webkit-transition-duration: 0.2s; /* Safari */
   transition-duration: 0.2s;
   cursor: pointer;
 }
-
-.spacer {
-  padding: 80px 0px 20px 0px;
+button.green:hover {
+  background-color: #4CAF50;
+  color: white;
+}
+button.red {
+  background-color: white;
+  color: #001a33;
+  border: 1px solid firebrick;
+  border-radius: 3px;
+  padding: 4px 8px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: .7em;
+  font-weight: 600;
+  margin: 4px 0px;
+  -webkit-transition-duration: 0.2s; /* Safari */
+  transition-duration: 0.2s;
+  cursor: pointer;
+}
+button.red:hover {
+  background-color: firebrick;
+  color: white;
 }
 
+/* Flex defaults for SureVote's custom grid template  */
+.super-container {
+  display: flex;
+  flex-direction: column;
+}
+.row {
+  width: var(--width-percent-for-margin);
+}
+div[class^="spc"] {
+  width: var(--width-percent-for-margin);
+  /*border: 1px solid yellow;*/
+}
+.col {
+  /*border: 1px solid #262626;*/
+}
+.icr {
+  /*border: 1px solid #262626;*/
+}
+.nfr {
+  width: var(--width-percent-for-margin);
+}
+
+/* Individual col or row styliing */
+.iccShrink {
+  flex: 0 1000 auto;
+}
+.iccGrey{
+  background-color: #e6e6e6;
+  color: white;
+}
+.iccBlue {
+  background-color: #001a33;
+  color: white;
+}
+.icrField1 {
+  text-align: right;
+  padding-top: 20px;
+  padding-bottom: 10px;
+  padding-left: 20px;
+  padding-right: 20px;
+  color: #001a33;
+}
+.icrField2 {
+  text-align: right;
+  padding-top: 10px;
+  padding-bottom: 20px;
+  padding-left: 20px;
+  padding-right: 20px;
+  color: #001a33;
+}
+.icrInput1 {
+  padding-top: 20px;
+  padding-bottom: 10px;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+.icrInput2 {
+  padding-top: 10px;
+  padding-bottom: 20px;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+.icrButton {
+  min-height: 50px;
+  max-height: 50px;
+  padding-left: 20px;
+}
+
+/* Media Queries */
 @media (min-width: 321px) {
-
-  .title {
-    text-align:inherit;
+  .login-component {
+    --width-percent-for-margin: 85vw;
   }
 }
-
 @media (min-width: 600px) {
-
-  .title {
-    text-align:inherit;
+  .login-component {
+    --width-percent-for-margin: 75vw;
   }
 }
+@media (min-width: 769px) {
+  .login-component {
+    --width-percent-for-margin: 60vw;
+  }
+}
+@media (min-width: 1250px) {
+  .login-component {
+    --width-percent-for-margin: 50vw;
+  }
+}
+
 </style>

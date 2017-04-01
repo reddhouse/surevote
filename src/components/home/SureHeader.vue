@@ -54,7 +54,7 @@ export default {
       }
     },
     glassHalf () {
-      return this.fireBank.numVotes > 0 || this.coinCount === 50 ? 'expires' : 'refill'
+      return this.fireBank.numVotes > 0 || this.coinCount === 50 ? 'expire' : 'refill'
     }
   },
   firebase () {

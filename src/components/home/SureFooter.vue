@@ -29,9 +29,12 @@
         <div class="col colSpc"></div>
         <div class="col colShrink">
           <div class="icc">
-            <div class="icr"><router-link to="/login">Sign In</router-link></div>
-            <div class="icr">&nbsp;</div>
-            <div class="icr">My Account</div>
+            <div class="icr" v-if="user.uid"><router-link to="/login">Log Out</router-link></div>
+            <div class="icr" v-else><router-link to="/login">Login</router-link></div>
+            <div class="icr" v-if="!user.uid"><router-link to="/login">Sign Up</router-link></div>
+            <div class="icr" v-else>&nbsp;</div>
+            <div class="icr" v-if="user.uid"><router-link to="/account">MyAccount</router-link></div>
+            <div class="icr" v-else>&nbsp;</div>
           </div>
         </div>
         <div class="col colSpc"></div>
@@ -44,7 +47,7 @@
 </template>
 <!--xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx-->
 <script>
-// import { mapGetters, mapActions } from 'vuex'
+import { mapGetters } from 'vuex'
 // import HelloChild from './HelloChild'
 
 export default {
@@ -56,7 +59,7 @@ export default {
     }
   },
   computed: {
-    // ...mapGetters(['titleState'])
+    ...mapGetters(['user'])
   },
   methods: {
     // ...mapActions(['setTitle'])
@@ -85,7 +88,8 @@ a {
   /*text-decoration: none;*/
 }
 .logo-sure {
-  color: white;
+  /*color: #da3e3e;*/
+  color: #ffbf00;
   font-size: 1.25em;
   font-weight: 500;
 }

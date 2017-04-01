@@ -60,32 +60,28 @@
       <div class="spc8"></div>
 
       <div class="nfr">
-        <div>
+        <div class="bottom-pad">
           The truth is, regardless of your identity or political
           persuasion, we ALL want to feel happy, healthy, and secure in the places
           where we live and work.
         </div>
-        <br>
-        <div>
-          Sadly, the happiest, healthiest, and most secure among are often
+        <div class="bottom-pad">
+          Sadly, the happiest, healthiest, and most secure among us are often
           less motivated to fix the problems that many of us face every day.
         </div>
-        <br>
-        <div>
+        <div class="bottom-pad">
           To make matters worse, many of the companies we trust for news and social media are
           intentionally dividing our country for profit. After a while, it seems
           normal to be angry and point fingers.
         </div>
-        <br>
-        <div class="avenir">
+        <div class="bottom-pad avenir">
           Enough is enough.
         </div>
-        <br>
-        <div>
-          SureVote users are finding common ground. We build consensus,
+        <div class="bottom-pad">
+          <span class="logo-sure-reg">Sure</span><span class="logo-vote-reg">Vote</span> users are finding common ground. We build consensus,
           and then we take action.
-          <br><router-link to="how">Come see how.</router-link>
         </div>
+        <router-link to="how">Come see how.</router-link>
       </div>
 
       <div class="spc25"></div>
@@ -169,6 +165,9 @@ a {
   border-left: calc(1.75vh + 2vw) solid transparent;
   border-right: calc(1.75vh + 2vw) solid transparent;
   border-bottom: calc(1.75vh + 2vw) solid white;
+}
+.bottom-pad {
+  padding-bottom: 2vh;
 }
 
 /* Flex defaults for SureVote's custom grid template  */

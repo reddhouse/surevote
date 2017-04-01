@@ -17,21 +17,22 @@
           <div class="icr icr05" v-else></div>
           <div class="icr icr05"></div>
           <div class="icr">
-            <span class="vote mono" v-bind:class="{ voting: isVoting }">
-              {{ condition ? condition.votes : 0 }}
+            <span class="vote" v-bind:class="{ voting: isVoting }">
+              <span class="mono">{{ condition ? condition.votes : 0 }}</span><span class="nobr"><i class="fa fa-check vcoin"></i></span>
             </span>
             <span>
               &nbsp;|&nbsp;
             </span>
-            <span class="vote mono" v-bind:class="{ voting: isVoting }">
-              {{ myVotes }}
+            <span class="vote" v-bind:class="{ voting: isVoting }">
+              Your Votes: <span class="mono">{{ myVotes }}</span><span class="nobr"><i class="fa fa-check vcoin"></i></span>
             </span>
-            <span class="nobr"><i class="fa fa-check vcoin"></i></span>
+
           </div>
         </div>
         <div class="col"></div>
       </div>
 
+      <div class="spc1" v-if="showingDetails"></div>
       <div class="row" v-if="showingDetails">
         <div class="col">
           <con-details v-bind:condition="condition"></con-details>
@@ -215,6 +216,7 @@ div[class^="spc"] {
   max-height: 3px;
 }
 .icrDetails {
+  padding-top: .5vh;
   font-size: .9em;
   color: dodgerblue;
   cursor: pointer;

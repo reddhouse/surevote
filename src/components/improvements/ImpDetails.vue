@@ -38,7 +38,7 @@
         <div class="col">
           <div v-for="link in impObj.links">
             <div class="spc spc1"></div>
-            <a v-bind:href="link">{{ link }}</a>
+            <a v-bind:href="link" target="_blank">{{ link }}</a>
           </div>
         </div>
         <div class="col"></div>

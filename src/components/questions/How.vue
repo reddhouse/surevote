@@ -67,7 +67,7 @@
       <div class="spc1"></div>
       <div class="row">
         <div class="col colPadded">
-          Each month SureVote users get an allowance of <span class="mono">50</span>
+          Each month <span class="logo-sure-reg">Sure</span><span class="logo-vote-reg">Vote</span> users get an allowance of <span class="mono">50</span>
           <span class="nobr"><i class="fa fa-check vcoin"></i>otes.</span>
           A <span class="nobr"><i class="fa fa-check vcoin"></i>ote</span>
           is like a coin or token that you can use to up-vote the things that are important to you.
@@ -94,7 +94,7 @@
         <div class="col colIndent colPadded">
           - Identify a better solution to the particular problem at hand,<br>
           - Elevate entirely different Improvements to the top of the priority list, or,<br>
-          - Spend their √otes at the state or local level.<br>
+          - Spend their votes at the state or local level.<br>
         </div>
         <div class="col"></div>
       </div>
@@ -131,13 +131,13 @@
       <div class="spc1"></div>
       <div class="row">
         <div class="col colPadded">
-          SureVote sends weekly reports to every lawmaker in every federal, state, and local jurisdiction in the country to help them understand their constituents' priorities.
+          <span class="logo-sure-reg">Sure</span><span class="logo-vote-reg">Vote</span> sends weekly reports to every lawmaker in every federal, state, and local jurisdiction in the country to help them understand their constituents' priorities.
         </div>
         <div class="col"></div>
       </div>
       <div class="row">
         <div class="col">
-          Likewise, SureVote users can view a "score" of their representative's performance at any time during the lead-up to an election.
+          Additionally, <span class="logo-sure-reg">Sure</span><span class="logo-vote-reg">Vote</span> users can view a "score" of their representative's performance at any time during the lead-up to an election.
         </div>
         <div class="col"></div>
       </div>
@@ -155,8 +155,8 @@
       <div class="row">
         <div class="col">
           <div>Want to learn more?</div>
-          <div>- <router-link to="faqs">Frequently asked questions</router-link></div>
-          <div>- <router-link to="vision">Long term vision</router-link></div>
+          <div>- <router-link to="/faqs">Frequently asked questions</router-link></div>
+          <div>- <router-link to="/vision">Long term vision</router-link></div>
         </div>
         <div class="col"></div>
       </div>

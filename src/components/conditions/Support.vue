@@ -20,10 +20,12 @@
 
       <div class="spc2"></div>
       <div class="row rowVoteMax">
-        <div class="col col2"></div>
-        <div class="col colShrink vote mono" v-bind:class="{ voting: isVoting }">{{ fireImpObj.votes }}</div>
         <div class="col col1"></div>
-        <div class="col" v-bind:class="{ hidden: isVoting }">&nbsp;&nbsp;Sum total of conditional votes</div>
+        <div class="col colShrink" v-bind:class="{ voting: isVoting }">
+          <span class="vote mono">{{ fireImpObj.votes }}</span><span class="nobr"><i class="fa fa-check vcoin"></i></span>
+        </div>
+        <div class="col col1"></div>
+        <div class="col" v-bind:class="{ hidden: isVoting }">&nbsp;&nbsp;Combined Total</div>
       </div>
 
       <div class="spc4"></div>
@@ -37,7 +39,7 @@
       <div class="row">
         <div class="col"></div>
         <div class="col colShrink">
-          <div class="faux-link" v-on:click="addingNew = true">+ Add New Condition</div>
+          <div class="faux-link" v-on:click="handleNewCon">+ Add New Condition</div>
         </div>
       </div>
 
@@ -84,7 +86,7 @@ export default {
     }
   },
   computed: {
-    ...mapGetters(['improvements']),
+    ...mapGetters(['user', 'improvements']),
     impObj () {
       if (this.improvements.length !== 0) {
         let urlID = this.$route.params.iid
@@ -135,7 +137,14 @@ export default {
         this.isVoting = false
       },
       2000 // Delay before execution
-    )
+    ),
+    handleNewCon () {
+      if (!this.user.uid) {
+        this.$router.push({ path: '/login', query: { redirect: this.$route.fullPath } })
+      } else {
+        this.addingNew = true
+      }
+    }
   },
   filters: {
 
@@ -216,10 +225,6 @@ div[class^="spc"] {
 .col1 {
   min-width: 1vw;
   max-width: 1vw;
-}
-.col2 {
-  min-width: 2vw;
-  max-width: 2vw;
 }
 .col5 {
   min-width: 5vw;

@@ -109,4 +109,26 @@ div[class^="spc"] {
   width: calc((100% - var(--width-percent-for-margin))/2);
 }
 
+/* Media Queries */
+@media (min-width: 321px) {
+  .grid-template-component {
+    --width-percent-for-margin: 85vw;
+  }
+}
+@media (min-width: 600px) {
+  .grid-template-component {
+    --width-percent-for-margin: 75vw;
+  }
+}
+@media (min-width: 769px) {
+  .grid-template-component {
+    --width-percent-for-margin: 60vw;
+  }
+}
+@media (min-width: 1250px) {
+  .grid-template-component {
+    --width-percent-for-margin: 50vw;
+  }
+}
+
 </style>

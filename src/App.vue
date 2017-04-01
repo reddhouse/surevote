@@ -113,6 +113,14 @@ a {
   font-size: 1.25em;
   font-weight: 500;
 }
+.logo-sure-reg {
+  color: firebrick;
+  font-weight: 500;
+}
+.logo-vote-reg {
+  color: #262626;
+  font-weight: 500;
+}
 span.nobr {
   white-space: nowrap;
 }

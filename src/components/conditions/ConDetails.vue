@@ -12,7 +12,7 @@
       <div class="row">
         <div class="col">
           <div v-for="link in condition.links">
-            <a v-bind:href="link">{{ link }}</a>
+            <a v-bind:href="link" target="_blank">{{ link }}</a>
           </div>
         </div>
         <div class="col"></div>
@@ -61,6 +61,10 @@ a, a:hover, a:focus, a:visited {
 .super-container {
   display: flex;
   flex-direction: column;
+  /*-moz-box-shadow: inset 0 0 10px #808080;
+  -webkit-box-shadow: inset 0 0 10px #808080;
+  box-shadow: inset 0 0 10px #808080;*/
+  background-color: #e6e6e6;
 }
 .row {
   width: calc(var(--width-percent-for-margin) - 5vw);

@@ -31,13 +31,13 @@
       </div>
       <div class="row">
         <div class="col colPadded">
-          <span class="mini">2. </span>Remind lawmakers that we're keeping score, and remove them from office if they refuse to take our priorities seriously.
+          <span class="mini">2. </span>Remove lawmakers from office if they don't turn our #1 Improvement into law.
         </div>
         <div class="col"></div>
       </div>
       <div class="row">
         <div class="col">
-          <span class="mini">3. </span>Move on to <strong>Improvement #2</strong> and repeat. Often, the next Improvement is idealogically different than its predecessor.
+          <span class="mini">3. </span>Move on to <strong>Improvement #2</strong> and repeat. Often, the next Improvement is ideologically different than its predecessor.
         </div>
         <div class="col"></div>
       </div>

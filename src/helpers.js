@@ -13,7 +13,7 @@ export const firstBlankConObj = {
   belongsTo: '',
   author: '',
   timestamp: 0,
-  title: 'No Conditions (Full Support)',
+  title: 'No Condition (Full Support)',
   description: 'This improvement is acceptable as originally proposed.',
   links: [],
   votes: 1,

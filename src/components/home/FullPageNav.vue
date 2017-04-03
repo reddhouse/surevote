@@ -10,7 +10,7 @@
       <div class="row rowJustify">
         <div class="col colShrink avenir heading">Top 3 Improvements</div>
         <div class="col"></div>
-        <div class="col colShrink">
+        <div class="col colShrink align-right">
           <router-link to="/improvements/all">View All Improvements</router-link>
         </div>
       </div>
@@ -24,7 +24,7 @@
       <div class="row rowJustify">
         <div class="col colShrink avenir heading">Pledge</div>
         <div class="col"></div>
-        <div class="col colShrink">
+        <div class="col colShrink align-right">
           <router-link to="lawmakers">View Lawmakers</router-link>
         </div>
       </div>
@@ -92,6 +92,9 @@ a {
 }
 .heading {
   font-weight: 600;
+}
+.align-right {
+  text-align: right;
 }
 
 /* Flex defaults for SureVote's custom grid template  */

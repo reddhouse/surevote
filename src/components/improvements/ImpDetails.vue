@@ -80,7 +80,7 @@
 
           <br>
           <div><strong>Laws</strong></div>
-          <div>Your lawmakers have proposed/passed the following law(s) to adddress this issue:</div>
+          <div>Your lawmakers have proposed/passed the following law(s) to address this issue:</div>
           <div>Link to law 1 ...., etc.</div>
 
           <br>
@@ -191,12 +191,6 @@ div[class^="spc"] {
 /* Individual col or row styliing */
 .col1 {
   max-width: 1vw;
-}
-.col5 {
-  max-width: 5vw;
-}
-.colMargin {
-  width: calc((100% - var(--width-percent-for-margin))/2);
 }
 .colDivider1 {
   height: 1px;

@@ -199,7 +199,6 @@ export default {
   margin: 0 auto;
   display: flex;
   flex-direction: column;
-  /*border: 1px solid #001a33;*/
 }
 .row {
   width: var(--width-percent-for-margin);
@@ -225,13 +224,6 @@ div[class^="spc"] {
 .col1 {
   min-width: 1vw;
   max-width: 1vw;
-}
-.col5 {
-  min-width: 5vw;
-  max-width: 5vw;
-}
-.colMargin {
-  width: calc((100% - var(--width-percent-for-margin))/2);
 }
 .icr1 {
   min-height: 1vh;

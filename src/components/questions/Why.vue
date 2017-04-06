@@ -6,7 +6,6 @@
       <div class="row rowTopNav">
         <div class="col"></div>
         <div class="col colTab colShrink">Why?</div>
-        <!-- <div class="col colMargin"></div> -->
       </div>
 
       <div id="header" class="spc4"></div>
@@ -226,9 +225,6 @@ div[class^="spc"] {
   text-align: right;
   padding: .5vh 4vw;
   cursor: pointer;
-}
-.colMargin {
-  width: calc((100% - var(--width-percent-for-margin))/2);
 }
 .icrGrow {
   flex: 1000 1 auto;

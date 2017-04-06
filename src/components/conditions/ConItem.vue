@@ -205,9 +205,6 @@ div[class^="spc"] {
   min-width: 3vw;
   max-width: 3vw;
 }
-.colMargin {
-  width: calc((100% - var(--width-percent-for-margin))/2);
-}
 .iccVoteBox {
   min-width: 40px;
   max-width: 40px;

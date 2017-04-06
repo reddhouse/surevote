@@ -85,15 +85,6 @@ div[class^="spc"] {
 }
 
 /* Individual col or row styliing */
-.rowFlip {
-  flex-direction: row-reverse;
-}
-.col1 {
-  max-width: 1vw;
-}
-.colRegion {
-  padding: 1vh 6vw 1vh 6vw;
-}
 
 @media (min-width: 321px) {
   .improvements-root-component {

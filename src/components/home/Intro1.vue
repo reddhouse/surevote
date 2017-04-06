@@ -2,21 +2,52 @@
   <div class="intro-component">
     <div class="super-container">
 
-      <div class="spc25"></div>
-      <div class="nfr title">
-        <div class="center">What happens when 200&nbsp;million Americans agree for 5&nbsp;minutes?</div>
-        <div class="nfc"></div>
-        <div class="nfc"></div>
+      <div class="spcTop"></div>
+      <div class="nfr align title1">
+        <div>
+          Why do we elect lawmakers based on what they say they <strong>"will do"</strong>?
+        </div>
       </div>
 
-      <div class="spcX"></div>
-      <div class="nfr">
-        <div class="center">
-          <a href="#" v-on:click="emitScrollEvent">We win.</a>
+      <div class="spc3"></div>
+      <div class="nfr align title2">
+        <div>
+          Wouldn't it be better to reward lawmakers who <strong>"have done"</strong> by
+          electing them to serve another term?
+        </div>
+      </div>
+
+      <div class="spc5"></div>
+      <div class="nfr center">
+        <div>
+          <i class="fa fa-check-square-o fa-3x"></i>
+        </div>
+      </div>
+
+      <div class="spc5"></div>
+      <div class="nfr align title3 avenir">
+        <div>
+          Until very recently, this simple idea was not possible. There was no
+          trustworthy, democratic authority to maintain the list of the things
+          we actually want to see accomplished.
         </div>
       </div>
 
       <div class="spc10"></div>
+      <div class="nfr align title2">
+        <div>
+          Blockchain technology has solved the trust issue.
+        </div>
+      </div>
+
+      <div class="spc3"></div>
+      <div class="nfr align title2">
+        <div>
+          <a href="#" v-on:click="emitScrollEvent">We are solving everything else.</a>
+        </div>
+      </div>
+
+      <div class="spcX"></div>
 
     </div>
   </div>
@@ -80,15 +111,68 @@ div[class^="spc"] {
   /*border: 1px solid yellow;*/
 }
 .col {
-  border: 1px solid white;
+  /*border: 1px solid white;*/
 }
 .nfr {
   width: var(--width-percent-for-margin);
 }
 
 /* Individual col or row styliing */
-.nfr.title {
-  font-size: 1.5em;
+.spcTop {
+  margin: 0 auto;
+  flex: 1 1000 10vh;
+}
+.align {
+
+}
+.title1 {
+  font-size: 1.1em;
+}
+.title2 {
+
+}
+.title3 {
+
+}
+
+/* Media Queries */
+@media (min-width: 375px) {
+  .spcTop {
+    margin: 0 auto;
+    flex: 1 1000 15vh;
+  }
+  .align {
+    text-align: center;
+  }
+  .title1 {
+    font-size: 1.25em;
+  }
+  .title2 {
+
+  }
+  .title3 {
+
+  }
+}
+@media (min-width: 600px) {
+
+}
+@media (min-width: 768px) {
+  .align {
+
+  }
+  .title1 {
+    font-size: 1.5em;
+  }
+  .title2 {
+    font-size: 1.1em;
+  }
+  .title3 {
+    font-size: 1.1em;
+  }
+}
+@media (min-width: 1250px) {
+
 }
 
 </style>

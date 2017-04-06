@@ -111,12 +111,6 @@ div[class^="spc"] {
   min-height: 60px;
   cursor: pointer
 }
-.col1 {
-  max-width: 1vw;
-}
-.colMargin {
-  width: calc((100% - var(--width-percent-for-margin))/2);
-}
 .iccFixed {
   border-right: 1px solid #262626;
   margin-right: 4px;

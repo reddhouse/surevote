@@ -87,9 +87,6 @@ div[class^="spc"] {
 .rowFlip {
   flex-direction: row-reverse;
 }
-.col1 {
-  max-width: 1vw;
-}
 .colRegion {
   padding: 1vh 6vw 1vh 6vw;
 }

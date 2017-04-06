@@ -120,15 +120,6 @@ export default {
 }
 
 /* Individual col or row styliing */
-.col1 {
-  max-width: 1vw;
-}
-.col5 {
-  max-width: 5vw;
-}
-.colMargin {
-  width: calc((100% - var(--width-percent-for-margin))/2);
-}
 .colTopPad {
   padding-top: 3px;
 }

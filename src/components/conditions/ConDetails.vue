@@ -61,9 +61,6 @@ a, a:hover, a:focus, a:visited {
 .super-container {
   display: flex;
   flex-direction: column;
-  /*-moz-box-shadow: inset 0 0 10px #808080;
-  -webkit-box-shadow: inset 0 0 10px #808080;
-  box-shadow: inset 0 0 10px #808080;*/
   background-color: #e6e6e6;
 }
 .row {
@@ -84,8 +81,5 @@ div[class^="spc"] {
 }
 
 /* Individual col or row styliing */
-.colMargin {
-  width: calc((100% - (var(--width-percent-for-margin) - 5vw))/2);
-}
 
 </style>

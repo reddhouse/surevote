@@ -126,9 +126,6 @@ div[class^="spc"] {
 }
 
 /* Individual col or row styliing */
-.col0 {
-  max-width: 0vw;
-}
 .colLogo {
   padding-top: 1vh;
   padding-bottom: 1vh;

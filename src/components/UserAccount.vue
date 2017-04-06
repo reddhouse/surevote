@@ -96,12 +96,6 @@ div[class^="spc"] {
 }
 
 /* Individual col or row styliing */
-.col1 {
-  max-width: 1vw;
-}
-.colMargin {
-  width: calc((100% - var(--width-percent-for-margin))/2);
-}
 
 /* Media Queries */
 @media (min-width: 321px) {

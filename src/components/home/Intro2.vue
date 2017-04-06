@@ -149,12 +149,6 @@ a {
   min-height: calc(20vh + 10vw);
   background-color: white;
 }
-.col0 {
-  max-width: 0vw;
-}
-.col1 {
-  max-width: 1vw;
-}
 .colFlip {
   align-self: flex-end;
 }

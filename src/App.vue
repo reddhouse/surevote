@@ -82,10 +82,8 @@ a {
   /* These are technically the same, but use both */
    overflow-wrap: break-word;
    word-wrap: break-word;
-
    -ms-word-break: break-all;
    word-break: break-word;
-
    /* Adds a hyphen where the word breaks, if supported (No Blink) */
    -ms-hyphens: auto;
    -moz-hyphens: auto;

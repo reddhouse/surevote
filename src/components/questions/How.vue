@@ -5,7 +5,6 @@
       <div class="row rowTopNav">
         <div class="col"></div>
         <div class="col colTab colShrink" v-on:click="handleBack">How?</div>
-        <!-- <div class="col colMargin"></div> -->
       </div>
 
       <div class="spc2"></div>
@@ -291,9 +290,6 @@ div[class^="spc"] {
 }
 .colIndent {
   margin-left: 2vw;
-}
-.colMargin {
-  width: calc((100% - var(--width-percent-for-margin))/2);
 }
 .nfrDivider {
   height: 1px;

@@ -208,6 +208,7 @@ div[class^="spc"] {
 .iccVoteBox {
   min-width: 40px;
   max-width: 40px;
+  cursor: pointer;
 }
 .icrMax {
   max-height: 3px;

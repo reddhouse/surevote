@@ -5,14 +5,14 @@
       <div class="spcTop"></div>
       <div class="nfr align title1">
         <div>
-          Why do we elect lawmakers based on what they say they <strong>"will do"</strong>?
+          Why do we elect lawmakers based on what they say they <strong>"will&nbsp;do"</strong>?
         </div>
       </div>
 
       <div class="spc3"></div>
       <div class="nfr align title2">
         <div>
-          Wouldn't it be better to reward lawmakers who <strong>"have done"</strong> by
+          Wouldn't it be better to reward lawmakers who <strong>"have&nbsp;done"</strong> by
           electing them to serve another term?
         </div>
       </div>
